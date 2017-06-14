@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { UserViewComponent } from './user-view.component';
+import { AuthGuard } from '../core/auth-guard.service';
 
 import { blogRoutes } from '../blog/blog.routes';
 import { calenderRoutes } from '../calender/calender.routes';
@@ -34,6 +35,7 @@ const routes: Routes = [
   {
     path: '',
     component: UserViewComponent,
+    canActivate: [AuthGuard],
     children: [
       ...dashboardRoutes,
       ...mailboxRoutes,

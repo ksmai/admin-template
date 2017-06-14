@@ -1,10 +1,15 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 
+import { AuthGuard } from './auth-guard.service';
+import { UserService } from './user.service';
+
 @NgModule({
   imports: [
   ],
 
   providers: [
+    AuthGuard,
+    UserService,
   ],
 })
 export class CoreModule {
