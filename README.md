@@ -1,16 +1,13 @@
-[![Build Status](https://travis-ci.org/ksmai/angular-components.svg?branch=master)](https://travis-ci.org/ksmai/angular-components)
+[![Build Status](https://travis-ci.org/ksmai/admin-template.svg?branch=master)](https://travis-ci.org/ksmai/admin-template)
 
-# angular-components
-A module of UI Components for Angular 4. Heavily inspired by [rubix](http://rubix410.sketchpixy.com/ltr/dashboard).
-
-## Integrated libraries
-TODO
+# admin-template
+An admin template clone of [rubix](http://rubix410.sketchpixy.com/ltr/dashboard).
 
 ## Development
 ```
 # clone repository
-git clone https://github.com/ksmai/angular-components
-cd angular-components
+git clone https://github.com/ksmai/admin-template
+cd admin-template
 
 yarn           # install dependencies
 yarn start     # start dev server

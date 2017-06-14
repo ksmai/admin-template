@@ -1,9 +1,9 @@
 {
-  "name": "angular-components",
+  "name": "admin-template",
   "version": "1.0.0",
-  "description": "An angular component library",
-  "main": "index.js",
-  "repository": "https://github.com/ksmai/angular-components",
+  "description": "An admin template",
+  "private": true,
+  "repository": "https://github.com/ksmai/admin-template",
   "author": "ksmai <kasingmai@gmail.com>",
   "license": "MIT",
   "scripts": {
