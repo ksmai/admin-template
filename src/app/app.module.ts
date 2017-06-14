@@ -26,21 +26,18 @@ import { MailboxModule } from './mailbox/mailbox.module';
 import { MapModule } from './map/map.module';
 import { PanelModule } from './panel/panel.module';
 import { PaymentModule } from './payment/payment.module';
-import { SidenavModule } from './sidenav/sidenav.module';
 import { SocialModule } from './social/social.module';
 import {
   StaticTimelineModule,
 } from './static-timeline/static-timeline.module';
 import { TableModule } from './table/table.module';
-import { TopnavModule } from './topnav/topnav.module';
 import { UIElementModule } from './ui-element/ui-element.module';
+import { UserViewModule } from './user-view/user-view.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     CoreModule,
-    SidenavModule,
-    TopnavModule,
     DashboardModule,
     MailboxModule,
     GalleryModule,
@@ -62,6 +59,7 @@ import { UIElementModule } from './ui-element/ui-element.module';
     InteractiveTimelineModule,
     StaticTimelineModule,
     AuthModule,
+    UserViewModule,
     AppRoutingModule,
   ],
 
