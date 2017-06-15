@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: #999;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}

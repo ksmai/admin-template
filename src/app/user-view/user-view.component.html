@@ -1,3 +1,19 @@
-<admin-topnav></admin-topnav>
-<admin-sidenav></admin-sidenav>
-<router-outlet></router-outlet>
+<aside class="sidenav">
+  <admin-sidenav></admin-sidenav>
+</aside>
+
+<section class="main">
+  <nav class="topnav">
+    <admin-topnav></admin-topnav>
+  </nav>
+
+  <section class="content-area">
+    <section class="content-area__content">
+      <router-outlet></router-outlet>
+    </section>
+
+    <footer class="content-area__footer">
+      <admin-footer></admin-footer>
+    </footer>
+  </section>
+</section>

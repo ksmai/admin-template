@@ -1,7 +1,7 @@
-import { CanActivate, Router } from '@angular/router';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/operator/map';
+import { CanActivate, Router } from '@angular/router';
 import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 
 import { UserService } from './user.service';
 

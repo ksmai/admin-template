@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 
+import { FooterModule } from '../footer/footer.module';
 import { SharedModule } from '../shared/shared.module';
 import { SidenavModule } from '../sidenav/sidenav.module';
 import { TopnavModule } from '../topnav/topnav.module';
@@ -9,6 +10,7 @@ import { UserViewComponent } from './user-view.component';
 @NgModule({
   imports: [
     SharedModule,
+    FooterModule,
     TopnavModule,
     SidenavModule,
     UserViewRoutingModule,
