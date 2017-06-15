@@ -1,1 +1,29 @@
-panel demo
+<admin-panel [showHeader]="true" [showFooter]="true">
+  <header>
+    <h1 style="font-size: 1.5em;">My Header</h1>
+    <h6 style="font-size: .7em;">Mini heading</h6>
+  </header>
+  <p>Lorem ipsum</p>
+  <p>dolor sit amet</p>
+  <div><header>this should be in body</header></div>
+  <footer>Footer</footer>
+</admin-panel>
+
+<admin-panel>Basic panel</admin-panel>
+
+<admin-panel [showHeader]="true" [showFooter]="true">
+  <header>My Header</header>
+  <div>some content</div>
+  <p>some paragraphs</p>
+  <footer>My Footer</footer>
+</admin-panel>
+
+<admin-panel [showHeader]="true" headerColor="#666">
+  lorem ipsum
+  <header>Grey header</header>
+</admin-panel>
+
+<admin-panel [showFooter]="true" footerColor="rgb(12, 34, 56)">
+  foobarbaz
+  <footer>Dark blue footer</footer>
+</admin-panel>

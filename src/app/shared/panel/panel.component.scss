@@ -1,0 +1,70 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+:host(.closed) {
+  display: none;
+}
+
+:host(.minimized) .panel {
+  height: 20px;
+  overflow: hidden;
+}
+
+.panel {
+  background-color: transparent;
+  border: none;
+  position: relative;
+  z-index: 1;
+}
+
+.panel-heading {
+  border-radius: 8px 8px 0 0;
+}
+
+.panel-footer {
+  border-radius: 0 0 8px 8px;
+}
+
+.panel-heading,
+.panel-footer {
+  color: #fff;
+  border: none;
+}
+
+.panel-body {
+  background-color: #fff;
+}
+
+.panel-controls {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  background-color: #fff;
+  font-size: 12px;
+  padding: 3px 5px 0;
+  border-radius: 3px;
+  transition: transform .15s cubic-bezier(.4, 0, .6, 1);
+  z-index: 0;
+}
+
+:host(.minimized) .panel-controls,
+:host(:hover) .panel-controls {
+  transform: translateY(-100%);
+}
+
+.panel-control {
+  cursor: pointer;
+  opacity: .5;
+  margin: 0 3px;
+
+  &:active,
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.glyphicon-remove {
+  top: 2px;
+}

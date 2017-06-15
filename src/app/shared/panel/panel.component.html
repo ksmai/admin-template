@@ -1,1 +1,31 @@
-panel component
+<div class="panel">
+  <div class="panel-heading" *ngIf="showHeader" #header>
+    <ng-content select="header"></ng-content>
+  </div>
+  <div class="panel-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="panel-footer" *ngIf="showFooter" #footer>
+    <ng-content select="footer"></ng-content>
+  </div>
+</div>
+
+<div class="panel-controls">
+  <span
+    class="glyphicon glyphicon-plus panel-control"
+    *ngIf="isMinimized; else minimizeButton"
+    (click)="toggleMinimized()"
+  ></span>
+
+  <ng-template #minimizeButton>
+    <span
+      class="glyphicon glyphicon-minus panel-control"
+      (click)="toggleMinimized()"
+    ></span>
+  </ng-template>
+
+  <span
+    class="glyphicon glyphicon-remove panel-control"
+    (click)="toggleClosed()"
+  ></span>
+</div>
