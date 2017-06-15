@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { ButtonComponent } from './button/button.component';
 import { CalenderComponent } from './calender/calender.component';
-import { ChartComponent } from './chart/chart.component';
+import {
+  ChartJSChartComponent,
+} from './chartjs-chart/chartjs-chart.component';
 import { CodemirrorComponent } from './codemirror/codemirror.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropzoneComponent } from './dropzone/dropzone.component';
@@ -24,6 +26,10 @@ import { SliderComponent } from './slider/slider.component';
 import { StaticTimelineComponent } from './static-timeline/static-timeline.component';
 import { TabComponent } from './tab/tab.component';
 import { TableComponent } from './table/table.component';
+import { C3JSChartComponent } from './c3js-chart/c3js-chart.component';
+import {
+  MorrisJSChartComponent,
+} from './morrisjs-chart/morrisjs-chart.component';
 
 @NgModule({
   imports: [
@@ -33,7 +39,7 @@ import { TableComponent } from './table/table.component';
   declarations: [
     ButtonComponent,
     CalenderComponent,
-    ChartComponent,
+    ChartJSChartComponent,
     CodemirrorComponent,
     DropdownComponent,
     DropzoneComponent,
@@ -54,13 +60,15 @@ import { TableComponent } from './table/table.component';
     StaticTimelineComponent,
     TabComponent,
     TableComponent,
+    C3JSChartComponent,
+    MorrisJSChartComponent,
   ],
 
   exports: [
     CommonModule,
     ButtonComponent,
     CalenderComponent,
-    ChartComponent,
+    ChartJSChartComponent,
     CodemirrorComponent,
     DropdownComponent,
     DropzoneComponent,
@@ -81,6 +89,8 @@ import { TableComponent } from './table/table.component';
     StaticTimelineComponent,
     TabComponent,
     TableComponent,
+    C3JSChartComponent,
+    MorrisJSChartComponent,
   ],
 })
 export class SharedModule {

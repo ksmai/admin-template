@@ -1,1 +1,7 @@
-c3 js demo
+<h1>c3 js demo</h1>
+<admin-c3js-chart
+  *ngFor="let chart of charts"
+  [columns]="chart.columns"
+  [type]="chart.type"
+  [group]="!!chart.group"
+></admin-c3js-chart>

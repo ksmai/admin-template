@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'c3/c3.css';
 
 import '../styles/styles.scss';
 import { AppRoutingModule } from './app-routing.module';

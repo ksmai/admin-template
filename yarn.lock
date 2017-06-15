@@ -67,11 +67,21 @@
     magic-string "^0.19.0"
     source-map "^0.5.6"
 
+"@types/c3@^0.4.42":
+  version "0.4.42"
+  resolved "https://registry.yarnpkg.com/@types/c3/-/c3-0.4.42.tgz#7872b6ce3ff13ae1d526ed2cd3e0ab6dbed4b928"
+  dependencies:
+    "@types/d3" "^3"
+
 "@types/chart.js@^2.4.3":
   version "2.4.3"
   resolved "https://registry.yarnpkg.com/@types/chart.js/-/chart.js-2.4.3.tgz#cef45eca6f8f7203163abc30b22a526190d05fc5"
   dependencies:
     "@types/jquery" "*"
+
+"@types/d3@^3":
+  version "3.5.38"
+  resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.38.tgz#76f8f2e9159ae562965b2fa0e6fbee1aa643a1bc"
 
 "@types/jasmine@^2.5.52":
   version "2.5.52"
@@ -683,6 +693,12 @@ bytes@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/bytes/-/bytes-2.4.0.tgz#7d97196f9d5baf7f6935e25985549edd2a6c2339"
 
+c3@^0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/c3/-/c3-0.4.13.tgz#d671aea5a048cc137c3d745a0fc5e3c648ce5f1e"
+  dependencies:
+    d3 "~3.5.0"
+
 callsite@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/callsite/-/callsite-1.0.0.tgz#280398e5d664bd74038b6f0905153e6e8af1bc20"
@@ -1290,6 +1306,10 @@ currently-unhandled@^0.4.1:
 custom-event@~1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/custom-event/-/custom-event-1.0.1.tgz#5d02a46850adf1b4a317946a3928fccb5bfd0425"
+
+d3@~3.5.0:
+  version "3.5.17"
+  resolved "https://registry.yarnpkg.com/d3/-/d3-3.5.17.tgz#bc46748004378b21a360c9fc7cf5231790762fb8"
 
 dashdash@^1.12.0:
   version "1.14.1"
