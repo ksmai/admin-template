@@ -1,1 +1,10 @@
-chart js demo
+<h1>chart js demo</h1>
+<admin-chart
+  *ngFor="let chart of charts"
+  lib="chart-js"
+  [type]="chart.type"
+  [labels]="chart.labels"
+  [datasets]="chart.datasets"
+  [width]="1000"
+  [height]="300"
+></admin-chart>
