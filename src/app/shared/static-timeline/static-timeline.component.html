@@ -1,27 +1,35 @@
-<ul class="static-timeline">
+<ul
+  class="static-timeline"
+  [class.static-timeline--block]="block"
+  [class.static-timeline--full]="full"
+>
   <li
     *ngFor="let evt of events; let i=index"
     class="static-timeline__event static-timeline-event"
   >
     <section
       class="static-timeline-event__header"
-      [class.static-timeline-event__header--block]="block"
+      [style.background-color]="block ? shade(colors[i]) : ''"
     >
       <span
         class="static-timeline__bullet glyphicon glyphicon-comment"
-        [style.background-color]="colors[i]"
+        [style.background-color]="full ? '' : colors[i]"
       ></span><span class="static-timeline-event__date" >{{evt.date}}</span>
     </section>
 
     <ul class="static-timeline-event__desc-list">
       <li
-        *ngFor="let text of evt.texts"
+        *ngFor="let text of evt.texts; let j=index"
         class="static-timeline-event__desc-item"
       >
         <span
           class="static-timeline-event__bullet"
           [style.background-color]="colors[i]"
-        ></span><span class="static-timeline-event__dsec">{{text}}</span>
+        ></span><span
+          class="static-timeline-event__desc"
+          [class.static-timeline-event__desc--reversed]="full &&
+            evt.reversed[j]"
+        >{{text}}</span>
       </li>
     </ul>
   </li>
