@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { ButtonComponent } from './button/button.component';
+import { C3JSChartComponent } from './c3js-chart/c3js-chart.component';
 import { CalenderComponent } from './calender/calender.component';
 import {
   ChartJSChartComponent,
@@ -21,15 +22,14 @@ import { KnobComponent } from './knob/knob.component';
 import { MapComponent } from './map/map.component';
 import { MessengerComponent } from './messenger/messenger.component';
 import { ModalComponent } from './modal/modal.component';
+import {
+  MorrisJSChartComponent,
+} from './morrisjs-chart/morrisjs-chart.component';
 import { PanelComponent } from './panel/panel.component';
 import { SliderComponent } from './slider/slider.component';
 import { StaticTimelineComponent } from './static-timeline/static-timeline.component';
 import { TabComponent } from './tab/tab.component';
 import { TableComponent } from './table/table.component';
-import { C3JSChartComponent } from './c3js-chart/c3js-chart.component';
-import {
-  MorrisJSChartComponent,
-} from './morrisjs-chart/morrisjs-chart.component';
 
 @NgModule({
   imports: [

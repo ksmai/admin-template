@@ -1,22 +1,34 @@
 import {
-  Component,
-  ViewChild,
-  OnChanges,
   AfterViewInit,
+  Component,
   Input,
+  OnChanges,
+  ViewChild,
 } from '@angular/core';
 import * as Chart from 'chart.js';
 import randomcolor = require('randomcolor');
 
-type Dataset = {
+interface IDataset {
   label: string;
   data: Array<number|{x: number, y: number, r?: number }>;
   backgroundColor?: string|string[];
   borderColor?: string|string[];
   pointBackgroundColor?: string|string[];
   borderWidth?: number;
-};
+}
 
+/**
+ * A simple wrapper around Chart.js
+ *
+ * @exmaple
+ * <admin-chartjs-chart
+ *  type="bar"
+ *  [labels]="['Apple', 'Orange', 'Pineapple', 'Grape', 'Banana']"
+ *  [datasets]="{ label: '# of fruits', data: [3, 5, 9, 1, 2] }"
+ *  [width]="1000"
+ *  [height]="300"
+ * ></admin-chart>
+ */
 @Component({
   selector: 'admin-chartjs-chart',
   templateUrl: './chartjs-chart.component.html',
@@ -27,8 +39,8 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit {
   @Input() height = 400;
   @Input() type: string;
   @Input() labels: string[];
-  @Input() datasets: Dataset|Dataset[];
-  @ViewChild('canvas') canvasEl: any;
+  @Input() datasets: IDataset|IDataset[];
+  @ViewChild('canvas') private canvasEl: any;
 
   private chart: any;
 
@@ -56,8 +68,8 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit {
       };
       const options = {
         legend: {
-          display: (data.datasets as Dataset[]).length > 1,
-        }
+          display: (data.datasets as IDataset[]).length > 1,
+        },
       };
       this.chart = new Chart(ctx, {
         data,

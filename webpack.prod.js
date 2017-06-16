@@ -167,5 +167,9 @@ module.exports = {
       },
     }),
     new FaviconsPlugin(paths.favicon),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery', // needed by morris.js
+      Raphael: 'raphael', // needed by morris.js
+    }),
   ],
 };

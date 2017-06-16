@@ -43,5 +43,9 @@ module.exports = {
       paths.src,
       {}
     ),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery', // needed by morris.js
+      Raphael: 'raphael', // needed by morris.js
+    }),
   ],
 };

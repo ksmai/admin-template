@@ -1,1 +1,10 @@
-morris js demo
+<admin-morrisjs-chart
+  *ngFor="let chart of charts"
+  [data]="chart.data"
+  [xkey]="chart.xkey"
+  [ykey]="chart.ykey"
+  [ykeys]="chart.ykeys"
+  [label]="chart.label"
+  [labels]="chart.labels"
+  [type]="chart.type"
+></admin-morrisjs-chart>

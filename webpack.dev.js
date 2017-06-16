@@ -76,6 +76,10 @@ module.exports = {
     new HTMLPlugin({
       template: paths.index,
     }),
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery', // needed by morris.js
+      Raphael: 'raphael', // needed by morris.js
+    }),
   ],
 
   devServer: {
