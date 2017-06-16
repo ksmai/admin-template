@@ -36,6 +36,8 @@ export class MorrisJSChartComponent implements OnInit {
   @Input() label: string;
   @Input() labels: string[];
 
+  private chart: any;
+
   constructor(private el: ElementRef) {
   }
 
@@ -46,9 +48,7 @@ export class MorrisJSChartComponent implements OnInit {
   private drawChart(): void {
     this.checkInput();
 
-    // Morris works by side effect
-    // tslint:disable-next-line:no-unused-expression
-    new (Morris[this.type] as any)({
+    this.chart = new (Morris[this.type] as any)({
       element: this.el.nativeElement,
       data: this.data,
       xkey: this.xkey,
