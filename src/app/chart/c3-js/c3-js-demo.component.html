@@ -4,4 +4,10 @@
   [columns]="chart.columns"
   [type]="chart.type"
   [group]="!!chart.group"
+  [x]="chart.x"
+></admin-c3js-chart>
+
+<admin-c3js-chart
+  [columns]="['data', this.gauge]"
+  type="gauge"
 ></admin-c3js-chart>

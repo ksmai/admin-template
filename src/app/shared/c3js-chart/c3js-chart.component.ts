@@ -18,6 +18,7 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
   @Input() columns: Column|Column[];
   @Input() type: string;
   @Input() group: boolean;
+  @Input() x: string|{ [key: string]: string };
   @ViewChild('div') divEl: any;
 
   private chart: any;
@@ -35,12 +36,12 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
       return;
     }
 
+    this.processColumns();
+
     if (this.chart) {
       this.chart.load({ columns: this.columns });
       return;
     }
-
-    this.processColumns();
 
     // stack the data if this.group is true
     const data = {
@@ -56,9 +57,6 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
     // handle timeseries data
     const axis = {};
     if (this.type === 'timeseries') {
-      Object.assign(data, {
-        x: 'time',
-      });
       Object.assign(axis, {
         x: {
           type: 'timeseries',
@@ -66,6 +64,17 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
         },
       });
       data.type = undefined;
+    }
+
+    // handle x-axis
+    if (typeof this.x === 'string') {
+      Object.assign(data, {
+        x: this.x,
+      });
+    } else if (typeof this.x === 'object') {
+      Object.assign(data, {
+        xs: this.x,
+      });
     }
 
     // Add a horizontal line to separate postive and negative data
