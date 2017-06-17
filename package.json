@@ -31,6 +31,7 @@
     "randomcolor": "^0.5.3",
     "raphael": "^2.2.7",
     "rxjs": "^5.4.0",
+    "trumbowyg": "^2.6.0",
     "web-animations-js": "^2.2.5",
     "zone.js": "^0.8.12"
   },
@@ -42,6 +43,7 @@
     "@types/chart.js": "^2.4.3",
     "@types/codemirror": "^0.0.40",
     "@types/jasmine": "^2.5.52",
+    "@types/jquery": "^3.2.1",
     "@types/morris.js": "^0.5.6",
     "@types/node": "^7.0.31",
     "@types/randomcolor": "^0.4.3",
