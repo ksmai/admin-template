@@ -10,6 +10,24 @@ interface IEvent {
 
 type Luminosity = 'bright'|'dark'|'light'|'random';
 
+/**
+ * A component for displaying a series of timeline events
+ * Inputs:
+ *   - events
+ *     - (required) An array of events to be shown
+ *     - e.g. `[{ date: 'Tue Jul 29 2014', texts: ['lorem ipsum']}, ...]`
+ *   - block
+ *      - a flag for block mode headers
+ *   - full
+ *      - a flag for full mode where the timeline is in the middle
+ *   - luminosity
+ *      - bright/light/dark/random - colors for the bullets
+ *
+ * Note: Date/Time are displayed as provided, without formatting/sorting
+ *
+ * @example
+ * <admin-static-timeline [events]="events"></admin-static-timeline>
+ */
 @Component({
   selector: 'admin-static-timeline',
   templateUrl: './static-timeline.component.html',

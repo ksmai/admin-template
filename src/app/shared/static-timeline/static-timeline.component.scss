@@ -80,6 +80,12 @@
   overflow-wrap: break-word;
 }
 
+.static-timeline-event__time {
+  font-weight: 900;
+  font-size: .8em;
+  letter-spacing: .05em;
+}
+
 .static-timeline--full {
   .static-timeline-event:after {
     display: none;
