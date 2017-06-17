@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import randomColor = require('randomcolor');
 
 interface IEvent {
@@ -33,12 +33,16 @@ type Luminosity = 'bright'|'dark'|'light'|'random';
   templateUrl: './static-timeline.component.html',
   styleUrls: ['./static-timeline.component.scss'],
 })
-export class StaticTimelineComponent implements OnInit {
+export class StaticTimelineComponent implements OnInit, OnChanges {
   @Input() events: IEvent[];
   @Input() luminosity: Luminosity = 'bright';
   @Input() block: boolean;
   @Input() full: boolean;
   colors: string[];
+
+  ngOnChanges(): void {
+    this.ngOnInit();
+  }
 
   ngOnInit(): void {
     this.colors = randomColor({

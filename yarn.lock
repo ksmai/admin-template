@@ -79,6 +79,10 @@
   dependencies:
     "@types/jquery" "*"
 
+"@types/codemirror@^0.0.40":
+  version "0.0.40"
+  resolved "https://registry.yarnpkg.com/@types/codemirror/-/codemirror-0.0.40.tgz#0868ed9ba5bf3ef8072de80e245ecf4a8f0bbdfd"
+
 "@types/d3@^3":
   version "3.5.38"
   resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.38.tgz#76f8f2e9159ae562965b2fa0e6fbee1aa643a1bc"
@@ -917,6 +921,10 @@ codelyzer@^3.0.1:
     semver-dsl "^1.0.1"
     source-map "^0.5.6"
     sprintf-js "^1.0.3"
+
+codemirror@^5.26.0:
+  version "5.26.0"
+  resolved "https://registry.yarnpkg.com/codemirror/-/codemirror-5.26.0.tgz#bcbee86816ed123870c260461c2b5c40b68746e5"
 
 color-convert@^0.5.3:
   version "0.5.3"

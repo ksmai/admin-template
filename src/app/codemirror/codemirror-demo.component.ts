@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./codemirror-demo.component.scss'],
 })
 export class CodemirrorDemoComponent {
+  value = `function debounce(fn, t = 300) {
+  let timer;
+
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), t);
+  };
+}`;
 }
