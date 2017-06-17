@@ -1,1 +1,31 @@
-button component
+<button
+  *ngIf="!texts; else btnGroup"
+  [ngClass]="classes"
+  (click)="onClick($event, 0)"
+>
+  <ng-content></ng-content>
+</button>
+
+<ng-template #btnGroup>
+  <div [ngClass]="groupClasses" role="group">
+    <div class="btn-group" *ngFor="let text of texts; let i=index">
+      <a
+        type="button"
+        [ngClass]="classLists[i]"
+        (click)="onClick($event, i)"
+        data-toggle="dropdown"
+      >
+        {{text.options ? text.text : text}}
+        <span *ngIf="text.options" class="caret"></span>
+      </a>
+
+      <ul class="dropdown-menu" *ngIf="text.options">
+        <li *ngFor="let option of text.options; let j=index">
+          <a class="dropdown-menu__option" (click)="onClick($event, i, j)">
+            {{option}}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</ng-template>

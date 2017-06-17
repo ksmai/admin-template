@@ -1,0 +1,233 @@
+$tags:
+  (default, #b4b7b9),
+  (primary, #428bca),
+  (success, #5cb85c),
+  (info, #5bc0de),
+  (warning, #f0ad4e),
+  (danger, #d9534f);
+
+$colors:
+  (deepred, rgb(215, 31, 75)),
+  (red, rgb(234, 120, 130)),
+  (lightred, rgb(240, 159, 166)),
+  (brightblue, rgb(0, 59, 255)),
+  (darkblue, rgb(74, 144, 226)),
+  (blue, rgb(121, 176, 236)),
+  (lightblue, rgb(160, 199, 242)),
+  (purple, rgb(180, 161, 221)),
+  (lightpurple, rgb(211, 201, 235)),
+  (darkbrown, rgb(171, 79, 69)),
+  (brown, rgb(168, 85, 58)),
+  (brown75, rgb(195, 104, 73)),
+  (brown60, rgb(198, 112, 85)),
+  (brown50, rgb(214, 127, 107)),
+  (brownishgreen, rgb(148, 130, 102)),
+  (orange, rgb(255, 196, 151)),
+  (paleorange, rgb(234, 133, 100)),
+  (pinkishred, rgb(239, 107, 93)),
+  (orange75, rgb(238, 104, 47)),
+  (orange65, rgb(250, 130, 79)),
+  (orange45, rgb(255, 201, 160)),
+  (darkorange, rgb(235, 160, 104)),
+  (lightorange, rgb(255, 211, 177)),
+  (darkgreen, rgb(48, 108, 103)),
+  (darkgreen85, rgb(54, 132, 94)),
+  (darkgreen75, rgb(81, 143, 65)),
+  (darkgreen65, rgb(102, 166, 85)),
+  (darkgreen55, rgb(104, 189, 128)),
+  (darkgreen50, rgb(85, 166, 159)),
+  (darkgreen45, rgb(46, 179, 152)),
+  (darkgreen40, rgb(68, 193, 172)),
+  (green, rgb(85, 201, 166)),
+  (lightgreen, rgb(124, 213, 186)),
+  (brightyellow, rgb(252, 182, 33)),
+  (brightyellow75, rgb(243, 197, 87)),
+  (brightyellow65, rgb(237, 188, 108)),
+  (yellow, rgb(250, 221, 127)),
+  (paleyellow, rgb(222, 188, 133)),
+  (lightyellow, rgb(251, 228, 153)),
+  (pink, rgb(226, 153, 183)),
+  (lightpink, rgb(236, 188, 208)),
+  (paleblue, rgb(165, 199, 236)),
+  (palegreen, rgb(160, 223, 204)),
+  (palepink, rgb(227, 148, 179)),
+  (brownishgray, rgb(100, 88, 76)),
+  (brownishgray75, rgb(119, 107, 95)),
+  (darkgray, rgb(153, 152, 149)),
+  (darkgray75, rgb(184, 182, 176)),
+  (darkgray50, rgb(184, 195, 200)),
+  (darkgray40, rgb(205, 204, 200)),
+  (darkgray25, rgb(220, 219, 216)),
+  (black, rgb(0, 0, 0)),
+  (black75, rgb(63, 63, 59)),
+  (davygray, rgb(85, 85, 85)),
+  (darkgrayishblue75, rgb(67, 82, 90)),
+  (darkgrayishblue, rgb(76, 93, 103)),
+  (desaturateddarkblue, rgb(81, 94, 120)),
+  (desaturateddarkblue75, rgb(59, 70, 92)),
+  (darkcyan, rgb(104, 160, 165)),
+  (grayishcyan, rgb(146, 189, 193));
+
+.btn {
+  text-transform: uppercase;
+  font-size: .7em;
+  font-weight: 700;
+  letter-spacing: .125em;
+  color: #fff;
+  padding: 7px 15px;
+  transition: all .2s cubic-bezier(.4, 0, .2, 1);
+  border-width: 2px;
+  border-radius: 100px;
+}
+
+.btn-lg {
+  font-size: .8em;
+  padding: 10px 25px;
+}
+
+.btn-sm {
+  font-size: .6em;
+  padding: 5px 15px;
+}
+
+.btn-xs {
+  font-size: .5em;
+  padding: 2px 15px;
+}
+
+@each $tag, $color in $tags {
+  .btn-#{$tag} {
+    border-color: $color;
+    background-color: $color;
+
+    &:hover {
+      border-color: lighten($color, 10%);
+      background-color: lighten($color, 10%);
+      color: #fff;
+    }
+
+    &:active,
+    &:focus {
+      border-color: darken($color, 20%);
+      background-color: darken($color, 10%);
+      color: #fff;
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  .btn-#{$name} {
+    border-color: $color;
+    background-color: $color;
+
+    &:hover {
+      border-color: lighten($color, 10%);
+      background-color: lighten($color, 10%);
+    }
+
+    &:active,
+    &:focus {
+      border-color: darken($color, 20%);
+      background-color: darken($color, 10%);
+    }
+  }
+}
+
+.btn--outlined {
+  background-color: transparent;
+
+  @each $tag, $color in $tags {
+    &.btn-#{$tag} {
+      color: $color;
+    }
+  }
+
+  @each $name, $color in $colors {
+    &.btn-#{$name} {
+      color: $color;
+    }
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: #fff;
+  }
+}
+
+.btn--inverse {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-color: #fff;
+    background-color: #fff;
+
+    @each $tag, $color in $tags {
+      &.btn-#{$tag} {
+        color: $color;
+      }
+    }
+
+    @each $name, $color in $colors {
+      &.btn-#{$name} {
+        color: $color;
+      }
+    }
+  }
+}
+
+.btn-group-vertical .btn-group .btn {
+  border-radius: 0;
+}
+
+.btn-group-vertical .btn-group:first-child .btn {
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+
+.btn-group-vertical .btn-group:last-child .btn {
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.btn-group .btn-group .btn {
+  border-radius: 0;
+}
+
+.btn-group .btn-group:first-child .btn {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+
+.btn-group .btn-group:last-child .btn {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
+
+.dropdown-menu__option {
+  cursor: pointer;
+}
+
+@each $tag, $color in $tags {
+  .btn-#{$tag} + .dropdown-menu .dropdown-menu__option {
+    &:active {
+      color: #fff;
+      background-color: $color;
+    }
+  }
+}
+
+@each $name, $color in $colors {
+  .btn-#{$name} + .dropdown-menu .dropdown-menu__option {
+    &:hover,
+    &:focus,
+    &:active {
+      color: #fff;
+      background-color: $color;
+    }
+  }
+}
