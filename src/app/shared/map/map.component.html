@@ -1,1 +1,15 @@
-map component
+<input
+  type="text"
+  *ngIf="geocode"
+  (keyup)="onKeyup(geocode.value)"
+  #geocode
+>
+
+<button
+  type="button"
+  (click)="startRouting()"
+  *ngIf="route"
+  [disabled]="routingStarted"
+>Start routing</button>
+
+<div #div></div>

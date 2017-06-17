@@ -25,6 +25,7 @@
     "chart.js": "^2.6.0",
     "codemirror": "^5.26.0",
     "cross-env": "^5.0.1",
+    "gmaps": "^0.4.24",
     "jquery": "^3.2.1",
     "morris.js": "^0.5.0",
     "randomcolor": "^0.5.3",

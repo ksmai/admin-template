@@ -2292,6 +2292,10 @@ glogg@^1.0.0:
   dependencies:
     sparkles "^1.0.0"
 
+gmaps@^0.4.24:
+  version "0.4.24"
+  resolved "https://registry.yarnpkg.com/gmaps/-/gmaps-0.4.24.tgz#07f22f0cfc3e4e32498950ffafd7ca635ffc100c"
+
 got@^5.0.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/got/-/got-5.7.1.tgz#5f81635a61e4a6589f180569ea4e381680a51f35"

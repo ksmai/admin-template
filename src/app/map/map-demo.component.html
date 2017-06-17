@@ -1,1 +1,56 @@
-map demo
+<admin-map [lat]="lat" [lng]="lng" height="600px"></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  (mapClick)="clickHandler($event)"
+  (mapDragend)="dragendHandler($event)"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [markers]="markers"
+  (markerClick)="markerHandler($event)"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [geocode]="true"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [polyline]="polyline"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [overlay]="overlay"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [polygon]="polygon"
+></admin-map>
+
+<admin-map
+  [lat]="39.74229"
+  [lng]="-105.004578"
+  [polygon]="geoJSONPolygon"
+></admin-map>
+
+<admin-map
+  [lat]="lat"
+  [lng]="lng"
+  [route]="route"
+  (instruction)="instructionHandler($event)"
+></admin-map>
+<ul>
+  <li *ngFor="let instruction of instructions" [innerHTML]="instruction">
+  </li>
+</ul>
