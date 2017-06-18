@@ -1,1 +1,44 @@
-tab component
+<ul class="nav" [ngClass]="this.classes">
+  <li
+    *ngFor="let tab of tabs; let i=index"
+    class="nav__item"
+    [class.active]="i === 0"
+    [class.dropdown]="tab.isDropdown"
+  >
+    <a
+      [href]="tab.isDropdown ? '': '#' + ids[i]"
+      [attr.data-toggle]="tab.isDropdown ? 'dropdown' : 'tab'"
+      class="nav__tab"
+    >{{tab.name}} <span class="caret" *ngIf="tab.isDropdown"></span></a>
+
+    <ul class="dropdown-menu" *ngIf="tab.isDropdown">
+      <li *ngFor="let t of tab.tabs; let j=index" class="dropdown-item">
+        <a
+          data-toggle="tab"
+          [href]="'#' + ids[i][j]"
+          class="dropdown-item__nav"
+        >{{t.name}}</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <ng-container *ngFor="let tab of tabs; let i=index">
+    <div
+      *ngIf="!tab.isDropdown; else dropdownContent"
+      class="tab-pane fade"
+      [class.active]="i === 0"
+      [class.in]="i === 0"
+      [id]="ids[i]"
+    >{{tab.content}}</div>
+
+    <ng-template #dropdownContent>
+      <div
+        *ngFor="let t of tab.tabs; let j=index"
+        class="tab-pane fade"
+        [id]="ids[i][j]"
+      >{{t.content}}</div>
+    </ng-template>
+  </ng-container>
+</div>

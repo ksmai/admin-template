@@ -1,0 +1,69 @@
+@import '../../../styles/colors';
+
+:host {
+  display: block;
+  background-color: #fff;
+}
+
+.nav {
+  padding-left: 25px;
+}
+
+.nav__tab {
+  padding: 4px 25px;
+}
+
+.nav__tab,
+.dropdown-item__nav {
+  color: #aaa;
+}
+
+.dropdown-item__nav:hover,
+.nav-tabs .active .nav__tab {
+  color: #555;
+}
+
+@each $name, $color in $colors {
+  .nav--#{$name} {
+    border-color: $color;
+
+    &.nav-tabs .active .nav__tab {
+      border-top-color: $color;
+      border-left-color: $color;
+      border-right-color: $color;
+      border-bottom-color: transparent;
+    }
+
+    &.nav-pills .active .nav__tab,
+    .active > .dropdown-item__nav {
+      background-color: $color;
+    }
+  }
+}
+
+.tab-content {
+  flex: 1;
+  padding: 25px;
+}
+
+:host(.landscape) {
+  display: flex;
+  width: 100%;
+}
+
+.nav-stacked {
+  padding-top: 25px;
+}
+
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+  border-color: transparent;
+}
+
+.nav-tabs.nav-justified {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+.nav-justified .nav__item.active {
+  box-shadow: 0 1px 0 0 #fff;
+}
