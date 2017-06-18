@@ -9,7 +9,9 @@ import {
 } from './messenger/messenger-demo.component';
 import { ModalDemoComponent } from './modal/modal-demo.component';
 import { SliderDemoComponent } from './slider/slider-demo.component';
-import { TabDemoComponent } from './tab/tab-demo.component';
+import {
+  TabAndNavDemoComponent,
+} from './tab-and-nav/tab-and-nav-demo.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,7 @@ import { TabDemoComponent } from './tab/tab-demo.component';
   declarations: [
     ButtonDemoComponent,
     DropdownDemoComponent,
-    TabDemoComponent,
+    TabAndNavDemoComponent,
     SliderDemoComponent,
     KnobDemoComponent,
     ModalDemoComponent,

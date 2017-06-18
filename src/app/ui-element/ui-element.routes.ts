@@ -8,7 +8,9 @@ import {
 } from './messenger/messenger-demo.component';
 import { ModalDemoComponent } from './modal/modal-demo.component';
 import { SliderDemoComponent } from './slider/slider-demo.component';
-import { TabDemoComponent } from './tab/tab-demo.component';
+import {
+  TabAndNavDemoComponent,
+} from './tab-and-nav/tab-and-nav-demo.component';
 
 export const uiElementRoutes: Routes = [
   {
@@ -16,7 +18,7 @@ export const uiElementRoutes: Routes = [
     children: [
       { path: 'buttons', component: ButtonDemoComponent },
       { path: 'dropdowns', component: DropdownDemoComponent },
-      { path: 'tabs', component: TabDemoComponent },
+      { path: 'tabs-and-navs', component: TabAndNavDemoComponent },
       { path: 'sliders', component: SliderDemoComponent },
       { path: 'knobs', component: KnobDemoComponent },
       { path: 'modals', component: ModalDemoComponent },

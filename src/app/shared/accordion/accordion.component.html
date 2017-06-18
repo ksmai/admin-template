@@ -1,0 +1,16 @@
+<div class="panel-group" [id]="parentID">
+  <div class="panel panel-default" *ngFor="let item of items; let i=index">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a
+          class="collapse-toggle"
+          data-toggle="collapse"
+          [attr.data-parent]="'#' + parentID" 
+          [href]="'#' + ids[i]">{{item.header}}</a>
+      </h4>
+    </div>
+    <div [id]="ids[i]" class="panel-collapse collapse">
+      <div class="panel-body">{{item.content}}</div>
+    </div>
+  </div>
+</div>
