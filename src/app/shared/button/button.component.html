@@ -17,6 +17,7 @@
         [ngClass]="classLists[i]"
         (click)="onClick($event, i)"
         [attr.data-toggle]="text.options && !text.split ? 'dropdown' : ''"
+        [disabled]="text.disabled"
       >
         {{text.options ? text.text : text}}
         <span *ngIf="text.options && !text.split" class="caret"></span>
@@ -26,15 +27,27 @@
         *ngIf="text.options && text.split"
         type="button"
         [ngClass]="classLists[i]"
+        [disabled]="text.disabled"
         data-toggle="dropdown"
       ><span class="caret"></span></button>
 
       <ul class="dropdown-menu" *ngIf="text.options">
-        <li *ngFor="let option of text.options; let j=index">
-          <a class="dropdown-menu__option" (click)="onClick($event, i, j)">
-            {{option}}
-          </a>
-        </li>
+        <ng-container *ngFor="let option of text.options; let j=index">
+          <li class="divider" *ngIf="option.isHeader && j > 0"></li>
+
+          <li
+            [class.dropdown-header]="option.isHeader"
+            [class.disabled]="option.disabled"
+          >
+            <a
+              *ngIf="!option.isHeader; else header"
+              class="dropdown-menu__option"
+              (click)="onClick($event, i, j)"
+            >{{option.option || option}}</a>
+
+            <ng-template #header>{{option.option}}</ng-template>
+          </li>
+        </ng-container>
       </ul>
     </div>
   </div>

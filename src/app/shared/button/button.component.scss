@@ -80,6 +80,10 @@ $colors:
   border-radius: 100px;
 }
 
+.btn[disabled] {
+  opacity: .5;
+}
+
 .btn-lg {
   font-size: .8em;
   padding: 10px 25px;
@@ -100,7 +104,7 @@ $colors:
     border-color: $color;
     background-color: $color;
 
-    &:hover {
+    &:hover:not([disabled]) {
       border-color: lighten($color, 10%);
       background-color: lighten($color, 10%);
       color: #fff;
@@ -120,7 +124,7 @@ $colors:
     border-color: $color;
     background-color: $color;
 
-    &:hover {
+    &:hover:not([disabled]) {
       border-color: lighten($color, 10%);
       background-color: lighten($color, 10%);
     }
@@ -150,8 +154,12 @@ $colors:
 
   &:active,
   &:focus,
-  &:hover {
+  &:hover:not([disabled]) {
     color: #fff;
+  }
+
+  &[disabled]:hover {
+    background-color: transparent;
   }
 }
 
@@ -162,7 +170,7 @@ $colors:
 
   &:active,
   &:focus,
-  &:hover {
+  &:hover:not([disabled]) {
     border-color: #fff;
     background-color: #fff;
 
@@ -177,6 +185,12 @@ $colors:
         color: $color;
       }
     }
+  }
+
+  &[disabled]:hover {
+    background-color: transparent;
+    border-color: #fff;
+    color: #fff;
   }
 }
 
@@ -224,8 +238,17 @@ $colors:
   cursor: pointer;
 }
 
+.dropdown-header {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: .7em;
+  letter-spacing: .08em;
+}
+
 @each $tag, $color in $tags {
-  .btn-#{$tag} + .dropdown-menu .dropdown-menu__option {
+  .btn-#{$tag} + .dropdown-menu li:not(.disabled) .dropdown-menu__option {
+    &:hover,
+    &:focus,
     &:active {
       color: #fff;
       background-color: $color;
@@ -234,7 +257,7 @@ $colors:
 }
 
 @each $name, $color in $colors {
-  .btn-#{$name} + .dropdown-menu .dropdown-menu__option {
+  .btn-#{$name} + .dropdown-menu li:not(.disabled) .dropdown-menu__option {
     &:hover,
     &:focus,
     &:active {

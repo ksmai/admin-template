@@ -8,11 +8,18 @@ import {
 } from '@angular/core';
 import 'bootstrap/js/dropdown';
 
-interface IDropdown {
+export interface IDropdownOption {
+  option: string;
+  disabled?: boolean;
+  isHeader?: boolean;
+}
+
+export interface IDropdown {
   text: string;
-  options?: string[];
+  options?: Array<string|IDropdownOption>;
   split?: boolean;
   dropup?: boolean;
+  disabled?: boolean;
 }
 
 /**
@@ -48,6 +55,12 @@ interface IDropdown {
  * @example
  * <admin-button [texts]="['a', { text: 'dropdown', options: ['1', '2'],
  *   dropup: false, split: false }]"</admin-button>
+ *
+ * Dropdown menu options can have headers or be disabled
+ * @example
+ * <admin-button [texts]="[{ text: 'dropdown', options: [{ option: '1',
+ *   disable: true }, { option: 'header', isHeader: true }, '3', '4'] }]">
+ * </admin-button>
  */
 @Component({
   selector: 'admin-button',
