@@ -55,4 +55,10 @@ export class TabAndNavDemoComponent {
 
   leftHTML = 'Signed in as <a href="#" class="navbar-link">Mark Otto</a>';
   rightHTML = 'Good morning';
+
+  links = [
+    { label: 'Home', href: '#' },
+    { label: 'Library', href: '#' },
+    { label: 'Data' },
+  ];
 }

@@ -1,0 +1,14 @@
+<ol [ngClass]="classes">
+  <li
+    *ngFor="let link of links; let i=index"
+    [class.active]="i === links.length"
+  >
+    <a
+      [href]="link.href"
+      *ngIf="i < links.length - 1; else last"
+      class="link"
+    >{{link.label}}</a>
+
+    <ng-template #last>{{link.label}}</ng-template>
+  </li>
+</ol>

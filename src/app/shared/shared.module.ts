@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { AccordionComponent } from './accordion/accordion.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ButtonComponent } from './button/button.component';
 import { C3JSChartComponent } from './c3js-chart/c3js-chart.component';
 import { CalenderComponent } from './calender/calender.component';
@@ -40,6 +41,7 @@ import { TableComponent } from './table/table.component';
 
   declarations: [
     AccordionComponent,
+    BreadcrumbComponent,
     ButtonComponent,
     CalenderComponent,
     ChartJSChartComponent,
@@ -71,6 +73,7 @@ import { TableComponent } from './table/table.component';
   exports: [
     CommonModule,
     AccordionComponent,
+    BreadcrumbComponent,
     ButtonComponent,
     CalenderComponent,
     ChartJSChartComponent,

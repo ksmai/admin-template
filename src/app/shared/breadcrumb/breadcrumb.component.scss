@@ -1,0 +1,16 @@
+@import '../../../styles/colors';
+
+@each $name, $color in $colors {
+  .breadcrumb--#{$name} .link {
+    &:link,
+    &:visited {
+      color: $color;
+    }
+
+    &:hover,
+    &:active {
+      color: darken($color, 10%);
+      text-decoration: none;
+    }
+  }
+}
