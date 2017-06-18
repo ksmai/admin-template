@@ -28,6 +28,7 @@ import {
   MorrisJSChartComponent,
 } from './morrisjs-chart/morrisjs-chart.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { PaginationComponent } from './pagination/pagination.component';
 import { PanelComponent } from './panel/panel.component';
 import { SliderComponent } from './slider/slider.component';
 import { StaticTimelineComponent } from './static-timeline/static-timeline.component';
@@ -61,6 +62,7 @@ import { TableComponent } from './table/table.component';
     MessengerComponent,
     ModalComponent,
     NavbarComponent,
+    PaginationComponent,
     PanelComponent,
     SliderComponent,
     StaticTimelineComponent,
@@ -93,6 +95,7 @@ import { TableComponent } from './table/table.component';
     MessengerComponent,
     ModalComponent,
     NavbarComponent,
+    PaginationComponent,
     PanelComponent,
     SliderComponent,
     StaticTimelineComponent,

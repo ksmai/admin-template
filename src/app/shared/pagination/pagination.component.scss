@@ -1,0 +1,24 @@
+@import '../../../styles/colors';
+
+@each $name, $color in $colors {
+  .pagination--#{$name} {
+    .pagination__button--active {
+      background-color: $color;
+      color: #fff;
+    }
+  }
+}
+
+.pagination__button {
+  cursor: pointer;
+  color: inherit;
+}
+
+.pagination__button--disabled {
+  opacity: .5;
+  cursor: initial;
+
+  &:hover {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,50 @@
+<nav aria-label="Page navigation">
+  <ul [ngClass]="classes">
+    <li>
+      <span
+        (click)="navTo(start)"
+        class="pagination__button"
+        [class.pagination__button--disabled]="current === start"
+      ><span>&laquo;</span></span>
+    </li>
+
+    <li>
+      <span
+        (click)="navTo(current - 1)"
+        class="pagination__button"
+        [class.pagination__button--disabled]="current === start"
+      ><span>&lsaquo;</span></span>
+    </li>
+
+    <li *ngFor="let num of truncated">
+      <span
+        *ngIf="num !== null; else ellipsis"
+        class="pagination__button"
+        [class.pagination__button--active]="num === current"
+        (click)="navTo(num)"
+      >{{num}}</span>
+
+      <ng-template #ellipsis>
+        <span class="pagination__button pagination__button--disabled">
+          &hellip;
+        </span>
+      </ng-template>
+    </li>
+
+    <li>
+      <span
+        (click)="navTo(current + 1)"
+        class="pagination__button"
+        [class.pagination__button--disabled]="current === end"
+      ><span>&rsaquo;</span></span>
+    </li>
+
+    <li>
+      <span
+        class="pagination__button"
+        (click)="navTo(end)"
+        [class.pagination__button--disabled]="current === end"
+      ><span>&raquo;</span></span>
+    </li>
+  </ul>
+</nav>
