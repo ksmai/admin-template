@@ -23,4 +23,36 @@ export class TabAndNavDemoComponent {
       ],
     },
   ];
+
+  leftLinks = [
+    { label: 'Link 1', href: '#', active: true },
+    { label: 'Link 2', href: '#' },
+    {
+      label: 'Dropdown',
+      children: [
+        { label: 'Action', href: '#', active: true },
+        { label: 'Another action', href: '#' },
+        { label: 'Something else here', href: '#' },
+        { label: '' },
+        { label: 'Separated link', href: '#' },
+      ],
+    },
+  ];
+
+  rightLinks = [
+    { label: 'Link 3', href: '#' },
+    {
+      label: 'Dropdown',
+      children: [
+        { label: 'Action', href: '#', active: true },
+        { label: 'Another action', href: '#' },
+        { label: 'Something else here', href: '#' },
+        { label: '' },
+        { label: 'Separated link', href: '#' },
+      ],
+    },
+  ];
+
+  leftHTML = 'Signed in as <a href="#" class="navbar-link">Mark Otto</a>';
+  rightHTML = 'Good morning';
 }

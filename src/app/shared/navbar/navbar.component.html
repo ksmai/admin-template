@@ -1,0 +1,84 @@
+<nav class="navbar navbar-default" [class.navbar-inverse]="inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        [attr.data-target]="'#' + id"
+      >
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">{{brand}}</a>
+    </div>
+
+    <div class="collapse navbar-collapse" [id]="id">
+      <ul class="nav navbar-nav">
+        <li
+          *ngFor="let link of leftLinks"
+          [class.active]="link.active"
+          [class.dropdown]="link.children"
+        >
+          <a
+            [href]="link.href || ''"
+            [class.dropdown-toggle]="link.children"
+            [attr.data-toggle]="link.children ? 'dropdown' : ''"
+          >
+            {{link.label}}
+            <span class="caret" *ngIf="link.children"></span>
+          </a>
+
+          <ul class="dropdown-menu" *ngIf="link.children">
+            <li
+              *ngFor="let child of link.children"
+              [class.divider]="!child.label"
+            >
+              <a
+                *ngIf="child.label"
+                [href]="child.href"
+                [class.active]="child.active"
+                class="dropdown-link"
+              >{{child.label}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p class="navbar-text navbar-left" [innerHTML]="leftHTML"></p>
+      <p class="navbar-text navbar-right" [innerHTML]="rightHTML"></p>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li
+          *ngFor="let link of rightLinks"
+          [class.active]="link.active"
+          [class.dropdown]="link.children"
+        >
+          <a
+            [href]="link.href || ''"
+            [class.dropdown-toggle]="link.children"
+            [attr.data-toggle]="link.children ? 'dropdown' : ''"
+          >
+            {{link.label}}
+            <span class="caret" *ngIf="link.children"></span>
+          </a>
+
+          <ul class="dropdown-menu" *ngIf="link.children">
+            <li
+              *ngFor="let child of link.children"
+              [class.divider]="!child.label"
+            >
+              <a
+                *ngIf="child.label"
+                [href]="child.href"
+                [class.active]="child.active"
+                class="dropdown-link"
+              >{{child.label}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
