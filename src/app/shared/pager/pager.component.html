@@ -1,0 +1,25 @@
+<nav>
+  <ul [ngClass]="classes">
+    <li
+      [class.previous]="aligned"
+      [class.disabled]="prevDisabled"
+      class="pager__item"
+    >
+      <span (click)="onClick(-1)" class="pager__button">
+        <span *ngIf="aligned">&larr;</span>
+        <span>{{prev}}</span>
+      </span>
+    </li>
+
+    <li
+      [class.next]="aligned"
+      [class.disabled]="nextDisabled"
+      class="pager__item"
+    >
+      <span (click)="onClick(1)" class="pager__button">
+        <span>{{next}}</span>
+        <span *ngIf="aligned">&rarr;</span>
+      </span>
+    </li>
+  </ul>
+</nav>

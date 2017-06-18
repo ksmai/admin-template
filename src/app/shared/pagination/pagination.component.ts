@@ -6,6 +6,21 @@ import {
   Output,
 } from '@angular/core';
 
+/**
+ * Based on Bootstrap pagination, with additional truncation and colors
+ * Inputs:
+ *   - start: first page number, default to 1
+ *   - end: last page number (greater than start)
+ *   - current: current page number, default to start
+ *   - color: optional string
+ *   - size: optional, "lg" | "sm"
+ *
+ * Outputs:
+ *   - page: the page number navigated to
+ *
+ * @exmaple
+ * <admin-pagination [start]="1" [end]="10" color="red"></admin-pagination>
+ */
 @Component({
   selector: 'admin-pagination',
   templateUrl: './pagination.component.html',

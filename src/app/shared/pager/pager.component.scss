@@ -1,0 +1,18 @@
+@import '../../../styles/colors';
+
+@each $name, $color in $colors {
+  .pager--#{$name} {
+    .pager__item:not(.disabled) .pager__button {
+      color: $color;
+
+      &:hover {
+        color: darken($color, 10%);
+      }
+    }
+  }
+}
+
+.pager__item:not(.disabled) .pager__button {
+  cursor: pointer;
+  background-color: #eee;
+}
