@@ -208,6 +208,18 @@ $colors:
   border-bottom-right-radius: 100px;
 }
 
+.btn-group .btn-group--split {
+  .btn:first-of-type {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .btn:last-of-type {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
 .dropdown-menu__option {
   cursor: pointer;
 }

@@ -8,6 +8,47 @@ import {
 } from '@angular/core';
 import 'bootstrap/js/dropdown';
 
+interface IDropdown {
+  text: string;
+  options?: string[];
+  split?: boolean;
+  dropup?: boolean;
+}
+
+/**
+ * The ButtonComponent is built on top of bootstrap buttons/dropdowns
+ *   - Changing size: `size="lg"`, `size="sm"`, `size="xs"`
+ *   - Changing tag: `tag="info"`, ...
+ *   - Changing color: `color="red"`, ...
+ *   - Outlined button: `[outlined]="true"`
+ *   - Inverse button: `[inverse]="true"`
+ * @exmaple
+ * <admin-button size="lg" color="pink">Hello</admin-button>
+ *
+ * For button groups, pass in a list of texts as `texts`
+ * @example
+ * <admin-button [texts]="['a', 'b', 'c']" tag="primary"></admin-button>
+ *
+ * If buttons in a button group have different tags/colors, use
+ * `colors` or `tags` instead
+ * @exmaple
+ * <admin-button [texts]="['1', '2']" [colors]="['red', 'blue']">
+ * </admin-button>
+ *
+ * To listen for click events:
+ * @exmaple
+ * <admin-button [texts]="['1', '2']" (clickBtn)="myCB($event)">
+ * </admin-button>
+ *
+ * For justified/vertical button groups, use `[justified]="true"`
+ * and `[vertical]="true"`
+ *
+ * For dropdown menu within button groups, pass in an object to the
+ * `texts` array
+ * @example
+ * <admin-button [texts]="['a', { text: 'dropdown', options: ['1', '2'],
+ *   dropup: false, split: false }]"</admin-button>
+ */
 @Component({
   selector: 'admin-button',
   templateUrl: './button.component.html',
@@ -21,7 +62,7 @@ export class ButtonComponent implements OnChanges, OnInit {
   @Input() tags: string[];
   @Input() outlined: boolean = false;
   @Input() inverse: boolean = false;
-  @Input() texts: Array<string|{ text: string, options: string[] }>;
+  @Input() texts: Array<string|IDropdown>;
   @Input() justified: boolean = false;
   @Input() vertical: boolean = false;
   @Output() clickBtn = new EventEmitter<any>();

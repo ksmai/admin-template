@@ -2,22 +2,32 @@
   *ngIf="!texts; else btnGroup"
   [ngClass]="classes"
   (click)="onClick($event, 0)"
->
-  <ng-content></ng-content>
-</button>
+><ng-content></ng-content></button>
 
 <ng-template #btnGroup>
   <div [ngClass]="groupClasses" role="group">
-    <div class="btn-group" *ngFor="let text of texts; let i=index">
-      <a
+    <div
+      *ngFor="let text of texts; let i=index"
+      class="btn-group"
+      [class.btn-group--split]="text.options && text.split"
+      [class.dropup]="text.options && text.dropup"
+    >
+      <button
         type="button"
         [ngClass]="classLists[i]"
         (click)="onClick($event, i)"
-        data-toggle="dropdown"
+        [attr.data-toggle]="text.options && !text.split ? 'dropdown' : ''"
       >
         {{text.options ? text.text : text}}
-        <span *ngIf="text.options" class="caret"></span>
-      </a>
+        <span *ngIf="text.options && !text.split" class="caret"></span>
+      </button>
+
+      <button
+        *ngIf="text.options && text.split"
+        type="button"
+        [ngClass]="classLists[i]"
+        data-toggle="dropdown"
+      ><span class="caret"></span></button>
 
       <ul class="dropdown-menu" *ngIf="text.options">
         <li *ngFor="let option of text.options; let j=index">
