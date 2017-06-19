@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import $ = require('jquery');
 
+import 'bootstrap/js/tooltip';
+
+import 'bootstrap/js/popover';
 import { VexDialogService } from '../../core/vex-dialog.service';
 
 // example dialog codes from http://github.hubspot.com/vex/api/basic/
@@ -7,8 +11,18 @@ import { VexDialogService } from '../../core/vex-dialog.service';
   templateUrl: './modal-demo.component.html',
   styleUrls: ['./modal-demo.component.scss'],
 })
-export class ModalDemoComponent {
+export class ModalDemoComponent implements AfterViewInit {
+  @ViewChild('tooltip') private tooltip: any;
+  @ViewChild('popover') private popover: any;
+
   constructor(private vexDialogService: VexDialogService) {
+  }
+
+  ngAfterViewInit(): void {
+    ($(this.tooltip.nativeElement) as any).tooltip();
+    ($(this.popover.nativeElement) as any).popover({
+      trigger: 'hover',
+    });
   }
 
   openAlert() {

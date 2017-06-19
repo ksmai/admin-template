@@ -3,3 +3,58 @@
 <button type="button" (click)="openPrompt()">prompt</button>
 <button type="button" (click)="openLogin()">login</button>
 <button type="button" (click)="openPicker()">picker</button>
+
+<admin-modal>
+  <ng-container modalButton>Launch basic modal</ng-container>
+  <ng-container modalTitle>Modal title</ng-container>
+  <ng-container>One fine body&hellip;</ng-container>
+  <ng-container modalNo>Close</ng-container>
+  <ng-container modalYes>Save Changes</ng-container>
+</admin-modal>
+
+<admin-modal size="sm">
+  <ng-container modalButton>Launch small modal</ng-container>
+  <ng-container modalTitle>Modal title</ng-container>
+  <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
+  <ng-container modalNo>Close</ng-container>
+  <ng-container modalYes>Save Changes</ng-container>
+</admin-modal>
+
+<admin-modal size="lg">
+  <ng-container modalButton>Launch large modal</ng-container>
+  <ng-container modalTitle>Modal title</ng-container>
+  <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
+  <ng-container modalNo>Close</ng-container>
+  <ng-container modalYes>Save Changes</ng-container>
+</admin-modal>
+
+<admin-modal>
+  <ng-container modalButton>Launch long modal</ng-container>
+  <ng-container modalTitle>Modal title</ng-container>
+  <ng-container>
+    <p>Lorem</p><p>ipsum</p><p>dolor</p><p>sit</p><p>amet</p>,<p>consectetur</p><p>adipiscing</p><p>elit</p>,<p>sed</p><p>do</p><p>eiusmod</p><p>tempor</p><p>incididunt</p><p>ut</p><p>labore</p><p>et</p><p>dolore</p><p>magna</p><p>aliqua</p>.<p>Ut</p><p>enim</p><p>ad</p><p>minim</p><p>veniam</p>,<p>quis</p><p>nostrud</p><p>exercitation</p><p>ullamco</p><p>laboris</p><p>nisi</p><p>ut</p><p>aliquip</p><p>ex</p><p>ea</p><p>commodo</p><p>consequat</p>.
+  </ng-container>
+  <ng-container modalNo>Close</ng-container>
+  <ng-container modalYes>Save Changes</ng-container>
+</admin-modal>
+
+<admin-modal>
+  <ng-container modalButton>Launch special modal</ng-container>
+  <ng-container modalTitle>Modal title</ng-container>
+  <ng-container>
+    <h4>Text in a modal</h4>
+    <p>Lorem ipsum</p>
+    <h4>Popover in a modal</h4>
+    <p>
+       <a #popover href="#" data-container="body" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="title">Popover</a> on the right
+    </p>
+    <h4>Tooltips in a modal</h4>
+    <p>There is a 
+      <a href="#" data-placement="right" title="wow." #tooltip>
+        tooltip
+      </a>
+    here</p>
+  </ng-container>
+  <ng-container modalNo>Close</ng-container>
+  <ng-container modalYes>Save Changes</ng-container>
+</admin-modal>
