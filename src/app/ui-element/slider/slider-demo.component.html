@@ -55,4 +55,75 @@
   [disabled]="disabled"
 ></admin-bootstrap-slider>
 
-<div style="height: 100px; width: 100px;" [style.background]="color"></div>
+<div style="height: 100px;" [style.background]="color"></div>
+
+<admin-ion-slider
+  prefix="$"
+  [min]="0"
+  [max]="5000"
+  [from]="1464"
+  [to]="3449"
+  type="double"
+  [grid]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  prefix="€"
+  [min]="1000"
+  [max]="100000"
+  [from]="30000"
+  [to]="90000"
+  type="double"
+  [grid]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  postfix="carats"
+  [min]="0"
+  [max]="10"
+  [step]="0.1"
+  [grid]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  postfix="°"
+  [min]="-50"
+  [max]="50"
+  [from]="0"
+  [grid]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  [min]="1"
+  [max]="12"
+  [from]="1"
+  [values]="['January','February','March','April','May','June','July','August','September','October','November','December']"
+  [grid]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  postfix="miles"
+  [min]="10000"
+  [max]="100000"
+  [from]="55000"
+  [hide_from_to]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  postfix="miles"
+  [min]="10000"
+  [max]="100000"
+  [from]="55000"
+  [hide_min_max]="true"
+></admin-ion-slider>
+
+<admin-ion-slider
+  postfix="pounds"
+  [from]="25000000"
+  [to]="35000000"
+  [max]="100000000"
+  [min]="1000000"
+  type="double"
+  (change)="onChange($event)"
+></admin-ion-slider>
+{{payload|json}}

@@ -1,13 +1,13 @@
 import {
-  Component,
-  Input,
-  EventEmitter,
-  Output,
-  HostBinding,
   AfterViewInit,
-  ViewChild,
+  Component,
+  EventEmitter,
+  HostBinding,
+  Input,
   OnChanges,
+  Output,
   SimpleChanges,
+  ViewChild,
 } from '@angular/core';
 import 'bootstrap-slider/src/js/bootstrap-slider';
 import 'bootstrap-slider/src/sass/bootstrap-slider.scss';
