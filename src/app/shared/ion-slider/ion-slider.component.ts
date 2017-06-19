@@ -28,6 +28,7 @@ import 'ion-rangeslider/js/ion.rangeSlider';
  *   - grid_num: default to 4
  *   - prefix: prefix for each displayed value
  *   - postfix: postfix for each displayed value
+ *   - max_postfix: postfix only for the maximum value (e.g. 0 - 100+)
  *
  * Output:
  *   - change: a payload object emitted during creation / on change
@@ -62,6 +63,7 @@ export class IonSliderComponent implements AfterViewInit {
   @Input() grid_num: number = 4;
   @Input() prefix: string = '';
   @Input() postfix: string = '';
+  @Input() max_postfix: string = '';
   @Output() change = new EventEmitter<any>();
   @ViewChild('inputEl') private inputEl: any;
 
@@ -75,6 +77,7 @@ export class IonSliderComponent implements AfterViewInit {
       hide_from_to: this.hide_from_to,
       prefix: this.prefix,
       postfix: this.postfix,
+      max_postfix: this.max_postfix,
       grid: this.grid,
       grid_num: this.grid_num,
       onChange: (payload: any) => this.onChange(payload),
