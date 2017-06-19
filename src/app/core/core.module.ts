@@ -2,6 +2,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 
 import { AuthGuard } from './auth-guard.service';
 import { UserService } from './user.service';
+import { VexDialogService } from './vex-dialog.service';
 
 @NgModule({
   imports: [
@@ -10,6 +11,7 @@ import { UserService } from './user.service';
   providers: [
     AuthGuard,
     UserService,
+    VexDialogService,
   ],
 })
 export class CoreModule {

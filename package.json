@@ -35,6 +35,7 @@
     "raphael": "^2.2.7",
     "rxjs": "^5.4.0",
     "trumbowyg": "^2.6.0",
+    "vex-js": "^3.1.1",
     "web-animations-js": "^2.2.5",
     "zone.js": "^0.8.12"
   },
@@ -50,6 +51,7 @@
     "@types/morris.js": "^0.5.6",
     "@types/node": "^7.0.31",
     "@types/randomcolor": "^0.4.3",
+    "@types/vex-js": "^2.3.29",
     "angular2-template-loader": "^0.6.2",
     "autoprefixer": "^7.1.1",
     "awesome-typescript-loader": "^3.1.3",
