@@ -91,11 +91,7 @@
   version "2.5.52"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.52.tgz#6ea5435d5c71562296e63ef27a4718f94f2fbb13"
 
-"@types/jquery@*":
-  version "2.0.46"
-  resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-2.0.46.tgz#c245426299b43c4bb75f44b813090bd5918d00f2"
-
-"@types/jquery@^3.2.1":
+"@types/jquery@*", "@types/jquery@^3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@types/jquery/-/jquery-3.2.1.tgz#72c2a4c35448fd4c6b15e82efd0852e71dd630f8"
 
@@ -548,6 +544,10 @@ boom@2.x.x:
   resolved "https://registry.yarnpkg.com/boom/-/boom-2.10.1.tgz#39c8918ceff5799f83f9492a848f625add0c766f"
   dependencies:
     hoek "2.x.x"
+
+bootstrap-slider@^9.8.0:
+  version "9.8.0"
+  resolved "https://registry.yarnpkg.com/bootstrap-slider/-/bootstrap-slider-9.8.0.tgz#b2ebde714a17553abeebf70249ac2d84c3072c13"
 
 bootstrap@^3.3.7:
   version "3.3.7"

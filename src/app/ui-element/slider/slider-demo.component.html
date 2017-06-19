@@ -1,1 +1,58 @@
-slider demo
+<admin-bootstrap-slider
+  min="0"
+  max="20"
+  step="1"
+  color="green"
+  value="14"
+></admin-bootstrap-slider>
+
+<admin-bootstrap-slider
+  min="10"
+  max="1000"
+  step="1"
+  value="[250, 450]"
+></admin-bootstrap-slider>
+
+<admin-bootstrap-slider
+  min="0"
+  max="255"
+  [(value)]="r"
+  color="red"
+  handle="square"
+  [colorHandle]="true"
+></admin-bootstrap-slider>
+
+<admin-bootstrap-slider
+  min="0"
+  max="255"
+  [(value)]="g"
+  color="green"
+  [colorHandle]="true"
+></admin-bootstrap-slider>
+
+<admin-bootstrap-slider
+  min="0"
+  max="255"
+  [(value)]="b"
+  color="blue"
+  handle="triangle"
+  [colorHandle]="true"
+></admin-bootstrap-slider>
+
+<admin-bootstrap-slider
+  [min]="-5"
+  [max]="20"
+  [value]="0"
+  [vertical]="true"
+  [reversed]="true"
+></admin-bootstrap-slider>
+
+<input type="checkbox" (change)="onCheck()">
+<admin-bootstrap-slider
+  [min]="-5"
+  [max]="20"
+  [value]="0"
+  [disabled]="disabled"
+></admin-bootstrap-slider>
+
+<div style="height: 100px; width: 100px;" [style.background]="color"></div>

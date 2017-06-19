@@ -1,0 +1,17 @@
+@import '../../../styles/colors';
+
+@each $name, $color in $colors {
+  :host(.#{$name}) /deep/ .slider-selection {
+    background: $color;
+  }
+
+  :host([data-color-handle="true"].#{$name}) {
+    /deep/ .slider-handle:not(.triangle) {
+      background: darken($color, 10%);
+    }
+
+    /deep/ .slider-handle.triangle {
+      border-bottom-color: darken($color, 10%);
+    }
+  }
+}

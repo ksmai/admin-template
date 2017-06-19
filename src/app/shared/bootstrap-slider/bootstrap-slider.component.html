@@ -1,0 +1,15 @@
+<input
+  type="text"
+  data-provide="slider"
+  [attr.data-slider-min]="min"
+  [attr.data-slider-max]="max"
+  [attr.data-slider-step]="step"
+  [attr.data-slider-value]="value"
+  [attr.data-slider-enabled]="!disabled"
+  [attr.data-slider-range]="range"
+  [attr.data-slider-orientation]="vertical ? 'vertical' : 'horizontal'"
+  [attr.data-slider-handle]="handle"
+  [attr.data-slider-reversed]="reversed"
+  [attr.data-slider-tooltip]="tooltip"
+  #inputEl
+>

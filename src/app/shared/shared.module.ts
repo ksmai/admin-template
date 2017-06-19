@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AccordionComponent } from './accordion/accordion.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
@@ -31,7 +32,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PagerComponent } from './pager/pager.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { PanelComponent } from './panel/panel.component';
-import { SliderComponent } from './slider/slider.component';
+import {
+  BootstrapSliderComponent,
+} from './bootstrap-slider/bootstrap-slider.component';
 import { StaticTimelineComponent } from './static-timeline/static-timeline.component';
 import { TabComponent } from './tab/tab.component';
 import { TableComponent } from './table/table.component';
@@ -39,6 +42,7 @@ import { TableComponent } from './table/table.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
   ],
 
   declarations: [
@@ -66,7 +70,7 @@ import { TableComponent } from './table/table.component';
     PagerComponent,
     PaginationComponent,
     PanelComponent,
-    SliderComponent,
+    BootstrapSliderComponent,
     StaticTimelineComponent,
     TabComponent,
     TableComponent,
@@ -100,7 +104,7 @@ import { TableComponent } from './table/table.component';
     PagerComponent,
     PaginationComponent,
     PanelComponent,
-    SliderComponent,
+    BootstrapSliderComponent,
     StaticTimelineComponent,
     TabComponent,
     TableComponent,

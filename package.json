@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^4.2.2",
     "@angular/router": "^4.2.2",
     "bootstrap": "^3.3.7",
+    "bootstrap-slider": "^9.8.0",
     "c3": "^0.4.13",
     "chart.js": "^2.6.0",
     "codemirror": "^5.26.0",

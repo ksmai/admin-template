@@ -5,4 +5,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./slider-demo.component.scss'],
 })
 export class SliderDemoComponent {
+  disabled = false;
+
+  onCheck(): void {
+    this.disabled = !this.disabled;
+  }
+
+  r = 128;
+  g = 200;
+  b = 128;
+
+  get color(): string {
+    return `rgb(${this.r}, ${this.g}, ${this.b})`;
+  }
 }
