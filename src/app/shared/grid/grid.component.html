@@ -1,1 +1,9 @@
-grid component
+<div class="container-fluid">
+  <div class="row">
+    <ng-container *ngFor="let template of templates; let i=index">
+      <div [class]="cols[i] ? 'col-sm-' + cols[i] : ''">
+        <ng-container *ngTemplateOutlet="template"></ng-container>
+      </div>
+    </ng-container>
+  </div>
+</div>
