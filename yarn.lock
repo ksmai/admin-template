@@ -1583,6 +1583,10 @@ download@^4.0.0, download@^4.1.2:
     vinyl-fs "^2.2.0"
     ware "^1.2.0"
 
+dropzone@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/dropzone/-/dropzone-5.1.0.tgz#541edc6a3f0f4f54c854e10336ad6d218da3e31f"
+
 duplexer2@0.0.2:
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.0.2.tgz#c614dcf67e2fb14995a91711e5a617e8a60a31db"
@@ -3055,6 +3059,10 @@ jpeg-js@^0.1.1:
 jpeg-js@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.2.0.tgz#53e448ec9d263e683266467e9442d2c5a2ef5482"
+
+jquery-jcrop@^0.9.13:
+  version "0.9.13"
+  resolved "https://registry.yarnpkg.com/jquery-jcrop/-/jquery-jcrop-0.9.13.tgz#cda8c9557fffc56540008cc7b6291a0ec4071bf5"
 
 jquery-knob@^1.2.11:
   version "1.2.11"
