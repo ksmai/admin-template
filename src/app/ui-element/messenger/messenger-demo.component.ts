@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/interval';
+import { Observable } from 'rxjs/Observable';
 
 import { MessengerService } from '../../core/messenger.service';
 

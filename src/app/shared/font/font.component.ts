@@ -7,7 +7,7 @@ import { Component, Input, OnChanges } from '@angular/core';
  *   - color: optional name of color
  *
  * @example
-  <admin-font name="plus" color="blue"></admin-font>
+ * <admin-font name="plus" color="blue"></admin-font>
  */
 @Component({
   selector: 'admin-font',

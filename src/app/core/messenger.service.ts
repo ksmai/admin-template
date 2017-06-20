@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/first';
+import 'messenger/build/css/messenger-theme-flat.css';
+import 'messenger/build/css/messenger.css';
 import 'messenger/build/js/messenger';
 import 'messenger/build/js/messenger-theme-flat';
-import 'messenger/build/css/messenger.css';
-import 'messenger/build/css/messenger-theme-flat.css';
+import 'rxjs/add/operator/first';
+import { Observable } from 'rxjs/Observable';
 declare const Messenger: any;
 Messenger.options = {
   theme: 'flat',
@@ -115,7 +115,7 @@ export class MessengerService {
   action(message: string, ...actions: IAction[]) {
     let messenger: any;
     const options = { message, actions: {} };
-    for (let action of actions) {
+    for (const action of actions) {
       options.actions[action.label] = {
         label: action.label,
         action: () => {
@@ -143,7 +143,7 @@ export class MessengerService {
   top(): void {
     this.changeLayout('messenger-fixed messenger-on-top');
   }
- 
+
   /**
    * Move the messages to the top right corner
    */

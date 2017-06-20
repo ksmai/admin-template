@@ -26,6 +26,7 @@
     "chart.js": "^2.6.0",
     "codemirror": "^5.26.0",
     "cross-env": "^5.0.1",
+    "fullcalendar": "^3.4.0",
     "gmaps": "^0.4.24",
     "ion-rangeslider": "^2.1.8",
     "jquery": "^3.2.1",
