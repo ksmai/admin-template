@@ -1,1 +1,6 @@
-font demo
+<ul>
+  <li *ngFor="let name of names">
+    <admin-font [name]="name" [color]="color"></admin-font>
+    <span>{{name}}</span>
+  </li>
+</ul>
