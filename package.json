@@ -30,6 +30,7 @@
     "ion-rangeslider": "^2.1.8",
     "jquery": "^3.2.1",
     "jquery-knob": "^1.2.11",
+    "messenger": "HubSpot/messenger",
     "morris.js": "^0.5.0",
     "randomcolor": "^0.5.3",
     "raphael": "^2.2.7",

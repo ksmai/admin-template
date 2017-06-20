@@ -27,7 +27,6 @@ import { InteractiveTimelineComponent } from './interactive-timeline/interactive
 import { IonSliderComponent } from './ion-slider/ion-slider.component';
 import { KnobComponent } from './knob/knob.component';
 import { MapComponent } from './map/map.component';
-import { MessengerComponent } from './messenger/messenger.component';
 import { ModalComponent } from './modal/modal.component';
 import {
   MorrisJSChartComponent,
@@ -66,7 +65,6 @@ import { TableComponent } from './table/table.component';
     IonSliderComponent,
     KnobComponent,
     MapComponent,
-    MessengerComponent,
     ModalComponent,
     NavbarComponent,
     PagerComponent,
@@ -101,7 +99,6 @@ import { TableComponent } from './table/table.component';
     IonSliderComponent,
     KnobComponent,
     MapComponent,
-    MessengerComponent,
     ModalComponent,
     NavbarComponent,
     PagerComponent,
