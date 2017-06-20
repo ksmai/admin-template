@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
-import { CalenderDemoComponent } from './calender-demo.component';
+import { CalendarDemoComponent } from './calendar-demo.component';
 
 @NgModule({
   imports: [
@@ -9,8 +9,8 @@ import { CalenderDemoComponent } from './calender-demo.component';
   ],
 
   declarations: [
-    CalenderDemoComponent,
+    CalendarDemoComponent,
   ],
 })
-export class CalenderModule {
+export class CalendarModule {
 }

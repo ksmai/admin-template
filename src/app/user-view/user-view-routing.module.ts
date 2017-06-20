@@ -5,7 +5,7 @@ import { AuthGuard } from '../core/auth-guard.service';
 import { UserViewComponent } from './user-view.component';
 
 import { blogRoutes } from '../blog/blog.routes';
-import { calenderRoutes } from '../calender/calender.routes';
+import { calendarRoutes } from '../calendar/calendar.routes';
 import { chartRoutes } from '../chart/chart.routes';
 import { codemirrorRoutes } from '../codemirror/codemirror.routes';
 import { dashboardRoutes } from '../dashboard/dashboard.routes';
@@ -53,7 +53,7 @@ const routes: Routes = [
       ...formRoutes,
       ...tableRoutes,
       ...gridRoutes,
-      ...calenderRoutes,
+      ...calendarRoutes,
       ...fileUtilitiesRoutes,
       ...fontRoutes,
       ...paymentRoutes,

@@ -9,7 +9,7 @@ import {
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { ButtonComponent } from './button/button.component';
 import { C3JSChartComponent } from './c3js-chart/c3js-chart.component';
-import { CalenderComponent } from './calender/calender.component';
+import { CalendarComponent } from './calendar/calendar.component';
 import {
   ChartJSChartComponent,
 } from './chartjs-chart/chartjs-chart.component';
@@ -49,7 +49,7 @@ import { TableComponent } from './table/table.component';
     AccordionComponent,
     BreadcrumbComponent,
     ButtonComponent,
-    CalenderComponent,
+    CalendarComponent,
     ChartJSChartComponent,
     CodemirrorComponent,
     DropdownComponent,
@@ -83,7 +83,7 @@ import { TableComponent } from './table/table.component';
     AccordionComponent,
     BreadcrumbComponent,
     ButtonComponent,
-    CalenderComponent,
+    CalendarComponent,
     ChartJSChartComponent,
     CodemirrorComponent,
     DropdownComponent,

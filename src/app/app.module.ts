@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { BlogModule } from './blog/blog.module';
-import { CalenderModule } from './calender/calender.module';
+import { CalendarModule } from './calendar/calendar.module';
 import { ChartModule } from './chart/chart.module';
 import { CodemirrorModule } from './codemirror/codemirror.module';
 import { CoreModule } from './core/core.module';
@@ -54,7 +54,7 @@ import { UserViewModule } from './user-view/user-view.module';
     FormModule,
     TableModule,
     GridModule,
-    CalenderModule,
+    CalendarModule,
     FontModule,
     PaymentModule,
     FileUtilitiesModule,
