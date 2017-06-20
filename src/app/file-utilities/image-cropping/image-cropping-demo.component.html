@@ -1,1 +1,16 @@
-image cropping demo
+<admin-image-crop [src]="desk" [setSelect]="deskSelection">
+</admin-image-crop>
+
+<admin-image-crop
+  [src]="grass"
+  (change)="onGrassChange($event)"
+  [setSelect]="grassSelection"
+></admin-image-crop>
+{{grassCoord|json}}
+
+<admin-image-crop
+  [src]="bird"
+  (change)="onBirdChange($event)"
+  [aspectRatio]="1"
+></admin-image-crop>
+<div #preview class="preview-image"></div>
