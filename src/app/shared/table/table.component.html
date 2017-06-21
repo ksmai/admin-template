@@ -1,5 +1,12 @@
-<div [class.table-responsive]="responsive">
-  <table [ngClass]="classes">
+<div [class.table-responsive]="responsive" class="tablesaw-overflow">
+  <table
+    [ngClass]="classes"
+    #table
+    [attr.data-tablesaw-mode]="tablesaw || null"
+    [attr.data-tablesaw-mode-switch]="tablesawSwitch || null"
+    [attr.data-tablesaw-sortable]="tablesaw === 'sortable' ? '' : null"
+    [attr.data-tablesaw-sortable-switch]="tablesaw === 'sortable' ? '':null"
+  >
     <ng-content></ng-content>
   </table>
 </div>
