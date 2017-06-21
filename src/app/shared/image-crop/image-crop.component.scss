@@ -1,0 +1,9 @@
+:host(.fade) {
+  /deep/ .jcrop-holder {
+    transition: background-color .5s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  /deep/ .img {
+    transition: opacity .5s cubic-bezier(.4, 0, .2, 1);
+  }
+}

@@ -14,3 +14,20 @@
   [aspectRatio]="1"
 ></admin-image-crop>
 <div #preview class="preview-image"></div>
+
+<admin-image-crop
+  [src]="desk"
+  [setSelect]="animateSelection"
+  [bgColor]="bgColor"
+  [bgOpacity]="bgOpacity"
+></admin-image-crop>
+<button *ngFor="let i of [1,2,3,4,5,0]" (click)="changeAnimateSelection(i)">
+  {{i}}
+</button>
+<button
+  *ngFor="let c of ['black', 'red', 'blue', 'yellow']"
+  (click)="changeColor(c)"
+>{{c}}</button>
+<button *ngFor="let i of [0.2,0.6,1]" (click)="changeOpacity(i)">
+  {{i}}
+</button>
