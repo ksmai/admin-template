@@ -1,1 +1,5 @@
-table component
+<div [class.table-responsive]="responsive">
+  <table [ngClass]="classes">
+    <ng-content></ng-content>
+  </table>
+</div>
