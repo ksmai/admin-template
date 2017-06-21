@@ -1,7 +1,9 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
 import $ = require('jquery');
 import 'fullcalendar/dist/fullcalendar';
 import 'fullcalendar/dist/fullcalendar.css';
+import 'jquery-ui/ui/widget';
+import 'jquery-ui/ui/widgets/draggable';
 
 interface IEvent {
   title: string;
@@ -25,6 +27,7 @@ interface IEvent {
  *     - dow: optional, array of numbers representing the days of week in
  *            which the event occurs
  *   - defaultDate: optional, the date to be displayed on init
+ *   - external: place event into an external draggable list, default false
  *
  * @example
  * <admin-calendar
@@ -37,16 +40,16 @@ interface IEvent {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })
-export class CalendarComponent implements OnInit {
+export class CalendarComponent implements AfterViewInit {
   @Input() events: IEvent[] = [];
   @Input() defaultDate: string;
+  @Input() external: boolean = false;
 
-  constructor(private el: ElementRef) {
-  }
+  removeAfterDrop = false;
+  @ViewChild('calendar') private calendarEl: any;
 
-  ngOnInit(): void {
-    ($(this.el.nativeElement) as any).fullCalendar({
-      events: this.events,
+  ngAfterViewInit(): void {
+    const options = {
       defaultDate: this.defaultDate,
       editable: true,
       header: {
@@ -54,6 +57,46 @@ export class CalendarComponent implements OnInit {
         center: 'title',
         right: 'month,agendaWeek,agendaDay',
       },
-    });
+    };
+    if (this.external) {
+      const calendarEl = this.calendarEl.nativeElement;
+      const that = this;
+      Object.assign(options, {
+        droppable: true,
+        drop(date: any) {
+          const originalEventObject = ($(this) as any).data('eventObject');
+          const copiedEventObject = Object.assign({}, originalEventObject);
+          copiedEventObject.start = date;
+          ($(calendarEl) as any).fullCalendar(
+            'renderEvent',
+            copiedEventObject,
+            true,
+          );
+          if (that.removeAfterDrop) {
+            ($(this) as any).remove();
+          }
+        },
+      });
+
+      ($(this.calendarEl.nativeElement) as any)
+        .parent()
+        .find('.external-event')
+        .each(function() {
+          const eventObject = {
+            title: ($(this) as any).text(),
+          };
+          ($(this) as any).data('eventObject', eventObject);
+          ($(this) as any).draggable({
+            zIndex: 999,
+            revert: true,
+            revertDuration: 0,
+          });
+        });
+    } else {
+      Object.assign(options, {
+        events: this.events,
+      });
+    }
+    ($(this.calendarEl.nativeElement) as any).fullCalendar(options);
   }
 }

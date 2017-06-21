@@ -1,0 +1,12 @@
+<div class="external-events" *ngIf="external">
+  <h4 class="external-events__title">Draggable Events</h4>
+  <div class="external-event" *ngFor="let evt of events">
+    {{evt.title}}
+  </div>
+  <label>
+    <input type="checkbox" [(ngModel)]="removeAfterDrop">
+    Remove after drop
+  </label>
+</div>
+
+<div #calendar class="calendar"></div>

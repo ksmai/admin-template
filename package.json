@@ -33,6 +33,7 @@
     "jquery": "^3.2.1",
     "jquery-jcrop": "^0.9.13",
     "jquery-knob": "^1.2.11",
+    "jquery-ui": "^1.12.1",
     "messenger": "HubSpot/messenger",
     "morris.js": "^0.5.0",
     "randomcolor": "^0.5.3",
