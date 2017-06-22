@@ -1,1 +1,47 @@
-x editable demo
+<select [(ngModel)]="mode">
+  <option value="popup">Popup</option>
+  <option value="inline">Inline</option>
+</select>
+<input type="checkbox" [(ngModel)]="disabled">
+<!-- example content from
+  https://vitalets.github.io/x-editable/demo-bs3.html
+-->
+Simple text field
+<admin-form-x-editable title="Enter username" [mode]="mode" [disabled]="disabled">superuser</admin-form-x-editable>
+
+Empty text field, required
+<admin-form-x-editable title="Enter your firstname" [required]="true" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+Select
+<admin-form-x-editable title="Select gender" type="select" [source]="[{ value: 0, text: 'Male' }, { value: 1, text: 'Female' }]" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+Select, no buttons
+<admin-form-x-editable title="Select gender" type="select" [source]="[{ value: 0, text: 'Male' }, { value: 1, text: 'Female' }]" [showbuttons]="false" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+Combodate
+<admin-form-x-editable title="Select date of birth" type="combodate" value="1984-06-06" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+Combodatetime
+<admin-form-x-editable title="Setup event date and time" type="combodate" combodateTemplate="D / MMM / YYYY hh : mm" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+textarea
+<admin-form-x-editable title="Enter comments" type="textarea" showbuttons="bottom" [mode]="mode" [disabled]="disabled">
+awesome
+</admin-form-x-editable>
+
+typeahead
+<admin-form-x-editable title="Input state" [typeahead]="typeahead" type="typeaheadjs" [mode]="mode" [disabled]="disabled">
+  California
+</admin-form-x-editable>
+
+checklist
+<admin-form-x-editable title="Choose any" type="checklist" [value]="[2,3]" [source]="[{value:1,text:'option1'},{value:2,text:'option2'},{value:3,text:'option3'}]" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+select2 (tags)
+<admin-form-x-editable type="select2" [source]="[{id: 'gb', text: 'Great Britain'},{id: 'us', text: 'United States'},{id: 'ru', text: 'Russia'}]" title="Select country" [select2]="{ multiple: true }" value="ru" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+select2 (dropdown)
+<admin-form-x-editable type="select2" [source]="[{id: 'gb', text: 'Great Britain'},{id: 'us', text: 'United States'},{id: 'ru', text: 'Russia'}]" title="Select country" [select2]="{ multiple: false }" value="ru" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>
+
+custom input, several fields
+<admin-form-x-editable type="address" title="Enter address" [value]="{ city: 'Moscow', street: 'Lenina', building: '15' }" [mode]="mode" [disabled]="disabled"></admin-form-x-editable>

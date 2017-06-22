@@ -46,6 +46,8 @@ module.exports = {
     new webpack.ProvidePlugin({
       jQuery: 'jquery', // needed by morris.js
       Raphael: 'raphael', // needed by morris.js
+      'window.jQuery': 'jquery', // bootstrap-editable
+      'moment': 'moment', // bootstrap-editable
     }),
   ],
 };
