@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+:host(.wizard) /deep/ .actions a[href="#finish"] {
+  &,
+  &:hover,
+  &:active {
+    background-color: #2eb398;
+  }
+}

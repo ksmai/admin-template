@@ -1,1 +1,81 @@
-wizard demo
+<!-- examples from http://www.jquery-steps.com/Examples -->
+<admin-form-wizard>
+  <h3>Keyboard</h3>
+  <section>
+    <p>Try the keyboard navigation by clicking arrow left or right!</p>
+  </section>
+  <h3>Effects</h3>
+  <section>
+    <p>Wonderful transition effects.</p>
+  </section>
+  <h3>Pager</h3>
+  <section>
+    <p>The next and previous buttons help you to navigate through your content.</p>
+  </section>
+</admin-form-wizard>
+
+<form #form>
+  <admin-form-wizard [form]="form">
+    <h3>Account</h3>
+    <section>
+      <label>User name *
+        <input name="userName" type="text" class="required">
+      </label>
+      <label>Password *
+        <input name="password" type="text" class="required">
+      </label>
+      <label>Confirm Password *
+        <input name="confirm" type="text" class="required">
+      </label>
+      <p>(*) Mandatory</p>
+    </section>
+    <h3>Profile</h3>
+    <section>
+      <label>First name *
+        <input id="name" name="name" type="text" class="required">
+      </label>
+      <label>Last name *
+        <input name="surname" type="text" class="required">
+      </label>
+      <label>Email *
+        <input name="email" type="text" class="required email">
+      </label>
+      <label>Address
+        <input name="address" type="text">
+      </label>
+      <p>(*) Mandatory</p>
+    </section>
+    <h3>Hints</h3>
+    <section>
+    <ul>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Foobar</li>
+    </ul>
+    </section>
+    <h3>Finish</h3>
+    <section>
+      <label>
+        <input name="acceptTerms" type="checkbox" class="required">
+          I agree with the Terms and Conditions.
+      </label>
+    </section>
+  </admin-form-wizard>
+</form>
+
+<admin-form-wizard [dynamic]="true"></admin-form-wizard>
+
+<admin-form-wizard [vertical]="true">
+  <h3>Keyboard</h3>
+  <section>
+    <p>Try the keyboard navigation by clicking arrow left or right!</p>
+  </section>
+  <h3>Effects</h3>
+  <section>
+    <p>Wonderful transition effects.</p>
+  </section>
+  <h3>Pager</h3>
+  <section>
+    <p>The next and previous buttons help you to navigate through your content.</p>
+  </section>
+</admin-form-wizard>

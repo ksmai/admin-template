@@ -3100,11 +3100,21 @@ jquery-knob@^1.2.11:
   version "1.2.11"
   resolved "https://registry.yarnpkg.com/jquery-knob/-/jquery-knob-1.2.11.tgz#f37c39dbc1c7a6a6c12cdb2ed4f6bffb683f10d6"
 
+jquery-steps@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/jquery-steps/-/jquery-steps-1.1.0.tgz#0ceee0b0d2e49143981ad120d458ed56ea8e1924"
+
 jquery-ui@^1.12.1:
   version "1.12.1"
   resolved "https://registry.yarnpkg.com/jquery-ui/-/jquery-ui-1.12.1.tgz#bcb4045c8dd0539c134bc1488cdd3e768a7a9e51"
 
-"jquery@2 - 3", jquery@>=1.7, jquery@>=1.8, jquery@^3.2.1:
+jquery-validation@^1.16.0:
+  version "1.16.0"
+  resolved "https://registry.yarnpkg.com/jquery-validation/-/jquery-validation-1.16.0.tgz#b6e5277ebbd67c1fabab213eb4454eea8a3095ca"
+  dependencies:
+    jquery "^1.7 || ^2.0 || ^3.1"
+
+"jquery@2 - 3", jquery@>=1.7, jquery@>=1.8, "jquery@^1.7 || ^2.0 || ^3.1", jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
