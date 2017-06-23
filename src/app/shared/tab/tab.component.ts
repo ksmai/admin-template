@@ -26,6 +26,8 @@ interface ITab {
  *   - pills: if true, display pills instead of tabs
  *   - stacked: if true and pills is also true, stack the pills vertically
  *   - justified: if true, justify the tabs/pills
+ *   - inverse: if true, invert the colors of the tabs/pills
+ *   - reversed: if true, put tabs at the bottom (or right, if stacked)
  *
  * @example
  * <admin-tab [tabs]="tabs" color="red" [pills]="true"></admin-tab>
@@ -39,12 +41,12 @@ export class TabComponent implements OnChanges {
   @Input() tabs: ITab[] = [];
   @Input() color: string;
   @Input() pills: boolean = false;
-  @Input() stacked: boolean = false;
   @Input() justified: boolean = false;
+  @HostBinding('class.landscape') @Input() stacked: boolean = false;
+  @HostBinding('class.inverse') @Input() inverse: boolean = false;
+  @HostBinding('class.reversed') @Input() reversed: boolean = false;
   classes: { [key: string]: boolean };
   ids: Array<string|string[]>;
-
-  @HostBinding('class.landscape') landscape = false;
 
   ngOnChanges(): void {
     this.ids = this.tabs.map((tab) => {
@@ -64,7 +66,6 @@ export class TabComponent implements OnChanges {
       this.classes['nav-pills'] = true;
       if (this.stacked) {
         this.classes['nav-stacked'] = true;
-        this.landscape = true;
       }
     } else {
       this.classes['nav-tabs'] = true;

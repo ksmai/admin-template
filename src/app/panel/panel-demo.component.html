@@ -1,29 +1,124 @@
-<admin-panel [showHeader]="true" [showFooter]="true">
-  <header>
-    <h1 style="font-size: 1.5em;">My Header</h1>
-    <h6 style="font-size: .7em;">Mini heading</h6>
-  </header>
-  <p>Lorem ipsum</p>
-  <p>dolor sit amet</p>
-  <div><header>this should be in body</header></div>
-  <footer>Footer</footer>
-</admin-panel>
+<admin-grid [cols]="[4, 4, 4]">
+  <ng-template>
+    <admin-panel>
+      <h3>Basic Panel</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </admin-panel>
 
-<admin-panel>Basic panel</admin-panel>
+    <admin-panel [showHeader]="true" [showFooter]="true">
+      <header>
+        <h3>Panel Header</h3>
+        <h6>Mini Heading</h6>
+      </header>
 
-<admin-panel [showHeader]="true" [showFooter]="true">
-  <header>My Header</header>
-  <div>some content</div>
-  <p>some paragraphs</p>
-  <footer>My Footer</footer>
-</admin-panel>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-<admin-panel [showHeader]="true" headerColor="#666">
-  lorem ipsum
-  <header>Grey header</header>
-</admin-panel>
+      <footer>
+        <h3>Panel Footer</h3>
+        <h6>Mini Heading</h6>
+      </footer>
+    </admin-panel>
+  </ng-template>
 
-<admin-panel [showFooter]="true" footerColor="rgb(12, 34, 56)">
-  foobarbaz
-  <footer>Dark blue footer</footer>
-</admin-panel>
+  <ng-template>
+    <admin-panel [showFooter]="true" footerColor="#ea7882">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <footer>
+        <h3>Panel body + footer without panel header</h3>
+        <h6>Mini Heading</h6>
+      </footer>
+    </admin-panel>
+
+    <admin-panel
+      [tabbed]="true"
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#b4a1dd"
+      footerColor="#b4a1dd"
+    >
+      <header>
+        <h3>Panel header + tabs</h3>
+      </header>
+
+      <admin-tab
+        color="purple"
+        [pills]="true"
+        [inverse]="true"
+        [justified]="true"
+        [tabs]="[
+          { name: '1', content: 'The first tab' },
+          { name: '2', content: 'The second tab' },
+          { name: '3', content: 'The third tab' }
+        ]"
+      ></admin-tab>
+
+      <footer>
+        <h3>Panel footer</h3>
+        <h6>Mini heading</h6>
+      </footer>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(85, 201, 166)">
+      <header>
+        <h3>Panel body + header without panel footer</h3>
+        <h6>Mini Heading</h6>
+      </header>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </admin-panel>
+
+    <admin-panel [tabbed]="true" [showFooter]="true" footerColor="#debc85">
+      <admin-tab
+        color="paleyellow"
+        [pills]="true"
+        [inverse]="true"
+        [reversed]="true"
+        [justified]="true"
+        [tabs]="[
+          { name: '1', content: 'The first tab' },
+          { name: '2', content: 'The second tab' },
+          { name: '3', content: 'The third tab' }
+        ]"
+      ></admin-tab>
+      <footer>Panel footer + tabs</footer>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
+
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel [tabbed]="true">
+      <admin-tab
+        color="pink"
+        [pills]="true"
+        [inverse]="true"
+        [stacked]="true"
+        [justified]="true"
+        [tabs]="[
+          { name: '1', content: 'The first tab' },
+          { name: '2', content: 'The second tab' },
+          { name: '3', content: 'The third tab' }
+        ]"
+      ></admin-tab>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [tabbed]="true">
+      <admin-tab
+        color="grayishcyan"
+        [pills]="true"
+        [inverse]="true"
+        [stacked]="true"
+        [reversed]="true"
+        [justified]="true"
+        [tabs]="[
+          { name: '1', content: 'The first tab' },
+          { name: '2', content: 'The second tab' },
+          { name: '3', content: 'The third tab' }
+        ]"
+      ></admin-tab>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

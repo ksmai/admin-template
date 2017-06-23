@@ -45,6 +45,7 @@ export class PanelComponent implements OnChanges, AfterViewInit {
   @Input() showFooter = false;
   @Input() headerColor = '#79b0ec';
   @Input() footerColor = '#79b0ec';
+  @HostBinding('class.tabbed') @Input() tabbed: boolean = false;
   @ViewChild('header') headerEl: any;
   @ViewChild('footer') footerEl: any;
 
@@ -65,6 +66,10 @@ export class PanelComponent implements OnChanges, AfterViewInit {
 
   toggleClosed(): void {
     this.isClosed = !this.isClosed;
+  }
+
+  refresh(): void {
+    // TODO: figure out what does this do
   }
 
   private updateColors(): void {

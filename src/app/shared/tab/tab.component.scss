@@ -1,8 +1,21 @@
 @import '../../../styles/colors';
 
 :host {
-  display: block;
+  display: flex;
   background-color: #fff;
+  flex-direction: column;
+}
+
+:host(.reversed) {
+  flex-direction: column-reverse;
+}
+
+:host(.landscape) {
+  flex-direction: row;
+}
+
+:host(.landscape.reversed) {
+  flex-direction: row-reverse;
 }
 
 .nav {
@@ -46,11 +59,6 @@
   padding: 25px;
 }
 
-:host(.landscape) {
-  display: flex;
-  width: 100%;
-}
-
 .nav-stacked {
   padding-top: 25px;
 }
@@ -66,4 +74,37 @@
 
 .nav-justified .nav__item.active {
   box-shadow: 0 1px 0 0 #fff;
+}
+
+:host(.inverse) {
+  .nav {
+    padding-left: 0;
+  }
+
+  .nav-stacked {
+    padding-top: 0;
+  }
+
+  .nav-pills .active .nav__tab {
+    background-color: #fff;
+    color: #aaa;
+  }
+
+  .nav-pills > li > a {
+    border-radius: 0;
+  }
+
+  .nav__tab {
+    color: #fff;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  @each $name, $color in $colors {
+    .nav--#{$name} {
+      background-color: $color;
+    }
+  }
 }
