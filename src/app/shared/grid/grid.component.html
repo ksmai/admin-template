@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <ng-container *ngFor="let template of templates; let i=index">
-      <div [class]="cols[i] ? 'col-sm-' + cols[i] : ''">
+      <div [class]="cols[i] ? 'col-md-' + cols[i] : ''">
         <ng-container *ngTemplateOutlet="template"></ng-container>
       </div>
     </ng-container>
