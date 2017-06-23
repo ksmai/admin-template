@@ -1,0 +1,19 @@
+.form-buttons {
+  text-align: right;
+}
+
+.form-submit-button {
+  margin-left: 5px;
+}
+
+/* some customizations for bootstrap form controls */
+.form-control {
+  border-width: 2px;
+}
+
+.sizing-form .form-control:focus {
+  border-color: #b4a1dd;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(#b4a1dd, 0.6);
+}

@@ -1,0 +1,191 @@
+<!-- Some of the form examples are adapted from bootstrap
+  http://getbootstrap.com/css/#forms
+-->
+<admin-panel
+  [showHeader]="true"
+  [showFooter]="true"
+  headerColor="#ea7882"
+  footerColor="#ea7882"
+  class="input-groups-form form-horizontal"
+>
+  <header><h3>Input groups</h3></header>
+
+  <label class="control-label">Checkbox addons</label>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">
+          <input type="checkbox">
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-addon">
+          <input type="checkbox">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Radio addons</label>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-addon">
+          <input type="radio" name="input-groups-radio-addon">
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-addon">
+          <input type="radio" name="input-groups-radio-addon">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Button addons</label>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <admin-button color="red">Go!</admin-button>
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-btn">
+          <admin-button color="green">Go!</admin-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Button addons: Dual</label>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <admin-button color="red">Go!</admin-button>
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-btn">
+          <admin-button color="green">Go!</admin-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Button with dropdowns</label>
+  <div class="form-group">
+    <div class="col-sm-6">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="blue" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]"></admin-dropdown>
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="input-group">
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="blue" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]"></admin-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Button with dropdowns: Dual</label>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="green" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]"></admin-dropdown>
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="paleyellow" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]"></admin-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label class="control-label">Segmented dropdowns: Dual</label>
+  <div class="form-group">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="green" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]" [split]="true"></admin-dropdown>
+        </div>
+        <input type="text" placeholder="Username" class="form-control">
+        <div class="input-group-btn">
+          <admin-dropdown text="Action" color="paleyellow" [options]="[
+            { option: 'Action1' },
+            { option: 'Action2' },
+            { option: 'Action3' },
+            { option: 'Separated', isHeader: true },
+            { option: 'Action4' }
+          ]" [split]="true"></admin-dropdown>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="form-buttons">
+    <admin-button
+      [inverse]="true"
+      color="red"
+      class="form-cancel-button"
+    >Cancel</admin-button>
+
+    <admin-button
+      [inverse]="true"
+      color="red"
+      class="form-submit-button"
+    >Submit</admin-button>
+  </footer>
+</admin-panel>

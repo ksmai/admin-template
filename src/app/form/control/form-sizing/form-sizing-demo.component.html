@@ -1,0 +1,113 @@
+<!-- Some of the form examples are adapted from bootstrap
+  http://getbootstrap.com/css/#forms
+-->
+<admin-panel
+  [showHeader]="true"
+  [showFooter]="true"
+  headerColor="#b4a1dd"
+  footerColor="#b4a1dd"
+  class="form-horizontal sizing-form"
+>
+  <header><h3>Horizontal form: sizing</h3></header>
+
+  <div class="form-group form-group-lg">
+    <label class="control-label col-sm-3" for="sizing-large-input">
+      Large input
+    </label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        id="sizing-large-input"
+        placeholder="Large input"
+        class="form-control"
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="sizing-default-input">
+      Default input
+    </label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        id="sizing-default-input"
+        placeholder="Default input"
+        class="form-control"
+      >
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label class="control-label col-sm-3" for="sizing-small-input">
+      Small input
+    </label>
+    <div class="col-sm-9">
+      <input
+        type="text"
+        id="sizing-small-input"
+        placeholder="Small input"
+        class="form-control"
+      >
+    </div>
+  </div>
+
+  <div class="form-group form-group-lg">
+    <label class="control-label col-sm-3" for="sizing-large-select">
+      Large select
+    </label>
+    <div class="col-sm-9">
+      <select class="form-control" id="sizing-large-select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-3" for="sizing-default-select">
+      Default select
+    </label>
+    <div class="col-sm-9">
+      <select class="form-control" id="sizing-default-select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group form-group-sm">
+    <label class="control-label col-sm-3" for="sizing-small-select">
+      Small select
+    </label>
+    <div class="col-sm-9">
+      <select class="form-control" id="sizing-small-select">
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+        <option>Option 4</option>
+        <option>Option 5</option>
+      </select>
+    </div>
+  </div>
+
+  <footer class="form-buttons">
+    <admin-button
+      [inverse]="true"
+      color="purple"
+      class="form-cancel-button"
+    >Cancel</admin-button>
+
+    <admin-button
+      [inverse]="true"
+      color="purple"
+      class="form-submit-button"
+    >Submit</admin-button>
+  </footer>
+</admin-panel>

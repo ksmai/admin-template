@@ -1,0 +1,233 @@
+<!-- Some of the form examples are adapted from bootstrap
+  http://getbootstrap.com/css/#forms
+-->
+<admin-panel
+  [showHeader]="true"
+  [showFooter]="true"
+  headerColor="#55c9a6"
+  footerColor="#55c9a6"
+  class="default-form"
+>
+  <header><h3>Default form</h3></header>
+
+  <div class="form-group">
+    <label
+      for="default-email"
+      class="control-label"
+    >Email address</label>
+
+    <div class="input-group">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-envelope"></span>
+      </div>
+
+      <input
+        type="email"
+        class="form-control"
+        id="default-email"
+        placeholder="Email"
+      >
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label
+      for="default-password"
+      class="control-label"
+    >Password</label>
+
+    <div class="input-group">
+      <input
+        type="password"
+        class="form-control"
+        id="default-password"
+        placeholder="Password"
+      >
+
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-lock"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group has-feedback">
+    <label class="control-label" for="default-withicon">With icon</label>
+    <input
+      type="text"
+      class="form-control"
+      id="default-withicon"
+      placeholder="Search"
+    >
+    <span class="glyphicon glyphicon-search form-control-feedback"
+    ></span>
+  </div>
+
+  <div class="form-group has-feedback">
+    <label
+      class="control-label"
+      for="default-input-with-icon"
+    >Input with icon</label>
+
+    <div class="input-group">
+      <span class="input-group-addon">
+        <span class="glyphicon glyphicon-asterisk"></span>
+      </span>
+
+      <input
+        type="text"
+        class="form-control"
+        id="default-input-with-icon"
+        placeholder="Search"
+      >
+    </div>
+
+    <span class="glyphicon glyphicon-search form-control-feedback"
+    ></span>
+  </div>
+
+  <div class="form-group">
+    <label for="default-disabled-input">Disabled</label>
+    <input
+      class="form-control"
+      id="default-disabled-input"
+      type="text"
+      placeholder="Disabled"
+      disabled
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="default-readonly-input">Readonly</label>
+    <input
+      class="form-control"
+      id="default-readonly-input"
+      type="text"
+      placeholder="Readonly"
+      readonly
+    >
+  </div>
+
+  <div class="form-group">
+    <label for="default-dropdown-select">Dropdown select</label>
+    <select class="form-control" id="default-dropdown-select">
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+      <option>Option 5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="default-multiple-select">Multiple select</label>
+    <select class="form-control" id="default-multiple-select" multiple>
+      <option>Option 1</option>
+      <option>Option 2</option>
+      <option>Option 3</option>
+      <option>Option 4</option>
+      <option>Option 5</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="default-textarea">Textarea</label>
+    <textarea
+      class="form-control"
+      rows="3"
+      id="default-textarea"
+      placeholder="Some text here..."
+    ></textarea>
+  </div>
+
+  <div class="form-group">
+    <label for="default-file-input">File input</label>
+    <input type="file" id="default-file-input" class="form-control">
+    <span class="help-block">Example block-level help text here</span>
+  </div>
+
+  <label>Checkboxes</label>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="1">
+      Option 1
+    </label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" value="1" checked>
+      Option 2
+    </label>
+  </div>
+  <div class="checkbox disabled">
+    <label>
+      <input type="checkbox" value="1" disabled>
+      Option 3 (disabled)
+    </label>
+  </div>
+
+  <label>Inline checkboxes</label>
+  <div class="form-group">
+    <label class="checkbox-inline">
+      <input type="checkbox" value="1">
+      Option 1
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="1" checked>
+      Option 2
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="1" disabled>
+      Option 3 (disabled)
+    </label>
+  </div>
+
+  <label>Radios</label>
+  <div class="radio">
+    <label>
+      <input type="radio" name="default-radio" value="1">
+      Option 1
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="default-radio" value="2" checked>
+      Option 2
+    </label>
+  </div>
+  <div class="radio disabled">
+    <label>
+      <input type="radio" name="default-radio" value="3" disabled>
+      Option 3 (disabled)
+    </label>
+  </div>
+
+  <label>Inline radios</label>
+  <div class="form-group">
+    <label class="radio-inline">
+      <input type="radio" name="default-inline-radio" value="1">
+      Option 1
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="default-inline-radio" value="2" checked>
+      Option 2
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="default-inline-radio" value="3" disabled>
+      Option 3 (disabled)
+    </label>
+  </div>
+
+  <footer class="form-buttons">
+    <admin-button
+      [inverse]="true"
+      color="green"
+      class="form-cancel-button"
+    >Cancel</admin-button>
+
+    <admin-button
+      [inverse]="true"
+      color="green"
+      class="form-submit-button"
+    >Submit</admin-button>
+  </footer>
+</admin-panel>
