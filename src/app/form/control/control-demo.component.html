@@ -1,1 +1,816 @@
-control demo
+<!-- Some of the form examples are adapted from bootstrap
+  http://getbootstrap.com/css/#forms
+-->
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#55c9a6"
+      footerColor="#55c9a6"
+      class="default-form"
+    >
+      <header>Default form</header>
+
+      <div class="form-group">
+        <label
+          for="default-email"
+          class="control-label"
+        >Email address</label>
+
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </div>
+
+          <input
+            type="email"
+            class="form-control"
+            id="default-email"
+            placeholder="Email"
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="default-password"
+          class="control-label"
+        >Password</label>
+
+        <div class="input-group">
+          <input
+            type="password"
+            class="form-control"
+            id="default-password"
+            placeholder="Password"
+          >
+
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label class="control-label" for="default-withicon">With icon</label>
+        <input
+          type="text"
+          class="form-control"
+          id="default-withicon"
+          placeholder="Search"
+        >
+        <span class="glyphicon glyphicon-search form-control-feedback"
+        ></span>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label
+          class="control-label"
+          for="default-input-with-icon"
+        >Input with icon</label>
+
+        <div class="input-group">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-asterisk"></span>
+          </span>
+
+          <input
+            type="text"
+            class="form-control"
+            id="default-input-with-icon"
+            placeholder="Search"
+          >
+        </div>
+
+        <span class="glyphicon glyphicon-search form-control-feedback"
+        ></span>
+      </div>
+
+      <div class="form-group">
+        <label for="default-disabled-input">Disabled</label>
+        <input
+          class="form-control"
+          id="default-disabled-input"
+          type="text"
+          placeholder="Disabled"
+          disabled
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="default-readonly-input">Readonly</label>
+        <input
+          class="form-control"
+          id="default-readonly-input"
+          type="text"
+          placeholder="Readonly"
+          readonly
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="default-dropdown-select">Dropdown select</label>
+        <select class="form-control" id="default-dropdown-select">
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
+          <option>Option 5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="default-multiple-select">Multiple select</label>
+        <select class="form-control" id="default-multiple-select" multiple>
+          <option>Option 1</option>
+          <option>Option 2</option>
+          <option>Option 3</option>
+          <option>Option 4</option>
+          <option>Option 5</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="default-textarea">Textarea</label>
+        <textarea
+          class="form-control"
+          rows="3"
+          id="default-textarea"
+          placeholder="Some text here..."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="default-file-input">File input</label>
+        <input type="file" id="default-file-input" class="form-control">
+        <span class="help-block">Example block-level help text here</span>
+      </div>
+
+      <label>Checkboxes</label>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="1">
+          Option 1
+        </label>
+      </div>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value="1" checked>
+          Option 2
+        </label>
+      </div>
+      <div class="checkbox disabled">
+        <label>
+          <input type="checkbox" value="1" disabled>
+          Option 3 (disabled)
+        </label>
+      </div>
+
+      <label>Inline checkboxes</label>
+      <div class="form-group">
+        <label class="checkbox-inline">
+          <input type="checkbox" value="1">
+          Option 1
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="1" checked>
+          Option 2
+        </label>
+        <label class="checkbox-inline">
+          <input type="checkbox" value="1" disabled>
+          Option 3 (disabled)
+        </label>
+      </div>
+
+      <label>Radios</label>
+      <div class="radio">
+        <label>
+          <input type="radio" name="default-radio" value="1">
+          Option 1
+        </label>
+      </div>
+      <div class="radio">
+        <label>
+          <input type="radio" name="default-radio" value="2" checked>
+          Option 2
+        </label>
+      </div>
+      <div class="radio disabled">
+        <label>
+          <input type="radio" name="default-radio" value="3" disabled>
+          Option 3 (disabled)
+        </label>
+      </div>
+
+      <label>Inline radios</label>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="default-inline-radio" value="1">
+          Option 1
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="default-inline-radio" value="2" checked>
+          Option 2
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="default-inline-radio" value="3" disabled>
+          Option 3 (disabled)
+        </label>
+      </div>
+
+      <footer class="form-buttons">
+        <admin-button
+          [inverse]="true"
+          color="green"
+          class="form-cancel-button"
+        >Cancel</admin-button>
+
+        <admin-button
+          [inverse]="true"
+          color="green"
+          class="form-submit-button"
+        >Submit</admin-button>
+      </footer>
+    </admin-panel>
+
+    <admin-panel
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#ea7882"
+      footerColor="#ea7882"
+      class="input-groups-form form-horizontal"
+    >
+      <header>Input groups</header>
+
+      <label class="control-label">Checkbox addons</label>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <input type="checkbox">
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-addon">
+              <input type="checkbox">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Radio addons</label>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <input type="radio" name="input-groups-radio-addon">
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-addon">
+              <input type="radio" name="input-groups-radio-addon">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Button addons</label>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <admin-button color="red">Go!</admin-button>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-btn">
+              <admin-button color="green">Go!</admin-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Button addons: Dual</label>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <admin-button color="red">Go!</admin-button>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-btn">
+              <admin-button color="green">Go!</admin-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Button with dropdowns</label>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="blue" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]"></admin-dropdown>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-6">
+          <div class="input-group">
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="blue" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]"></admin-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Button with dropdowns: Dual</label>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="green" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]"></admin-dropdown>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="paleyellow" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]"></admin-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <label class="control-label">Segmented dropdowns: Dual</label>
+      <div class="form-group">
+        <div class="col-xs-12">
+          <div class="input-group">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="green" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]" [split]="true"></admin-dropdown>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+            <div class="input-group-btn">
+              <admin-dropdown text="Action" color="paleyellow" [options]="[
+                { option: 'Action1' },
+                { option: 'Action2' },
+                { option: 'Action3' },
+                { option: 'Separated', isHeader: true },
+                { option: 'Action4' }
+              ]" [split]="true"></admin-dropdown>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="form-buttons">
+        <admin-button
+          [inverse]="true"
+          color="red"
+          class="form-cancel-button"
+        >Cancel</admin-button>
+
+        <admin-button
+          [inverse]="true"
+          color="red"
+          class="form-submit-button"
+        >Submit</admin-button>
+      </footer>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#4a90e2"
+      footerColor="#4a90e2"
+      class="form-horizontal horizontal-form"
+    >
+      <header>Horizontal form</header>
+
+      <div class="form-group">
+        <label
+          for="horizontal-block-help"
+          class="control-label col-sm-3"
+        >Block help</label>
+
+        <div class="col-sm-9">
+          <input type="text" placeholder="Enter text" class="form-control">
+          <span class="help-block">A block of help text</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-inline-help"
+          class="control-label col-sm-3"
+        >Inline help</label>
+
+        <div class="col-sm-5">
+          <input type="text" placeholder="Enter text" class="form-control">
+        </div>
+
+        <div class="col-sm-4">
+          <span class="help-block">Inline help</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-input-group"
+          class="control-label col-sm-3"
+        >Input group</label>
+
+        <div class="col-sm-6">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-user"></span>
+            </div>
+            <input type="text" placeholder="Username" class="form-control">
+          </div>
+        </div>
+
+        <div class="col-sm-3">
+          <span class="help-block">Inline help</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-email"
+          class="control-label col-sm-3"
+        >Email address</label>
+
+        <div class="col-sm-9">
+          <div class="input-group">
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-envelope"></span>
+            </div>
+
+            <input
+              type="email"
+              class="form-control"
+              id="horizontal-email"
+              placeholder="Email"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-password"
+          class="control-label col-sm-3"
+        >Password</label>
+
+        <div class="col-sm-9">
+          <div class="input-group">
+            <input
+              type="password"
+              class="form-control"
+              id="horizontal-password"
+              placeholder="Password"
+            >
+
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label
+          class="control-label col-sm-3"
+          for="horizontal-withicon">
+        With icon</label>
+
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="horizontal-withicon"
+            placeholder="Search"
+          >
+          <span class="glyphicon glyphicon-search form-control-feedback"
+          ></span>
+        </div>
+      </div>
+
+      <div class="form-group has-feedback">
+        <label
+          class="control-label col-sm-3"
+          for="horizontal-input-group-with-button"
+        >Input group with button</label>
+
+        <div class="col-sm-9">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="horizontal-input-group-with-button"
+              placeholder="Search"
+            >
+
+            <div class="input-group-btn">
+              <admin-button>
+                Search
+                <span class="glyphicon glyphicon-search"></span>
+              </admin-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-disabled-input"
+          class="col-sm-3 control-label"
+        >Disabled</label>
+
+        <div class="col-sm-9">
+          <input
+            class="form-control"
+            id="horizontal-disabled-input"
+            type="text"
+            placeholder="Disabled"
+            disabled
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-readonly-input"
+          class="col-sm-3 control-label"
+        >Readonly</label>
+
+        <div class="col-sm-9">
+          <input
+            class="form-control"
+            id="horizontal-readonly-input"
+            type="text"
+            placeholder="Readonly"
+            readonly
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-dropdown-select"
+          class="col-sm-3 control-label"
+        >Dropdown select</label>
+
+        <div class="col-sm-9">
+          <select class="form-control" id="horizontal-dropdown-select">
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-multiple-select"
+          class="col-sm-3 control-label"
+        >Multiple select</label>
+
+        <div class="col-sm-9">
+          <select
+            class="form-control"
+            id="horizontal-multiple-select"
+            multiple
+          >
+            <option>Option 1</option>
+            <option>Option 2</option>
+            <option>Option 3</option>
+            <option>Option 4</option>
+            <option>Option 5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-textarea"
+          class="col-sm-3 control-label"
+        >Textarea</label>
+
+        <div class="col-sm-9">
+          <textarea
+            class="form-control"
+            rows="3"
+            id="horizontal-textarea"
+            placeholder="Some text here..."
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label
+          for="horizontal-file-input"
+          class="col-sm-3 control-label"
+        >File input</label>
+
+        <div class="col-sm-9">
+          <input
+            type="file"
+            id="horizontal-file-input"
+            class="form-control"
+          >
+          <span class="help-block">Example block-level help text here</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-sm-3 control-label">Checkboxes</label>
+        <div class="col-sm-9">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="1">
+              Option 1
+            </label>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" value="1" checked>
+              Option 2
+            </label>
+          </div>
+          <div class="checkbox disabled">
+            <label>
+              <input type="checkbox" value="1" disabled>
+              Option 3 (disabled)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">Inline checkboxes</label>
+        <div class="col-sm-9">
+          <div class="form-group">
+            <label class="checkbox-inline">
+              <input type="checkbox" value="1">
+              Option 1
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="1" checked>
+              Option 2
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" value="1" disabled>
+              Option 3 (disabled)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">Radios</label>
+        <div class="col-sm-9">
+          <div class="radio">
+            <label>
+              <input type="radio" name="horizontal-radio" value="1">
+              Option 1
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="horizontal-radio" value="2" checked>
+              Option 2
+            </label>
+          </div>
+          <div class="radio disabled">
+            <label>
+              <input
+                type="radio"
+                name="horizontal-radio"
+                value="3"
+                disabled
+              >
+              Option 3 (disabled)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3">Inline radios</label>
+        <div class="col-sm-9">
+          <div class="form-group">
+            <label class="radio-inline">
+              <input type="radio" name="horizontal-inline-radio" value="1">
+              Option 1
+            </label>
+            <label class="radio-inline">
+              <input
+                type="radio"
+                name="horizontal-inline-radio"
+                value="2"
+                checked
+              >
+              Option 2
+            </label>
+            <label class="radio-inline">
+              <input
+                type="radio"
+                name="horizontal-inline-radio"
+                value="3"
+                disabled
+              >
+              Option 3 (disabled)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <footer class="form-buttons">
+        <admin-button
+          [inverse]="true"
+          color="darkblue"
+          class="form-cancel-button"
+        >Cancel</admin-button>
+
+        <admin-button
+          [inverse]="true"
+          color="darkblue"
+          class="form-submit-button"
+        >Submit</admin-button>
+      </footer>
+    </admin-panel>
+
+    <admin-panel
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#b4a1dd"
+      footerColor="#b4a1dd"
+    >
+      <header>Horizontal form: sizing</header>
+
+      <footer class="form-buttons">
+        <admin-button
+          [inverse]="true"
+          color="purple"
+          class="form-cancel-button"
+        >Cancel</admin-button>
+
+        <admin-button
+          [inverse]="true"
+          color="purple"
+          class="form-submit-button"
+        >Submit</admin-button>
+      </footer>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
