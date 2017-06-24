@@ -1,130 +1,208 @@
-<admin-bootstrap-slider
-  min="0"
-  max="20"
-  step="1"
-  color="green"
-  value="14"
-></admin-bootstrap-slider>
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(85,201,166)">
+      <header><h3>Bootstrap sliders</h3></header>
+      <div class="slider-container">
+        <admin-bootstrap-slider
+          min="0"
+          max="20"
+          step="1"
+          color="green"
+          value="14"
+        ></admin-bootstrap-slider>
+      </div>
 
-<admin-bootstrap-slider
-  min="10"
-  max="1000"
-  step="1"
-  value="[250, 450]"
-></admin-bootstrap-slider>
+      <div class="slider-container">
+        <admin-bootstrap-slider
+          min="10"
+          max="1000"
+          step="1"
+          value="[250, 450]"
+        ></admin-bootstrap-slider>
+      </div>
 
-<admin-bootstrap-slider
-  min="0"
-  max="255"
-  [(value)]="r"
-  color="red"
-  handle="square"
-  [colorHandle]="true"
-></admin-bootstrap-slider>
+      <div class="rgb-slider-container">
+        <div class="rgb-sliders">
+          <div class="slider-container rgb-slider">
+            <admin-bootstrap-slider
+              min="0"
+              max="255"
+              [(value)]="r"
+              color="red"
+              handle="square"
+              [colorHandle]="true"
+            ></admin-bootstrap-slider>
+          </div>
 
-<admin-bootstrap-slider
-  min="0"
-  max="255"
-  [(value)]="g"
-  color="green"
-  [colorHandle]="true"
-></admin-bootstrap-slider>
+          <div class="slider-container rgb-slider">
+            <admin-bootstrap-slider
+              min="0"
+              max="255"
+              [(value)]="g"
+              color="green"
+              [colorHandle]="true"
+            ></admin-bootstrap-slider>
+          </div>
 
-<admin-bootstrap-slider
-  min="0"
-  max="255"
-  [(value)]="b"
-  color="blue"
-  handle="triangle"
-  [colorHandle]="true"
-></admin-bootstrap-slider>
+          <div class="slider-container rgb-slider">
+            <admin-bootstrap-slider
+              min="0"
+              max="255"
+              [(value)]="b"
+              color="blue"
+              handle="triangle"
+              [colorHandle]="true"
+            ></admin-bootstrap-slider>
+          </div>
+        </div>
 
-<admin-bootstrap-slider
-  [min]="-5"
-  [max]="20"
-  [value]="0"
-  [vertical]="true"
-  [reversed]="true"
-></admin-bootstrap-slider>
+        <div class="rgb-display-container">
+          <div class="rgb-display" [style.background]="color"></div>
+        </div>
+      </div>
 
-<input type="checkbox" (change)="onCheck()">
-<admin-bootstrap-slider
-  [min]="-5"
-  [max]="20"
-  [value]="0"
-  [disabled]="disabled"
-></admin-bootstrap-slider>
+      <div class="slider-variations">
+        <div class="slider-variations__vertical">
+          <admin-bootstrap-slider
+            [min]="-5"
+            [max]="20"
+            [vertical]="true"
+            [reversed]="true"
+            color="brightyellow"
+          ></admin-bootstrap-slider>
+        </div>
 
-<div style="height: 100px;" [style.background]="color"></div>
+        <div class="slider-variations__horizontal">
+          <div class="current-value-slider">
+            <span>Current value = {{currentValue}}</span>
+            <admin-bootstrap-slider
+              [min]="-5"
+              [max]="20"
+              [(value)]="currentValue"
+              color="green"
+            ></admin-bootstrap-slider>
+          </div>
 
-<admin-ion-slider
-  prefix="$"
-  [min]="0"
-  [max]="5000"
-  [from]="1464"
-  [to]="3449"
-  type="double"
-  [grid]="true"
-  max_postfix="+"
-></admin-ion-slider>
+          <div class="disabled-slider">
+            <div class="form-group">
+              <label for="slider-toggle" class="control-label">
+                {{disabled ? 'Disabled' : 'Enabled'}}
+              </label>
+              <input
+                type="checkbox"
+                class="form-control"
+                id="slider-toggle"
+                [(ngModel)]="disabled"
+              >
+            </div>
+            <admin-bootstrap-slider
+              [min]="-5"
+              [max]="20"
+              [value]="0"
+              [disabled]="disabled"
+            ></admin-bootstrap-slider>
+          </div>
 
-<admin-ion-slider
-  prefix="€"
-  [min]="1000"
-  [max]="100000"
-  [from]="30000"
-  [to]="90000"
-  type="double"
-  [grid]="true"
-></admin-ion-slider>
+          <div class="slider-container">
+            <admin-bootstrap-slider
+              [min]="-5"
+              [max]="20"
+              [value]="12"
+              tooltip="always"
+              color="green"
+            ></admin-bootstrap-slider>
+          </div>
 
-<admin-ion-slider
-  postfix="carats"
-  [min]="0"
-  [max]="10"
-  [step]="0.1"
-  [grid]="true"
-></admin-ion-slider>
+          <div class="slider-container">
+            <admin-bootstrap-slider
+              [min]="-5"
+              [max]="20"
+              [value]="5"
+              tooltip="hide"
+              color="green"
+            ></admin-bootstrap-slider>
+          </div>
+        </div>
+      </div>
+    </admin-panel>
+  </ng-template>
 
-<admin-ion-slider
-  postfix="°"
-  [min]="-50"
-  [max]="50"
-  [from]="0"
-  [grid]="true"
-></admin-ion-slider>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(180,161,221)">
+      <header><h3>Ion range sliders</h3></header>
 
-<admin-ion-slider
-  [min]="1"
-  [max]="12"
-  [from]="1"
-  [values]="['January','February','March','April','May','June','July','August','September','October','November','December']"
-  [grid]="true"
-></admin-ion-slider>
+      <admin-ion-slider
+        prefix="$"
+        [min]="0"
+        [max]="5000"
+        [from]="1464"
+        [to]="3449"
+        type="double"
+        [grid]="true"
+        max_postfix="+"
+      ></admin-ion-slider>
 
-<admin-ion-slider
-  postfix="miles"
-  [min]="10000"
-  [max]="100000"
-  [from]="55000"
-  [hide_from_to]="true"
-></admin-ion-slider>
+      <admin-ion-slider
+        prefix="€"
+        [min]="1000"
+        [max]="100000"
+        [from]="30000"
+        [to]="90000"
+        type="double"
+        [grid]="true"
+      ></admin-ion-slider>
 
-<admin-ion-slider
-  postfix="miles"
-  [min]="10000"
-  [max]="100000"
-  [from]="55000"
-  [hide_min_max]="true"
-></admin-ion-slider>
+      <admin-ion-slider
+        postfix="carats"
+        [min]="0"
+        [max]="10"
+        [step]="0.1"
+        [grid]="true"
+      ></admin-ion-slider>
 
-<admin-ion-slider
-  postfix="pounds"
-  [from]="25000000"
-  [to]="35000000"
-  [max]="100000000"
-  [min]="1000000"
-  type="double"
-  (change)="onChange($event)"
-></admin-ion-slider>
-{{payload|json}}
+      <admin-ion-slider
+        postfix="°"
+        [min]="-50"
+        [max]="50"
+        [from]="0"
+        [grid]="true"
+      ></admin-ion-slider>
+
+      <admin-ion-slider
+        [min]="1"
+        [max]="12"
+        [from]="1"
+        [values]="['January','February','March','April','May','June','July','August','September','October','November','December']"
+        [grid]="true"
+      ></admin-ion-slider>
+
+      <admin-ion-slider
+        postfix="miles"
+        [min]="10000"
+        [max]="100000"
+        [from]="55000"
+        [hide_from_to]="true"
+      ></admin-ion-slider>
+
+      <admin-ion-slider
+        postfix="miles"
+        [min]="10000"
+        [max]="100000"
+        [from]="55000"
+        [hide_min_max]="true"
+      ></admin-ion-slider>
+
+      <admin-ion-slider
+        postfix="pounds"
+        [from]="25000000"
+        [to]="35000000"
+        [max]="100000000"
+        [min]="1000000"
+        type="double"
+        (change)="onChange($event)"
+      ></admin-ion-slider>
+
+      <pre><code class="language-javascript" [innerHTML]="payload"></code></pre>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+/* tslint:disable:max-line-length */
 /**
  * Demonstrate the usage of various components for tabs and navs:
  * {@link AccordionComponent},

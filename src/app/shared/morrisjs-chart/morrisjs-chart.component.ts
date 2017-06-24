@@ -1,10 +1,10 @@
 import {
   Component,
   ElementRef,
-  Input,
-  OnInit,
-  OnDestroy,
   HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
 } from '@angular/core';
 
 // morris.js exports a global variable Morris

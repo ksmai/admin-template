@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+/* tslint:disable:max-line-length */
 /**
  * Demonstate the usage of {@link StaticTimelineComponent}
  */

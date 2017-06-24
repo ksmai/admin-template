@@ -44,6 +44,7 @@
     "messenger": "HubSpot/messenger",
     "moment": "^2.18.1",
     "morris.js": "^0.5.0",
+    "prismjs": "https://github.com/PrismJS/prism",
     "randomcolor": "^0.5.3",
     "raphael": "^2.2.7",
     "rxjs": "^5.4.0",

@@ -24,3 +24,7 @@
 .panel--split-inverse {
   z-index: 2;
 }
+
+:host /deep/ .btn-group--split {
+  display: flex;
+}

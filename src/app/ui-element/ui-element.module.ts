@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { SharedModule } from '../shared/shared.module';
 import { ButtonDemoComponent } from './button/button-demo.component';
@@ -15,6 +16,7 @@ import {
 
 @NgModule({
   imports: [
+    FormsModule,
     SharedModule,
   ],
 
