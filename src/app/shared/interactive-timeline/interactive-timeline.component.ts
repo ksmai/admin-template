@@ -3,6 +3,7 @@ import {
   ElementRef,
   Input,
   OnInit,
+  ViewChild,
 } from '@angular/core';
 
 // The timelinejs3 library is loaded from cdn and exposed as a global
@@ -21,6 +22,8 @@ declare const TL: any;
 })
 export class InteractiveTimelineComponent implements OnInit {
   @Input() data: any;
+  @Input() height: number;
+  @ViewChild('timeline') private timelineEl: any;
 
   private timeline: any;
 
@@ -28,6 +31,12 @@ export class InteractiveTimelineComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.timeline = new TL.Timeline(this.el.nativeElement, this.data);
+    if (this.height) {
+      this.el.nativeElement.style.height = `${this.height}px`;
+    }
+    this.timeline = new TL.Timeline(
+      this.timelineEl.nativeElement,
+      this.data,
+    );
   }
 }

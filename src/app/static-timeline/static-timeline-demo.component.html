@@ -1,6 +1,22 @@
-<admin-static-timeline
-  *ngFor="let timeline of timelines"
-  [events]="timeline.events"
-  [block]="!!timeline.block"
-  [full]="!!timeline.full"
-></admin-static-timeline>
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel>
+      <admin-static-timeline [events]="events"></admin-static-timeline>
+    </admin-panel>
+    <admin-panel>
+      <admin-static-timeline [events]="events" [full]="true">
+      </admin-static-timeline>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel>
+      <admin-static-timeline [events]="events" [block]="true">
+      </admin-static-timeline>
+    </admin-panel>
+    <admin-panel>
+      <admin-static-timeline [events]="events" [full]="true" [block]="true">
+      </admin-static-timeline>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

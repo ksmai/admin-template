@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 
+/* tslint:disable:max-line-length */
+/**
+ * Demonstate the usage of {@link InteractiveTimelineComponent}
+ * Example data from https://github.com/NUKnightLab/TimelineJS3/blob/master/website/templates/examples/houston/timeline3.json
+ */
 @Component({
   templateUrl: './interactive-timeline-demo.component.html',
   styleUrls: ['./interactive-timeline-demo.component.scss'],
 })
 export class InteractiveTimelineDemoComponent {
-  /* tslint:disable:max-line-length */
-  // data from https://github.com/NUKnightLab/TimelineJS3/blob/master/website/templates/examples/houston/timeline3.json
   demoData = {
     title: {
       media: {
@@ -21,11 +24,6 @@ export class InteractiveTimelineDemoComponent {
     },
     events: [
     {
-      media: {
-        url: '{{ static_url }}/img/examples/houston/family.jpg',
-        caption: "Houston's mother and Gospel singer, Cissy Houston (left) and cousin Dionne Warwick.",
-        credit: "Cissy Houston photo:<a href='http://www.flickr.com/photos/11447043@N00/418180903/'>Tom Marcello</a><br/><a href='http://commons.wikimedia.org/wiki/File%3ADionne_Warwick_television_special_1969.JPG'>Dionne Warwick: CBS Television via Wikimedia Commons</a>",
-      },
       start_date: {
         month: '8',
         day: '9',
@@ -51,11 +49,6 @@ export class InteractiveTimelineDemoComponent {
       },
     },
     {
-      media: {
-        url: 'https://youtu.be/_gvJCCZzmro',
-        caption: 'A young poised Whitney Houston in an interview with EbonyJet.',
-        credit: 'EbonyJet',
-      },
       start_date: {
         year: '1978',
       },
