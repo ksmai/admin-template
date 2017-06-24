@@ -3,6 +3,8 @@ import {
   ElementRef,
   Input,
   OnInit,
+  OnDestroy,
+  HostListener,
 } from '@angular/core';
 
 // morris.js exports a global variable Morris
@@ -27,7 +29,7 @@ import 'morris.js/morris.js';
   templateUrl: './morrisjs-chart.component.html',
   styleUrls: ['./morrisjs-chart.component.scss'],
 })
-export class MorrisJSChartComponent implements OnInit {
+export class MorrisJSChartComponent implements OnInit, OnDestroy {
   @Input() type: string;
   @Input() data: Array<{ [key: string]: number }>;
   @Input() xkey: string;
@@ -37,6 +39,7 @@ export class MorrisJSChartComponent implements OnInit {
   @Input() labels: string[];
 
   private chart: any;
+  private timeoutID: any;
 
   constructor(private el: ElementRef) {
   }
@@ -44,6 +47,18 @@ export class MorrisJSChartComponent implements OnInit {
   ngOnInit(): void {
     // wait for a tick so that the chart is aware of container's width
     setTimeout(() => this.drawChart(), 0);
+  }
+
+  ngOnDestroy(): void {
+    clearTimeout(this.timeoutID);
+  }
+
+  @HostListener('window:resize')
+  private redraw(): void {
+    clearTimeout(this.timeoutID);
+    if (this.chart) {
+      this.timeoutID = setTimeout(() => this.chart.redraw(), 200);
+    }
   }
 
   private drawChart(): void {
@@ -55,7 +70,6 @@ export class MorrisJSChartComponent implements OnInit {
       xkey: this.xkey,
       ykeys: this.ykeys,
       labels: this.labels,
-      resize: true,
     });
   }
 
