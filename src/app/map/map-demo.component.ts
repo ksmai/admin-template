@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+import { VexDialogService } from '../core/vex-dialog.service';
+
+/**
+ * Demonstate the usage of {@link MapComponent}
+ * Example data from https://hpneo.github.io/gmaps/
+ */
 @Component({
   templateUrl: './map-demo.component.html',
   styleUrls: ['./map-demo.component.scss'],
@@ -103,17 +109,20 @@ export class MapDemoComponent {
   };
   instructions: string[] = [];
 
+  constructor(private vexDialogService: VexDialogService) {
+  }
+
   clickHandler(e: any) {
-    window.alert('Map clicked');
+    this.vexDialogService.alert('Map clicked');
   }
 
   dragendHandler(e: any) {
-    window.alert('Map dragend');
+    this.vexDialogService.alert('Map dragend');
   }
 
   markerHandler(e: any) {
     if (e.title === 'Lima') {
-      window.alert('Lima\'s marker clicked');
+      this.vexDialogService.alert("Lima's marker clicked");
     }
   }
 

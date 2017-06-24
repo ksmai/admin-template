@@ -1,6 +1,7 @@
 <button
   *ngIf="!texts; else btnGroup"
   [ngClass]="classes"
+  [disabled]="disabled"
   (click)="onClick($event, 0)"
 ><ng-content></ng-content></button>
 

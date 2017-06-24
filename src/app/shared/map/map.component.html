@@ -1,15 +1,26 @@
-<input
-  type="text"
-  *ngIf="geocode"
-  (keyup)="onKeyup(geocode.value)"
-  #geocode
->
-
-<button
-  type="button"
-  (click)="startRouting()"
-  *ngIf="route"
-  [disabled]="routingStarted"
->Start routing</button>
+<div class="form-group" *ngIf="geocode">
+  <div class="input-group">
+    <span class="input-group-addon">
+      <span class="glyphicon glyphicon-tags"></span>
+    </span>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      (keyup)="onKeyup(geocode.value)"
+      #geocode
+    >
+  </div>
+</div>
 
 <div #div></div>
+
+<div class="route-control">
+  <admin-button
+    *ngIf="route"
+    (click)="startRouting()"
+    [disabled]="routingStarted"
+    tag="primary"
+    [outlined]="true"
+  >Start routing</admin-button>
+</div>

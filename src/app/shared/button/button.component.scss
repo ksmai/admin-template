@@ -33,8 +33,11 @@
 
 @each $tag, $color in $tags {
   .btn-#{$tag} {
-    border-color: $color;
-    background-color: $color;
+    &,
+    &[disabled]:hover {
+      border-color: $color;
+      background-color: $color;
+    }
 
     &:hover:not([disabled]) {
       border-color: lighten($color, 10%);
@@ -53,8 +56,11 @@
 
 @each $name, $color in $colors {
   .btn-#{$name} {
-    border-color: $color;
-    background-color: $color;
+    &,
+    &[disabled]:hover {
+      border-color: $color;
+      background-color: $color;
+    }
 
     &:hover:not([disabled]) {
       border-color: lighten($color, 10%);

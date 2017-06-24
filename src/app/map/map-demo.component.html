@@ -1,56 +1,88 @@
-<admin-map [lat]="lat" [lng]="lng" height="600px"></admin-map>
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">Basic map</h3>
+      <admin-map [lat]="lat" [lng]="lng"></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">Map markers</h3>
+      <admin-map
+      [lat]="lat"
+      [lng]="lng"
+      [markers]="markers"
+      (markerClick)="markerHandler($event)"
+      ></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">Polylines</h3>
+      <admin-map [lat]="lat" [lng]="lng" [polyline]="polyline"></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">Polygons</h3>
+      <admin-map [lat]="lat" [lng]="lng" [polygon]="polygon"></admin-map>
+    </admin-panel>
+  </ng-template>
 
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  (mapClick)="clickHandler($event)"
-  (mapDragend)="dragendHandler($event)"
-></admin-map>
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">Map events <small>click/drag</small></h3>
+      <admin-map
+      [lat]="lat"
+      [lng]="lng"
+      (mapClick)="clickHandler($event)"
+      (mapDragend)="dragendHandler($event)"
+      ></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">Geocoding</h3>
+      <admin-map
+      [lat]="lat"
+      [lng]="lng"
+      [geocode]="true"
+      ></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">Overlays</h3>
+      <admin-map
+      [lat]="lat"
+      [lng]="lng"
+      [overlay]="overlay"
+      ></admin-map>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">GeoJSON Polygon</h3>
+      <admin-map
+      [lat]="39.74229"
+      [lng]="-105.004578"
+      [polygon]="geoJSONPolygon"
+      ></admin-map>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
 
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [markers]="markers"
-  (markerClick)="markerHandler($event)"
-></admin-map>
+<admin-panel>
+  <h3 class="header">Routing</h3>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6">
+        <admin-map
+          [lat]="lat"
+          [lng]="lng"
+          [route]="route"
+          (instruction)="instructionHandler($event)"
+          class="route-map"
+        ></admin-map>
+      </div>
 
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [geocode]="true"
-></admin-map>
-
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [polyline]="polyline"
-></admin-map>
-
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [overlay]="overlay"
-></admin-map>
-
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [polygon]="polygon"
-></admin-map>
-
-<admin-map
-  [lat]="39.74229"
-  [lng]="-105.004578"
-  [polygon]="geoJSONPolygon"
-></admin-map>
-
-<admin-map
-  [lat]="lat"
-  [lng]="lng"
-  [route]="route"
-  (instruction)="instructionHandler($event)"
-></admin-map>
-<ul>
-  <li *ngFor="let instruction of instructions" [innerHTML]="instruction">
-  </li>
-</ul>
+      <div class="col-md-6">
+        <ol class="instruction-list">
+          <li
+            *ngFor="let instruction of instructions"
+            [innerHTML]="instruction"
+          >
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</admin-panel>

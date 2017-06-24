@@ -75,6 +75,7 @@ export class ButtonComponent implements OnChanges, OnInit {
   @Input() tags: string[];
   @Input() outlined: boolean = false;
   @Input() inverse: boolean = false;
+  @Input() disabled: boolean = false;
   @Input() texts: Array<string|IDropdown>;
   @Input() justified: boolean = false;
   @Input() vertical: boolean = false;
