@@ -1,14 +1,23 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of various components for tabs and navs:
+ * {@link AccordionComponent},
+ * {@link TabComponent},
+ * {@link NavbarComponent},
+ * {@link BreadcrumbComponent},
+ * {@link PaginationComponent},
+ * {@link PagerComponent}
+ */
 @Component({
   templateUrl: './tab-and-nav-demo.component.html',
   styleUrls: ['./tab-and-nav-demo.component.scss'],
 })
 export class TabAndNavDemoComponent {
-  items = [
-    { header: 'item #1', content: 'some content' },
-    { header: 'item #2', content: 'some more content' },
-    { header: 'item #3', content: 'some more and more and more content' },
+  accordionItems = [
+    { header: 'Lorem ipsum dolor sit amet', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+    { header: 'Ut enim ad minim veniam', content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' },
+    { header: 'Duis aute irure dolor', content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.' },
   ];
 
   tabs = [
@@ -24,7 +33,7 @@ export class TabAndNavDemoComponent {
     },
   ];
 
-  leftLinks = [
+  navLeftLinks = [
     { label: 'Link 1', href: '#', active: true },
     { label: 'Link 2', href: '#' },
     {
@@ -39,7 +48,7 @@ export class TabAndNavDemoComponent {
     },
   ];
 
-  rightLinks = [
+  navRightLinks = [
     { label: 'Link 3', href: '#' },
     {
       label: 'Dropdown',
@@ -53,8 +62,8 @@ export class TabAndNavDemoComponent {
     },
   ];
 
-  leftHTML = 'Signed in as <a href="#" class="navbar-link">Mark Otto</a>';
-  rightHTML = 'Good morning';
+  navLeftHTML = 'Signed in as <a href="#" class="navbar-link">Mark Otto</a>';
+  navRightHTML = 'Good morning';
 
   links = [
     { label: 'Home', href: '#' },

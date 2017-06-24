@@ -102,6 +102,10 @@
     }
   }
 
+  .nav .open > a {
+    background-color: transparent;
+  }
+
   @each $name, $color in $colors {
     .nav--#{$name} {
       background-color: $color;
