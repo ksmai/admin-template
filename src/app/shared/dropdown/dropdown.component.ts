@@ -61,7 +61,7 @@ export class DropdownComponent implements OnChanges {
 
   @HostListener('mouseenter')
   private onHover() {
-    if (!this.hover) {
+    if (!this.hover || this.disabled) {
       return;
     }
 
@@ -73,7 +73,7 @@ export class DropdownComponent implements OnChanges {
 
   @HostListener('mouseleave')
   private onLeave() {
-    if (!this.hover) {
+    if (!this.hover || this.disabled) {
       return;
     }
 

@@ -1,0 +1,26 @@
+.dropdown-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.panel--basic {
+  z-index: 6;
+}
+
+.panel--basic-inverse {
+  z-index: 5;
+}
+
+.panel--basic-hover {
+  z-index: 4;
+}
+
+.panel--split {
+  z-index: 3;
+}
+
+.panel--split-inverse {
+  z-index: 2;
+}

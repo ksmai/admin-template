@@ -1,7 +1,456 @@
-<admin-dropdown
-  text="basic"
-  color="green"
-  [split]="true"
-  [hover]="true"
-  [options]="[{option:'disabled', disabled: true},{option:'option', isHeader:true}, 'another option', 'yet another option']"
-></admin-dropdown>
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel
+      [showHeader]="true"
+      headerColor="rgb(85,201,166)"
+      class="panel--basic"
+    >
+      <header><h3>Dropdowns and dropups</h3></header>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="green"
+          text="basic"
+          [options]="options"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="green"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="with headers"
+          [options]="optionsWithHeaders"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="darkblue"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="green"
+          text="basic"
+          [options]="options"
+          [dropup]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="green"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [dropup]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [dropup]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="darkblue"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [dropup]="true"
+        ></admin-dropdown>
+      </div>
+    </admin-panel>
+
+    <admin-panel
+      [tabbed]="true"
+      [showHeader]="true"
+      headerColor="rgb(85,201,166)"
+      class="panel--basic-inverse"
+    >
+      <header>
+        <h3>Dropdowns and dropups (inverse)</h3>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkblue"
+            [inverse]="true"
+            text="basic"
+            [options]="options"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkblue"
+            text="outlined"
+            [inverse]="true"
+            [options]="options"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkblue"
+            text="with headers"
+            [inverse]="true"
+            [options]="optionsWithHeaders"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkblue"
+            text="disabled"
+            [inverse]="true"
+            [disabled]="true"
+            [options]="options"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkblue"
+            text="basic"
+            [inverse]="true"
+            [options]="options"
+            [dropup]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkblue"
+            [inverse]="true"
+            text="outlined"
+            [options]="options"
+            [dropup]="true"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkblue"
+            text="with headers"
+            [options]="optionsWithHeaders"
+            [dropup]="true"
+            [inverse]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkblue"
+            text="disabled"
+            [inverse]="true"
+            [disabled]="true"
+            [options]="options"
+            [dropup]="true"
+          ></admin-dropdown>
+        </div>
+      </header>
+    </admin-panel>
+
+    <admin-panel
+      [showHeader]="true"
+      headerColor="rgb(168,85,58)"
+      class="panel--basic-hover"
+    >
+      <header><h3>Dropdowns and dropups (hover buttons)</h3></header>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="brown"
+          text="basic"
+          [options]="options"
+          [hover]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [hover]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="paleyellow"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [hover]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [hover]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="brown"
+          text="basic"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="paleyellow"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [dropup]="true"
+          [hover]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+        ></admin-dropdown>
+      </div>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel
+      [showHeader]="true"
+      headerColor="rgb(234,120,130)"
+      class="panel--split"
+    >
+      <header><h3>Split button dropdowns and dropups</h3></header>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="red"
+          text="basic"
+          [options]="options"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="red"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="darkblue"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="red"
+          text="basic"
+          [options]="options"
+          [dropup]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="red"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [dropup]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [dropup]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="darkblue"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [dropup]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+    </admin-panel>
+
+    <admin-panel
+      [showHeader]="true"
+      headerColor="rgb(234,120,130)"
+      class="panel--split-inverse"
+    >
+      <header>
+        <h3>Split button dropdowns and dropups (inverse)</h3>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkgreen"
+            [inverse]="true"
+            text="basic"
+            [options]="options"
+            [split]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkgreen"
+            text="outlined"
+            [inverse]="true"
+            [options]="options"
+            [split]="true"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkgreen"
+            text="with headers"
+            [inverse]="true"
+            [options]="optionsWithHeaders"
+            [split]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkgreen"
+            text="disabled"
+            [inverse]="true"
+            [disabled]="true"
+            [options]="options"
+            [split]="true"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkgreen"
+            text="basic"
+            [inverse]="true"
+            [options]="options"
+            [dropup]="true"
+            [split]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkgreen"
+            [inverse]="true"
+            text="outlined"
+            [options]="options"
+            [dropup]="true"
+            [split]="true"
+          ></admin-dropdown>
+        </div>
+        <div class="dropdown-container">
+          <admin-dropdown
+            color="darkgreen"
+            text="with headers"
+            [options]="optionsWithHeaders"
+            [dropup]="true"
+            [inverse]="true"
+            [split]="true"
+          ></admin-dropdown>
+          <admin-dropdown
+            color="darkgreen"
+            text="disabled"
+            [inverse]="true"
+            [disabled]="true"
+            [options]="options"
+            [dropup]="true"
+            [split]="true"
+          ></admin-dropdown>
+        </div>
+      </header>
+    </admin-panel>
+
+    <admin-panel
+      [showHeader]="true"
+      headerColor="rgb(121,176,236)"
+      class="panel--split-hover"
+    >
+      <header>
+        <h3>Split button dropdowns and dropups (hover buttons)</h3>
+      </header>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="basic"
+          [options]="options"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="blue"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="paleyellow"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="blue"
+          text="basic"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="blue"
+          text="outlined"
+          [outlined]="true"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+      <div class="dropdown-container">
+        <admin-dropdown
+          color="paleyellow"
+          text="with headers"
+          [options]="optionsWithHeaders"
+          [dropup]="true"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+        <admin-dropdown
+          color="brown"
+          text="disabled"
+          [outlined]="true"
+          [disabled]="true"
+          [options]="options"
+          [dropup]="true"
+          [hover]="true"
+          [split]="true"
+        ></admin-dropdown>
+      </div>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
