@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link CodemirrorComponent}
+ */
 @Component({
   templateUrl: './codemirror-demo.component.html',
   styleUrls: ['./codemirror-demo.component.scss'],
