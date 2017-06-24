@@ -1,5 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link C3JSChartComponent}
+ * Examples adapted from http://c3js.org/examples.html
+ */
 @Component({
   templateUrl: './c3-js-demo.component.html',
   styleUrls: ['./c3-js-demo.component.scss'],
@@ -11,6 +15,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ['data1', 30, 200, 100, 400, 150, 250],
         ['data2', 50, 20, 10, 40, 15, 25],
       ],
+      header: 'Line chart',
     },
     {
       columns: [
@@ -20,6 +25,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
       ],
       type: 'bar',
       group: true,
+      header: 'Stacked bar chart',
     },
     {
       columns: [
@@ -27,15 +33,18 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ['data2', 130, 100, 140, 200, 150, 50],
       ],
       type: 'bar',
+      header: 'Bar chart',
     },
     {
       x: 'time',
       columns: [
-        ['time', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04', '2013-01-05', '2013-01-06'],
+        ['time', '2013-01-01', '2013-01-02', '2013-01-03', '2013-01-04',
+          '2013-01-05', '2013-01-06'],
         ['data1', 30, 200, 100, 400, 150, 250],
         ['data2', 130, 340, 200, 500, 250, 350],
       ],
       type: 'timeseries',
+      header: 'Time series chart',
     },
     {
       columns: [
@@ -43,6 +52,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ['data2', 130, 100, 140, 200, 150, 50],
       ],
       type: 'spline',
+      header: 'Spline chart',
     },
     {
       columns: [
@@ -50,6 +60,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ['data2', 130, 100, 140, 200, 150, 50],
       ],
       type: 'step',
+      header: 'Step chart',
     },
     {
       columns: [
@@ -57,6 +68,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ['data2', 130, 100, 140, 200, 150, 50],
       ],
       type: 'area',
+      header: 'Area chart',
     },
     {
       // iris data from R
@@ -84,6 +96,7 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ],
       ],
       type: 'pie',
+      header: 'Pie chart',
     },
     {
       x: {
@@ -122,11 +135,11 @@ export class C3JSDemoComponent implements OnInit, OnDestroy {
         ],
       ],
       type: 'scatter',
+      header: 'Scatter chart',
     },
   ];
 
   gauge = 10;
-
   private interval: any;
 
   ngOnInit(): void {

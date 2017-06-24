@@ -1,9 +1,14 @@
-<h1>chart js demo</h1>
-<admin-chartjs-chart
-  *ngFor="let chart of charts"
-  [type]="chart.type"
-  [labels]="chart.labels"
-  [datasets]="chart.datasets"
-  [width]="1000"
-  [height]="300"
-></admin-chart>
+<admin-grid *ngFor="let chart of charts">
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">{{chart.header}}</h3>
+      <admin-chartjs-chart
+        [type]="chart.type"
+        [labels]="chart.labels"
+        [datasets]="chart.datasets"
+        [width]="1000"
+        [height]="300"
+      ></admin-chartjs-chart>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

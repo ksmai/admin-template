@@ -42,7 +42,8 @@ export class MorrisJSChartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.drawChart();
+    // wait for a tick so that the chart is aware of container's width
+    setTimeout(() => this.drawChart(), 0);
   }
 
   private drawChart(): void {
@@ -54,6 +55,7 @@ export class MorrisJSChartComponent implements OnInit {
       xkey: this.xkey,
       ykeys: this.ykeys,
       labels: this.labels,
+      resize: true,
     });
   }
 

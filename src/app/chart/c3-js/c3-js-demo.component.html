@@ -1,13 +1,25 @@
-<h1>c3 js demo</h1>
-<admin-c3js-chart
-  *ngFor="let chart of charts"
-  [columns]="chart.columns"
-  [type]="chart.type"
-  [group]="!!chart.group"
-  [x]="chart.x"
-></admin-c3js-chart>
+<admin-grid *ngFor="let chart of charts">
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">{{chart.header}}</h3>
+      <admin-c3js-chart
+        [columns]="chart.columns"
+        [type]="chart.type"
+        [group]="!!chart.group"
+        [x]="chart.x"
+      ></admin-c3js-chart>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
 
-<admin-c3js-chart
-  [columns]="['data', this.gauge]"
-  type="gauge"
-></admin-c3js-chart>
+<admin-grid>
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">Gauge</h3>
+      <admin-c3js-chart
+        [columns]="['data', gauge]"
+        type="gauge"
+      ></admin-c3js-chart>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

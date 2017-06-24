@@ -1,10 +1,58 @@
-<admin-morrisjs-chart
-  *ngFor="let chart of charts"
-  [data]="chart.data"
-  [xkey]="chart.xkey"
-  [ykey]="chart.ykey"
-  [ykeys]="chart.ykeys"
-  [label]="chart.label"
-  [labels]="chart.labels"
-  [type]="chart.type"
-></admin-morrisjs-chart>
+<!--
+  Cannot use *ngFor here due to a bug in Angular, see:
+  https://github.com/angular/angular/issues/13893
+-->
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">{{charts[0].header}}</h3>
+      <admin-morrisjs-chart
+        [data]="charts[0].data"
+        [xkey]="charts[0].xkey"
+        [ykey]="charts[0].ykey"
+        [ykeys]="charts[0].ykeys"
+        [label]="charts[0].label"
+        [labels]="charts[0].labels"
+        [type]="charts[0].type"
+      ></admin-morrisjs-chart>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">{{charts[1].header}}</h3>
+      <admin-morrisjs-chart
+        [data]="charts[1].data"
+        [xkey]="charts[1].xkey"
+        [ykey]="charts[1].ykey"
+        [ykeys]="charts[1].ykeys"
+        [label]="charts[1].label"
+        [labels]="charts[1].labels"
+        [type]="charts[1].type"
+      ></admin-morrisjs-chart>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel>
+      <h3 class="header">{{charts[2].header}}</h3>
+      <admin-morrisjs-chart
+        [data]="charts[2].data"
+        [xkey]="charts[2].xkey"
+        [ykey]="charts[2].ykey"
+        [ykeys]="charts[2].ykeys"
+        [label]="charts[2].label"
+        [labels]="charts[2].labels"
+        [type]="charts[2].type"
+      ></admin-morrisjs-chart>
+    </admin-panel>
+    <admin-panel>
+      <h3 class="header">{{charts[3].header}}</h3>
+      <admin-morrisjs-chart
+        [data]="charts[3].data"
+        [xkey]="charts[3].xkey"
+        [ykey]="charts[3].ykey"
+        [ykeys]="charts[3].ykeys"
+        [label]="charts[3].label"
+        [labels]="charts[3].labels"
+        [type]="charts[3].type"
+      ></admin-morrisjs-chart>
+  </ng-template>
+</admin-grid>

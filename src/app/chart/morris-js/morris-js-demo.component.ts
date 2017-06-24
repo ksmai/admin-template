@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link MorrisJSChartComponent}
+ * Example data are from http://morrisjs.github.io/morris.js
+ */
 @Component({
   templateUrl: './morris-js-demo.component.html',
   styleUrls: ['./morris-js-demo.component.scss'],
 })
 export class MorrisJSDemoComponent {
-  // demo data from http://morrisjs.github.io/morris.js
   charts = [
     {
+      header: 'Line chart',
       type: 'line',
       data: [
         { y: '2006', a: 100, b: 90 },
@@ -23,6 +27,7 @@ export class MorrisJSDemoComponent {
       labels: ['Series A', 'Series B'],
     },
     {
+      header: 'Area chart',
       type: 'area',
       data: [
         { y: '2006', a: 100, b: 90 },
@@ -38,6 +43,7 @@ export class MorrisJSDemoComponent {
       labels: ['Series A', 'Series B'],
     },
     {
+      header: 'Bar chart',
       type: 'bar',
       data: [
         { y: '2006', a: 100, b: 90 },
@@ -53,6 +59,7 @@ export class MorrisJSDemoComponent {
       labels: ['Series A', 'Series B'],
     },
     {
+      header: 'Donut chart',
       type: 'donut',
       data: [
         { label: 'Download Sales', value: 12 },

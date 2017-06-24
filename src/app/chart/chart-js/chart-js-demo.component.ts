@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link ChartJSChartComponent}
+ */
 @Component({
   templateUrl: './chart-js-demo.component.html',
   styleUrls: ['./chart-js-demo.component.scss'],
@@ -7,6 +10,7 @@ import { Component } from '@angular/core';
 export class ChartJSDemoComponent {
   charts = [
     {
+      header: 'Bar chart',
       type: 'bar',
       labels: ['Apple', 'Orange', 'Pineapple', 'Grape', 'Banana'],
       datasets: {
@@ -15,6 +19,7 @@ export class ChartJSDemoComponent {
       },
     },
     {
+      header: 'Horizontal bar chart',
       type: 'horizontalBar',
       labels: ['January', 'February', 'March', 'April', 'May', 'June'],
       datasets: [
@@ -29,6 +34,7 @@ export class ChartJSDemoComponent {
       ],
     },
     {
+      header: 'Line chart',
       type: 'line',
       labels: ['2011', '2012', '2013', '2014', '2015', '2016'],
       datasets: [
@@ -43,6 +49,7 @@ export class ChartJSDemoComponent {
       ],
     },
     {
+      header: 'Radar chart',
       type: 'radar',
       labels: ['Speed', 'Power', 'Height', 'Weight', 'Life expectancy'],
       datasets: [
@@ -57,6 +64,7 @@ export class ChartJSDemoComponent {
       ],
     },
     {
+      header: 'Pie chart',
       type: 'pie',
       labels: ['A', 'B', 'C'],
       datasets: {
@@ -64,6 +72,7 @@ export class ChartJSDemoComponent {
       },
     },
     {
+      header: 'Doughnut chart',
       type: 'doughnut',
       labels: ['X', 'Y', 'Z'],
       datasets: [{
@@ -71,6 +80,7 @@ export class ChartJSDemoComponent {
       }],
     },
     {
+      header: 'Polar area chart',
       type: 'polarArea',
       labels: ['P', 'Q', 'R', 'S', 'T'],
       datasets: {
@@ -78,6 +88,7 @@ export class ChartJSDemoComponent {
       },
     },
     {
+      header: 'Bubble chart',
       type: 'bubble',
       datasets: {
         label: 'My data',
