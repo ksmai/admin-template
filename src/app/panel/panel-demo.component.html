@@ -88,7 +88,14 @@
 
 <admin-grid [cols]="[6, 6]">
   <ng-template>
-    <admin-panel [tabbed]="true">
+    <admin-panel
+      [tabbed]="true"
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#e299b7"
+      footerColor="#e299b7"
+    >
+      <header><h3>Header of stacked tabs</h3></header>
       <admin-tab
         color="pink"
         [pills]="true"
@@ -101,11 +108,19 @@
           { name: '3', content: 'The third tab' }
         ]"
       ></admin-tab>
+      <footer><h6>Some footer</h6></footer>
     </admin-panel>
   </ng-template>
 
   <ng-template>
-    <admin-panel [tabbed]="true">
+    <admin-panel
+      [tabbed]="true"
+      [showHeader]="true"
+      [showFooter]="true"
+      headerColor="#92bdc1"
+      footerColor="#92bdc1"
+    >
+      <header><h3>Stacked tabs on the right</h3></header>
       <admin-tab
         color="grayishcyan"
         [pills]="true"
@@ -119,6 +134,7 @@
           { name: '3', content: 'The third tab' }
         ]"
       ></admin-tab>
+      <footer><h6>Some footer</h6></footer>
     </admin-panel>
   </ng-template>
 </admin-grid>

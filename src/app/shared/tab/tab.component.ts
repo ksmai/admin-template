@@ -26,7 +26,8 @@ interface ITab {
  *   - pills: if true, display pills instead of tabs
  *   - stacked: if true and pills is also true, stack the pills vertically
  *   - justified: if true, justify the tabs/pills
- *   - inverse: if true, invert the colors of the tabs/pills
+ *   - inverse: if true, invert the colors of the tabs/pills, intended for
+ *              use with pills (and preferably, justified)
  *   - reversed: if true, put tabs at the bottom (or right, if stacked)
  *
  * @example
