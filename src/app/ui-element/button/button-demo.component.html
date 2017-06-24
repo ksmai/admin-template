@@ -1,105 +1,339 @@
-<admin-button size="lg">default</admin-button>
-<admin-button tag="primary" size="lg">primary</admin-button>
-<admin-button tag="success" size="lg">success</admin-button>
-<admin-button tag="info" size="lg">info</admin-button>
-<admin-button tag="warning" size="lg">warning</admin-button>
-<admin-button tag="danger" size="lg">Danger</admin-button>
-<br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <admin-panel [showHeader]="true" headerColor="rgb(234,120,130)">
+        <header><h3>Buttons &mdash; outlined</h3></header>
+        <ng-container *ngFor="let size of sizes">
+          <h4>{{expandSize(size)}}</h4>
+          <admin-button
+            *ngFor="let tag of tags"
+            [outlined]="true"
+            [tag]="tag"
+            [size]="size"
+          >{{tag}}</admin-button>
+        </ng-container>
+      </admin-panel>
 
-<admin-button>default</admin-button>
-<admin-button tag="primary">primary</admin-button>
-<admin-button tag="success">success</admin-button>
-<admin-button tag="info">info</admin-button>
-<admin-button tag="warning">warning</admin-button>
-<admin-button tag="danger">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(74,144,226)">
+        <header>
+          <h3>Buttons &mdash; outlined (inverse)</h3>
+          <admin-button
+            *ngFor="let tag of tags"
+            [inverse]="true"
+            [tag]="tag"
+          >{{tag}}</admin-button>
+        </header>
+      </admin-panel>
 
-<admin-button size="sm">default</admin-button>
-<admin-button tag="primary" size="sm">primary</admin-button>
-<admin-button tag="success" size="sm">success</admin-button>
-<admin-button tag="info" size="sm">info</admin-button>
-<admin-button tag="warning" size="sm">warning</admin-button>
-<admin-button tag="danger" size="sm">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(180,161,221)">
+        <header><h3>Button group</h3></header>
+        <h4>Basic</h4>
+        <h5>Single color</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="purple"
+          ></admin-button>
+        </div>
+        <h5>Multi-colored</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            [colors]="['paleblue', 'pink', 'paleyellow']"
+          ></admin-button>
+        </div>
 
-<admin-button size="xs">default</admin-button>
-<admin-button tag="primary" size="xs">primary</admin-button>
-<admin-button tag="success" size="xs">success</admin-button>
-<admin-button tag="info" size="xs">info</admin-button>
-<admin-button tag="warning" size="xs">warning</admin-button>
-<admin-button tag="danger" size="xs">Danger</admin-button>
-<br><br>
+        <h4>Outlined</h4>
+        <h5>Single color</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="purple"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+        <h5>Multi-colored</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            [colors]="['darkcyan', 'deepred', 'darkorange']"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button size="lg" [outlined]="true">default</admin-button>
-<admin-button tag="primary" size="lg" [outlined]="true">primary</admin-button>
-<admin-button tag="success" size="lg" [outlined]="true">success</admin-button>
-<admin-button tag="info" size="lg" [outlined]="true">info</admin-button>
-<admin-button tag="warning" size="lg" [outlined]="true">warning</admin-button>
-<admin-button tag="danger" size="lg" [outlined]="true">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(168,85,58)">
+        <header><h3>Button groups: sizing (normal)</h3></header>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="red"
+            size="lg"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="green"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="blue"
+            size="sm"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="paleyellow"
+            size="xs"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button [outlined]="true">default</admin-button>
-<admin-button tag="primary" [outlined]="true">primary</admin-button>
-<admin-button tag="success" [outlined]="true">success</admin-button>
-<admin-button tag="info" [outlined]="true">info</admin-button>
-<admin-button tag="warning" [outlined]="true">warning</admin-button>
-<admin-button tag="danger" [outlined]="true">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(255,196,151)">
+        <header><h3>Button groups: sizing (Outlined)</h3></header>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="red"
+            size="lg"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="green"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="blue"
+            size="sm"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['Left', 'Middle', 'Right']"
+            color="paleyellow"
+            size="xs"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button size="sm" [outlined]="true">default</admin-button>
-<admin-button tag="primary" size="sm" [outlined]="true">primary</admin-button>
-<admin-button tag="success" size="sm" [outlined]="true">success</admin-button>
-<admin-button tag="info" size="sm" [outlined]="true">info</admin-button>
-<admin-button tag="warning" size="sm" [outlined]="true">warning</admin-button>
-<admin-button tag="danger" size="sm" [outlined]="true">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(239,107,93)">
+        <header><h3>Buttons &mdash; outlined (colors)</h3></header>
+        <admin-button
+          *ngFor="let color of colors"
+          [color]="color"
+          [outlined]="true"
+        >{{color}}</admin-button>
+      </admin-panel>
+    </div>
 
-<admin-button size="xs" [outlined]="true">default</admin-button>
-<admin-button tag="primary" size="xs" [outlined]="true">primary</admin-button>
-<admin-button tag="success" size="xs" [outlined]="true">success</admin-button>
-<admin-button tag="info" size="xs" [outlined]="true">info</admin-button>
-<admin-button tag="warning" size="xs" [outlined]="true">warning</admin-button>
-<admin-button tag="danger" size="xs" [outlined]="true">Danger</admin-button>
-<br><br>
+    <div class="col-md-6">
+      <admin-panel [showHeader]="true" headerColor="rgb(85,201,166)">
+        <header><h3>Buttons &mdash; normal</h3></header>
+        <ng-container *ngFor="let size of sizes">
+          <h4>{{expandSize(size)}}</h4>
+          <admin-button
+            *ngFor="let tag of tags"
+            [tag]="tag"
+            [size]="size"
+          >{{tag}}</admin-button>
+        </ng-container>
+      </admin-panel>
 
-<admin-button size="lg" [inverse]="true">default</admin-button>
-<admin-button tag="primary" size="lg" [inverse]="true">primary</admin-button>
-<admin-button tag="success" size="lg" [inverse]="true">success</admin-button>
-<admin-button tag="info" size="lg" [inverse]="true">info</admin-button>
-<admin-button tag="warning" size="lg" [inverse]="true">warning</admin-button>
-<admin-button tag="danger" size="lg" [inverse]="true">Danger</admin-button>
-<br><br>
+      <admin-panel [showHeader]="true" headerColor="rgb(252,182,33)">
+        <header><h3>Button groups: button toolbar</h3></header>
+        <h4>Basic</h4>
+        <h5>Single color</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', '3', '4']"
+            color="green"
+          ></admin-button>
+          <admin-button
+            [texts]="['5', '6', '7']"
+            color="green"
+          ></admin-button>
+          <admin-button
+            [texts]="['8']"
+            color="green"
+          ></admin-button>
+        </div>
+        <h5>Multi-colored</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', '3', '4']"
+            [colors]="['red', 'pink', 'darkblue', 'blue']"
+          ></admin-button>
+          <admin-button
+            [texts]="['5', '6', '7']"
+            [colors]="['paleblue', 'green', 'yellow']"
+          ></admin-button>
+          <admin-button
+            [texts]="['8']"
+            color="purple"
+          ></admin-button>
+        </div>
 
-<admin-button [inverse]="true">default</admin-button>
-<admin-button tag="primary" [inverse]="true">primary</admin-button>
-<admin-button tag="success" [inverse]="true">success</admin-button>
-<admin-button tag="info" [inverse]="true">info</admin-button>
-<admin-button tag="warning" [inverse]="true">warning</admin-button>
-<admin-button tag="danger" [inverse]="true">Danger</admin-button>
-<br><br>
+        <h4>Outlined</h4>
+        <h5>Single color</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', '3', '4']"
+            color="brown"
+            [outlined]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['5', '6', '7']"
+            color="brown"
+            [outlined]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['8']"
+            color="brown"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+        <h5>Multi-colored</h5>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', '3', '4']"
+            [colors]="['red', 'pink', 'darkblue', 'blue']"
+            [outlined]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['5', '6', '7']"
+            [colors]="['paleblue', 'green', 'brightyellow']"
+            [outlined]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['8']"
+            color="purple"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button size="sm" [inverse]="true">default</admin-button>
-<admin-button tag="primary" size="sm" [inverse]="true">primary</admin-button>
-<admin-button tag="success" size="sm" [inverse]="true">success</admin-button>
-<admin-button tag="info" size="sm" [inverse]="true">info</admin-button>
-<admin-button tag="warning" size="sm" [inverse]="true">warning</admin-button>
-<admin-button tag="danger" size="sm" [inverse]="true">Danger</admin-button>
-<br><br>
+      <admin-panel
+        [showHeader]="true"
+        headerColor="rgb(226,153,183)"
+        class="panel--normal-group"
+      >
+        <header><h3>Button groups: nesting (normal)</h3></header>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', {text:'Dropdown', options:['a','b','c']}]"
+            color="pink"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button size="xs" [inverse]="true">default</admin-button>
-<admin-button tag="primary" size="xs" [inverse]="true">primary</admin-button>
-<admin-button tag="success" size="xs" [inverse]="true">success</admin-button>
-<admin-button tag="info" size="xs" [inverse]="true">info</admin-button>
-<admin-button tag="warning" size="xs" [inverse]="true">warning</admin-button>
-<admin-button tag="danger" size="xs" [inverse]="true">Danger</admin-button>
-<br><br>
+      <admin-panel
+        [showHeader]="true"
+        headerColor="rgb(165,199,236)"
+        class="panel--outlined-group"
+      >
+        <header><h3>Button groups: nesting (outlined)</h3></header>
+        <div class="button-group-wrapper">
+          <admin-button
+            [texts]="['1', '2', {text:'Dropdown', options:['a','b','c']}]"
+            color="paleblue"
+            [outlined]="true"
+          ></admin-button>
+        </div>
+      </admin-panel>
 
-<admin-button [texts]="['1', '2', '3']"></admin-button>
-<admin-button [texts]="['1', '2', '3']" tag="success"></admin-button>
-<admin-button [texts]="['1', '2', '3']" color="pink" [outlined]="true"></admin-button>
-<admin-button [texts]="['1', '2', '3']" [tags]="['primary', 'success', 'info']"></admin-button>
-<admin-button [texts]="['1', '2', '3']" [tags]="['red', 'brown75', 'orange75']"></admin-button>
-<admin-button [texts]="['1', '2', {text:'3', options:['a','b','c'], dropup:true}]" [tags]="['red', 'brown75', 'orange75']" [justified]="true"></admin-button>
-<admin-button [texts]="['1', '2', '3']" [tags]="['red', 'brown75', 'orange75']" [vertical]="true"></admin-button>
-<admin-button [texts]="['left', {text:'middle', options:['o1','opop'], split:true}, 'right']" color="pink" size="lg"></admin-button>
-<admin-button [texts]="[{text:'middle', options:['o1','opop'], split: true}]" color="pink" size="lg"></admin-button>
+      <admin-panel
+        [showHeader]="true"
+        headerColor="rgb(235,160,104)"
+        class="panel--vertical"
+      >
+        <header><h3>Button groups: verical variation</h3></header>
+        <admin-grid [cols]="[6, 6]">
+          <ng-template>
+            <div class="button-group-wrapper">
+              <admin-button
+                color="darkorange"
+                [vertical]="true"
+                [texts]="['Button', 'Button', { text: 'Dropup',
+                  options: ['Dropup link', 'Dropup link'], dropup: true },
+                  'Button', 'Button', { text: 'Dropdown',
+                  options: ['Dropdown link', 'Dropdown link'] },
+                  { text: 'Dropdown',
+                  options: ['Dropdown link', 'Dropdown link'] },
+                  'Button', 'Button']"
+              ></admin-button>
+            </div>
+          </ng-template>
+
+          <ng-template>
+            <div class="button-group-wrapper">
+              <admin-button
+                color="darkorange"
+                [vertical]="true"
+                [outlined]="true"
+                [texts]="['Button', 'Button', { text: 'Dropup',
+                  options: ['Dropup link', 'Dropup link'], dropup: true },
+                  'Button', 'Button', { text: 'Dropdown',
+                  options: ['Dropdown link', 'Dropdown link'] },
+                  { text: 'Dropdown',
+                  options: ['Dropdown link', 'Dropdown link'] },
+                  'Button', 'Button']"
+              ></admin-button>
+            </div>
+          </ng-template>
+        </admin-grid>
+      </admin-panel>
+
+      <admin-panel
+        [showHeader]="true"
+        headerColor="rgb(67,82,90)"
+        class="panel--justified"
+      >
+        <header><h3>Button groups: justified button groups</h3></header>
+          <admin-button
+            [texts]="['left', 'middle', 'right']"
+            [colors]="['brown', 'blue', 'green']"
+            [justified]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['left', 'middle', { text: 'dropdown', options: [
+              'dropdown link', 'dropdown link'] }]"
+            [colors]="['red', 'pink', 'pinkishred']"
+            [justified]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['left', 'middle', 'right']"
+            color="green"
+            [outlined]="true"
+            [justified]="true"
+          ></admin-button>
+          <admin-button
+            [texts]="['left', 'middle', { text: 'dropdown', options: [
+              'dropdown link', 'dropdown link'] }]"
+            color="brightyellow"
+            [outlined]="true"
+            [justified]="true"
+          ></admin-button>
+      </admin-panel>
+
+      <admin-panel [showHeader]="true" headerColor="rgb(81,94,120)">
+        <header><h3>Buttons &mdash; normal (colors)</h3></header>
+        <admin-button
+          *ngFor="let color of colors"
+          [color]="color"
+        >{{color}}</admin-button>
+      </admin-panel>
+    </div>
+  </div>
+</div>

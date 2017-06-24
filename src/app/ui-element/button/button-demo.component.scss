@@ -1,0 +1,29 @@
+admin-button {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.button-group-wrapper {
+  text-align: center;
+}
+
+.panel--justified {
+  z-index: 2;
+}
+
+.panel--vertical {
+  z-index: 3;
+}
+
+.panel--outlined-group {
+  z-index: 4;
+}
+
+.panel--normal-group {
+  z-index: 5;
+}
