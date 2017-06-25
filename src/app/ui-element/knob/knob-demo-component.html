@@ -1,53 +1,121 @@
-<admin-knob
-  [value]="75"
-  fgColor="#f09fa6"
-  inputColor="#f09fa6"
-></admin-knob>
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(180,161,221)">
+      <header><h3>jQuery knobs</h3></header>
+      <section class="knobs">
+        <admin-knob
+          class="knob"
+          [value]="75"
+          fgColor="#f09fa6"
+          inputColor="#f09fa6"
+        ></admin-knob>
 
-<admin-knob
-  [value]="29"
-  fgColor="#4a90e2"
-  inputColor="#4a90e2"
-  [cursor]="30"
-></admin-knob>
+        <admin-knob
+          class="knob"
+          [value]="29"
+          fgColor="#4a90e2"
+          inputColor="#4a90e2"
+          [cursor]="30"
+        ></admin-knob>
 
-<admin-knob
-  [value]="50"
-  fgColor="#b4a1dd"
-  inputColor="#b4a1dd"
-  [displayPrevious]="true"
-></admin-knob>
+        <admin-knob
+          class="knob"
+          [value]="50"
+          fgColor="#b4a1dd"
+          inputColor="#b4a1dd"
+          [displayPrevious]="true"
+        ></admin-knob>
 
-<admin-knob
-  [value]="35"
-  fgColor="#a8553a"
-  inputColor="#a8553a"
-  [capRounded]="true"
-  [angleOffset]="90"
-></admin-knob>
+        <admin-knob
+          class="knob"
+          [value]="35"
+          fgColor="#a8553a"
+          inputColor="#a8553a"
+          [capRounded]="true"
+          [angleOffset]="90"
+        ></admin-knob>
 
-<admin-knob
-  [value]="35"
-  fgColor="#ffc497"
-  inputColor="#ffc497"
-  [angleArc]="250"
-  [angleOffset]="-125"
-></admin-knob>
+        <admin-knob
+          class="knob"
+          [value]="35"
+          fgColor="#ffc497"
+          inputColor="#ffc497"
+          [angleArc]="250"
+          [angleOffset]="-125"
+        ></admin-knob>
 
-<admin-knob
-  [value]="-11000"
-  [step]="1000"
-  [min]="-15000"
-  [max]="15000"
-  fgColor="#306c67"
-  inputColor="#306c67"
-  [displayPrevious]="true"
-></admin-knob>
+        <admin-knob
+          class="knob"
+          [value]="-11000"
+          [step]="1000"
+          [min]="-15000"
+          [max]="15000"
+          fgColor="#306c67"
+          inputColor="#306c67"
+          [displayPrevious]="true"
+        ></admin-knob>
 
-<admin-knob
-  [value]="75"
-  fgColor="#eba068"
-  inputColor="#eba068"
-  bgColor="#fff"
-  [thickness]="0.2"
-></admin-knob>
+      </section>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
+
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="#e2bea3">
+      <header>
+        <h3>jQuery knobs: alternate</h3>
+        <div class="alternate-knob">
+          <admin-knob
+            [value]="75"
+            fgColor="#eba068"
+            inputColor="#eba068"
+            bgColor="#fff"
+            [thickness]="0.2"
+          ></admin-knob>
+        </div>
+      </header>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(63,63,59)">
+      <header>
+        <h3>jQuery knobs: superpose</h3>
+        <div class="superpose">
+          <admin-knob
+            [max]="23"
+            [(value)]="hour"
+            [displayInput]="false"
+            bgColor="#2e2e2e"
+            fgColor="rgb(240,159,166)"
+            [width]="270"
+            [height]="270"
+            [thickness]="0.2"
+            class="superpose__knob superpose__knob--hour"
+          ></admin-knob>
+          <admin-knob
+            [max]="59"
+            [(value)]="minute"
+            [displayInput]="false"
+            bgColor="#2e2e2e"
+            fgColor="rgb(124,213,186)"
+            [thickness]="0.2"
+            class="superpose__knob superpose__knob--minute"
+          ></admin-knob>
+          <admin-knob
+            [max]="59"
+            [(value)]="second"
+            [displayInput]="false"
+            bgColor="#2e2e2e"
+            fgColor="rgb(160,199,242)"
+            [width]="150"
+            [height]="150"
+            [thickness]="0.2"
+            class="superpose__knob superpose__knob--second"
+          ></admin-knob>
+        </div>
+      </header>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

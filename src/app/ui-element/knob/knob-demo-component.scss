@@ -1,0 +1,32 @@
+.knobs {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.knob {
+  margin: 30px;
+}
+
+.alternate-knob {
+  margin: 30px auto;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.superpose {
+  height: 300px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+
+.superpose__knob {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
