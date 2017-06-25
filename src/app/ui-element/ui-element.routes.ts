@@ -22,7 +22,7 @@ export const uiElementRoutes: Routes = [
       { path: 'sliders', component: SliderDemoComponent },
       { path: 'knobs', component: KnobDemoComponent },
       { path: 'modals', component: ModalDemoComponent },
-      { path: 'messengers', component: MessengerDemoComponent },
+      { path: 'messenger', component: MessengerDemoComponent },
       { path: '**', redirectTo: 'buttons' },
     ],
   },

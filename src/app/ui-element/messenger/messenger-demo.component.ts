@@ -4,6 +4,10 @@ import { Observable } from 'rxjs/Observable';
 
 import { MessengerService } from '../../core/messenger.service';
 
+/**
+ * Demonstrate the usage of {@link MessengerService}
+ * Some examples adapted from http://github.hubspot.com/messenger/
+ */
 @Component({
   templateUrl: './messenger-demo.component.html',
   styleUrls: ['./messenger-demo.component.scss'],

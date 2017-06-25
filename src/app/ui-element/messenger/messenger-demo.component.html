@@ -1,14 +1,137 @@
-<button (click)="triggerBasic()">Trigger basic</button>
-<button (click)="triggerInfo()">Trigger info</button>
-<button (click)="triggerError()">Trigger error</button>
-<button (click)="triggerSuccess()">Trigger success</button>
-<button (click)="triggerNotification()">Trigger Notification</button>
-<button (click)="triggerLaunch()">Trigger Launch</button>
-<button (click)="triggerChoice()">Trigger Choice</button>
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(255,201,160)">
+      <header><h3>HubSpot messenger</h3></header>
+      <admin-table [striped]="true" [hover]="true">
+        <tbody>
+          <tr>
+            <th>Basic notification</th>
+            <td class="text-right">
+              <admin-button
+                tag="default"
+                [outlined]="true"
+                (click)="triggerBasic()"
+              >Trigger basic</admin-button>
+            </td>
+          </tr>
 
-<button (click)="topLeft()">Top left</button>
-<button (click)="top()">Top</button>
-<button (click)="topRight()">Top right</button>
-<button (click)="bottomLeft()">Bottom left</button>
-<button (click)="bottom()">Bottom</button>
-<button (click)="bottomRight()">Bottom right</button>
+          <tr>
+            <th>Info notification (singleton)</th>
+            <td class="text-right">
+              <admin-button
+                tag="info"
+                [outlined]="true"
+                (click)="triggerInfo()"
+              >Trigger info</admin-button>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Error notification (singleton)</th>
+            <td class="text-right">
+              <admin-button
+                tag="danger"
+                [outlined]="true"
+                (click)="triggerError()"
+              >Trigger error</admin-button>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Success notification</th>
+            <td class="text-right">
+              <admin-button
+                tag="success"
+                [outlined]="true"
+                (click)="triggerSuccess()"
+              >Trigger success</admin-button>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Updating notification</th>
+            <td class="text-right">
+              <admin-button
+                tag="primary"
+                [outlined]="true"
+                (click)="triggerNotification()"
+              >Trigger Notification</admin-button>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Taking actions</th>
+            <td class="text-right">
+              <admin-button
+                tag="warning"
+                [outlined]="true"
+                (click)="triggerLaunch()"
+              >Trigger Launch</admin-button>
+            </td>
+          </tr>
+
+          <tr>
+            <th>Taking actions with custom buttons</th>
+            <td class="text-right">
+              <admin-button
+                tag="warning"
+                [outlined]="true"
+                (click)="triggerChoice()"
+              >Trigger Choice</admin-button>
+            </td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(68,193,172)">
+      <header><h3>Notification layout</h3></header>
+      <admin-table [striped]="true" [hover]="true">
+        <tbody>
+          <tr>
+            <td class="text-left">
+              <admin-button
+                color="darkgreen40"
+                (click)="topLeft()"
+              >Top left</admin-button>
+            </td>
+            <td class="text-center">
+              <admin-button
+                color="darkgreen40"
+                (click)="top()"
+              >Top</admin-button>
+            </td>
+            <td class="text-right">
+              <admin-button
+                color="darkgreen40"
+                (click)="topRight()"
+              >Top right</admin-button>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-left">
+              <admin-button
+                color="darkgreen40"
+                (click)="bottomLeft()"
+              >Bottom left</admin-button>
+            </td>
+            <td class="text-center">
+              <admin-button
+                color="darkgreen40"
+                (click)="bottom()"
+              >Bottom</admin-button>
+            </td>
+            <td class="text-right">
+              <admin-button
+                color="darkgreen40"
+                (click)="bottomRight()"
+              >Bottom right</admin-button>
+            </td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

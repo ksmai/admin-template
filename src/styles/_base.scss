@@ -5,3 +5,9 @@ body {
   font: 400 16px/1.5 "Roboto", sans-serif;
   color: rgba(0, 0, 0, .7);
 }
+
+/* fix a bug in HubSpot messenger's stylesheet */
+ul.messenger.messenger-theme-flat .messenger-message .messenger-actions a {
+  text-decoration: none;
+  padding-right: 11px;
+}
