@@ -16,8 +16,11 @@ import 'typeahead.js/dist/typeahead';
 
 import 'bootstrap/js/popover';
 
-import 'X-editable/dist/bootstrap3-editable/css/bootstrap-editable.css';
+// This file is copied to fix some syntax issues causing problems in
+// production build
+// import 'X-editable/dist/bootstrap3-editable/css/bootstrap-editable.css';
 import 'X-editable/dist/bootstrap3-editable/js/bootstrap-editable';
+import '../../../styles/bootstrap-editable.css';
 
 import 'X-editable/dist/inputs-ext/address/address';
 import 'X-editable/dist/inputs-ext/address/address.css';

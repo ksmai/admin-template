@@ -57,8 +57,8 @@ export class PanelComponent implements OnChanges, AfterViewInit {
   @ViewChild('header') headerEl: any;
   @ViewChild('footer') footerEl: any;
 
-  @HostBinding('class.minimized') private isMinimized = false;
-  @HostBinding('class.closed') private isClosed = false;
+  @HostBinding('class.minimized') isMinimized = false;
+  @HostBinding('class.closed') isClosed = false;
 
   ngOnChanges(): void {
     this.updateColors();

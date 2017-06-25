@@ -9,7 +9,9 @@ import {
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
-import 'bootstrap-slider/src/js/bootstrap-slider';
+// uglifyJS error
+// import 'bootstrap-slider/src/js/bootstrap-slider';
+import 'bootstrap-slider/dist/bootstrap-slider';
 import 'bootstrap-slider/src/sass/bootstrap-slider.scss';
 import $ = require('jquery');
 
