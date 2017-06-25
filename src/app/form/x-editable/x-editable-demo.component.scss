@@ -1,0 +1,16 @@
+:host /deep/ .tablesaw-overflow {
+  overflow-x: initial;
+}
+
+.x-editable-controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  min-width: 0;
+  margin-bottom: 20px;
+}
+
+.mode-selector {
+  margin-left: 15px;
+}

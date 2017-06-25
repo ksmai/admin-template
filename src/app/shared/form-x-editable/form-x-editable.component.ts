@@ -65,6 +65,7 @@ export class FormXEditableComponent implements AfterViewInit, OnChanges {
   @Input() showbuttons: boolean|string = true;
   @Input() source: Array<{ value: number, text: string }>;
   @Input() combodateTemplate: string;
+  @Input() combodateViewformat: string;
   @Input() typeahead: any;
   @Input() select2: any;
 
@@ -97,6 +98,10 @@ export class FormXEditableComponent implements AfterViewInit, OnChanges {
 
     if (this.type === 'combodate' && this.combodateTemplate) {
       Object.assign(options, { template: this.combodateTemplate });
+    }
+
+    if (this.type === 'combodate' && this.combodateViewformat) {
+      Object.assign(options, { viewformat: this.combodateViewformat });
     }
 
     if (this.type === 'typeaheadjs' && this.typeahead) {

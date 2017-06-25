@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link FormXEditableComponent}
+ * Some examples from https://vitalets.github.io/x-editable/demo-bs3.html
+ */
 @Component({
   templateUrl: './x-editable-demo.component.html',
   styleUrls: ['./x-editable-demo.component.scss'],

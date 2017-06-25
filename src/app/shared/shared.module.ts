@@ -18,7 +18,6 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropzoneComponent } from './dropzone/dropzone.component';
 import { EditorComponent } from './editor/editor.component';
 import { FontComponent } from './font/font.component';
-import { FormControlComponent } from './form-control/form-control.component';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
 import { FormXEditableComponent } from './form-x-editable/form-x-editable.component';
 import { GridComponent } from './grid/grid.component';
@@ -56,7 +55,6 @@ import { TableComponent } from './table/table.component';
     DropzoneComponent,
     EditorComponent,
     FontComponent,
-    FormControlComponent,
     FormWizardComponent,
     FormXEditableComponent,
     GridComponent,
@@ -90,7 +88,6 @@ import { TableComponent } from './table/table.component';
     DropzoneComponent,
     EditorComponent,
     FontComponent,
-    FormControlComponent,
     FormWizardComponent,
     FormXEditableComponent,
     GridComponent,
