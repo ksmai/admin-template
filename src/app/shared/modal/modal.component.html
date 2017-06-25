@@ -1,6 +1,6 @@
-<button type="button" class="btn btn-primary btn-lg" (click)="onLaunch()">
+<admin-button tag="primary" (click)="onLaunch()">
   <ng-content select="[modalButton]"></ng-content>
-</button>
+</admin-button>
 
 <div class="modal fade" tabindex="-1" #modal>
   <div [ngClass]="classes">

@@ -1,60 +1,149 @@
-<button type="button" (click)="openAlert()">alert</button>
-<button type="button" (click)="openConfirm()">confirm</button>
-<button type="button" (click)="openPrompt()">prompt</button>
-<button type="button" (click)="openLogin()">login</button>
-<button type="button" (click)="openPicker()">picker</button>
+<!-- trigger buttons for vex modals -->
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(234,133,100)">
+      <header><h3>HubSpot Vex modals</h3></header>
 
-<admin-modal>
-  <ng-container modalButton>Launch basic modal</ng-container>
-  <ng-container modalTitle>Modal title</ng-container>
-  <ng-container>One fine body&hellip;</ng-container>
-  <ng-container modalNo>Close</ng-container>
-  <ng-container modalYes>Save Changes</ng-container>
-</admin-modal>
+      <admin-table [striped]="true" [hover]="true">
+        <tbody>
+          <tr>
+            <th>Alert demo</th>
+            <td class="demo-button">
+              <admin-button
+                [outlined]="true"
+                tag="danger"
+                (click)="openAlert()"
+              >Alert</admin-button>
+            </td>
+          </tr>
+          <tr>
+            <th>Confirm demo</th>
+            <td class="demo-button">
+              <admin-button
+                [outlined]="true"
+                tag="info"
+                (click)="openConfirm()"
+              >Confirm</admin-button>
+            </td>
+          </tr>
+          <tr>
+            <th>Prompt demo</th>
+            <td class="demo-button">
+              <admin-button
+                [outlined]="true"
+                tag="success"
+                (click)="openPrompt()"
+              >Prompt</admin-button>
+            </td>
+          </tr>
+          <tr>
+            <th>Login demo</th>
+            <td class="demo-button">
+              <admin-button
+                [outlined]="true"
+                tag="primary"
+                (click)="openLogin()"
+              >Login</admin-button>
+            </td>
+          </tr>
+          <tr>
+            <th>Datetime picker + color picker demo</th>
+            <td class="demo-button">
+              <admin-button
+                [outlined]="true"
+                tag="warning"
+                (click)="openPicker()"
+              >Pickers</admin-button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
 
-<admin-modal size="sm">
-  <ng-container modalButton>Launch small modal</ng-container>
-  <ng-container modalTitle>Modal title</ng-container>
-  <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
-  <ng-container modalNo>Close</ng-container>
-  <ng-container modalYes>Save Changes</ng-container>
-</admin-modal>
+  <ng-template>
+    <admin-panel
+      [showHeader]="true"
+      headerColor="#428bca"
+      class="bootstrap-modal-panel"
+    >
+      <header><h3>Bootstrap modals</h3></header>
 
-<admin-modal size="lg">
-  <ng-container modalButton>Launch large modal</ng-container>
-  <ng-container modalTitle>Modal title</ng-container>
-  <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
-  <ng-container modalNo>Close</ng-container>
-  <ng-container modalYes>Save Changes</ng-container>
-</admin-modal>
-
-<admin-modal>
-  <ng-container modalButton>Launch long modal</ng-container>
-  <ng-container modalTitle>Modal title</ng-container>
-  <ng-container>
-    <p>Lorem</p><p>ipsum</p><p>dolor</p><p>sit</p><p>amet</p>,<p>consectetur</p><p>adipiscing</p><p>elit</p>,<p>sed</p><p>do</p><p>eiusmod</p><p>tempor</p><p>incididunt</p><p>ut</p><p>labore</p><p>et</p><p>dolore</p><p>magna</p><p>aliqua</p>.<p>Ut</p><p>enim</p><p>ad</p><p>minim</p><p>veniam</p>,<p>quis</p><p>nostrud</p><p>exercitation</p><p>ullamco</p><p>laboris</p><p>nisi</p><p>ut</p><p>aliquip</p><p>ex</p><p>ea</p><p>commodo</p><p>consequat</p>.
-  </ng-container>
-  <ng-container modalNo>Close</ng-container>
-  <ng-container modalYes>Save Changes</ng-container>
-</admin-modal>
-
-<admin-modal>
-  <ng-container modalButton>Launch special modal</ng-container>
-  <ng-container modalTitle>Modal title</ng-container>
-  <ng-container>
-    <h4>Text in a modal</h4>
-    <p>Lorem ipsum</p>
-    <h4>Popover in a modal</h4>
-    <p>
-       <a #popover href="#" data-container="body" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="title">Popover</a> on the right
-    </p>
-    <h4>Tooltips in a modal</h4>
-    <p>There is a 
-      <a href="#" data-placement="right" title="wow." #tooltip>
-        tooltip
-      </a>
-    here</p>
-  </ng-container>
-  <ng-container modalNo>Close</ng-container>
-  <ng-container modalYes>Save Changes</ng-container>
-</admin-modal>
+      <admin-table [striped]="true" [hover]="true">
+        <tbody>
+          <tr>
+            <th>Basic modal demo</th>
+            <td class="demo-button">
+              <admin-modal>
+                <ng-container modalButton>Some basic content</ng-container>
+                <ng-container modalTitle>Modal title</ng-container>
+                <ng-container>One fine body&hellip;</ng-container>
+                <ng-container modalNo>Close</ng-container>
+                <ng-container modalYes>Save Changes</ng-container>
+              </admin-modal>
+            </td>
+          </tr>
+          <tr>
+            <th>Small modal demo</th>
+            <td class="demo-button">
+              <admin-modal size="sm">
+                <ng-container modalButton>Launch small modal</ng-container>
+                <ng-container modalTitle>Modal title</ng-container>
+                <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
+                <ng-container modalNo>Close</ng-container>
+                <ng-container modalYes>Save Changes</ng-container>
+              </admin-modal>
+            </td>
+          </tr>
+          <tr>
+            <th>Large modal demo</th>
+            <td class="demo-button">
+              <admin-modal size="lg">
+                <ng-container modalButton>Launch large modal</ng-container>
+                <ng-container modalTitle>Modal title</ng-container>
+                <ng-container>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</ng-container>
+                <ng-container modalNo>Close</ng-container>
+                <ng-container modalYes>Save Changes</ng-container>
+              </admin-modal>
+            </td>
+          </tr>
+          <tr>
+            <th>Long modal demo</th>
+            <td class="demo-button">
+              <admin-modal>
+                <ng-container modalButton>Launch long modal</ng-container>
+                <ng-container modalTitle>Modal title</ng-container>
+                <ng-container>
+                  <p>Lorem</p><p>ipsum</p><p>dolor</p><p>sit</p><p>amet</p>,<p>consectetur</p><p>adipiscing</p><p>elit</p>,<p>sed</p><p>do</p><p>eiusmod</p><p>tempor</p><p>incididunt</p><p>ut</p><p>labore</p><p>et</p><p>dolore</p><p>magna</p><p>aliqua</p>.<p>Ut</p><p>enim</p><p>ad</p><p>minim</p><p>veniam</p>,<p>quis</p><p>nostrud</p><p>exercitation</p><p>ullamco</p><p>laboris</p><p>nisi</p><p>ut</p><p>aliquip</p><p>ex</p><p>ea</p><p>commodo</p><p>consequat</p>.
+                </ng-container>
+                <ng-container modalNo>Close</ng-container>
+                <ng-container modalYes>Save Changes</ng-container>
+              </admin-modal>
+            </td>
+          </tr>
+          <tr>
+            <th>Special modal with tooltips/popovers</th>
+            <td class="demo-button">
+              <admin-modal>
+                <ng-container modalButton>Launch special modal</ng-container>
+                <ng-container modalTitle>Modal title</ng-container>
+                <ng-container>
+                  <h4>Text in a modal</h4>
+                  <p>Lorem ipsum</p>
+                  <h4>Popover in a modal</h4>
+                  <p><a #popover href="#" data-container="body" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." title="title">Popover</a> on the right</p>
+                  <h4>Tooltips in a modal</h4>
+                  <p>There is a <a href="#" data-placement="right"
+                    title="wow." #tooltip>tooltip</a> here</p>
+                </ng-container>
+                <ng-container modalNo>Close</ng-container>
+                <ng-container modalYes>Save Changes</ng-container>
+              </admin-modal>
+            </td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

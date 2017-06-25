@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 /**
- * Demonstrate the usage of KnobComponent
+ * Demonstrate the usage of {@link KnobComponent}
  */
 @Component({
   templateUrl: './knob-demo-component.html',

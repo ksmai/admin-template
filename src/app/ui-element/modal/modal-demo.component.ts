@@ -6,7 +6,11 @@ import 'bootstrap/js/tooltip';
 import 'bootstrap/js/popover';
 import { VexDialogService } from '../../core/vex-dialog.service';
 
-// example dialog codes from http://github.hubspot.com/vex/api/basic/
+/**
+ * Demonstrate the usage of {@link VexDialogService} and
+ * {@link ModalComponent}
+ * Example dialog snippets from http://github.hubspot.com/vex/api/basic/
+ */
 @Component({
   templateUrl: './modal-demo.component.html',
   styleUrls: ['./modal-demo.component.scss'],
