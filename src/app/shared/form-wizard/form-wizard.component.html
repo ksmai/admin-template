@@ -3,36 +3,79 @@
 <ng-container *ngIf="dynamic">
   <h3>Add Step</h3>
   <section>
-    <p>
-      <label>HTML Title <input type="text" class="add-title"></label>
-      <label>HTML Content
-        <textarea rows="5" class="add-content"></textarea>
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-add-title">
+        HTML Title
       </label>
-    </p>
-    <button type="button" class="add-button">Add</button>
+      <input
+        type="text"
+        class="add-title form-control"
+        id="jquery-steps-add-title"
+      >
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-add-content">
+        HTML Content
+      </label>
+      <textarea
+        rows="5"
+        class="add-content form-control"
+        id="jquery-steps-add-content"
+      ></textarea>
+    </div>
+
+    <admin-button class="add-button">Add</admin-button>
   </section>
   <h3>Insert Step</h3>
   <section>
-    <p>
-      <label>Position (zero-based)
-        <input type="text" class="insert-position">
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-insert-position">
+        Position (zero-based)
       </label>
-      <label>HTML Title
-        <input type="text" class="insert-title">
+      <input
+        type="text"
+        class="insert-position form-control"
+        id="jquery-steps-insert-position"
+      >
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-insert-title">
+        HTML Title
       </label>
-      <label>HTML Content
-        <textarea rows="5" class="insert-content"></textarea>
+      <input
+        type="text"
+        class="insert-title form-control"
+        id="jquery-steps-insert-title"
+      >
+    </div>
+
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-insert-content">
+        HTML Content
       </label>
-    </p>
-    <button type="button" class="insert-button">Insert</button>
+      <textarea
+        rows="5"
+        class="insert-content form-control"
+        id="jquery-steps-insert-content"
+      ></textarea>
+    </div>
+
+    <admin-button class="insert-button">Insert</admin-button>
   </section>
   <h3>Remove Step</h3>
   <section>
-    <p>
-      <label>Position (zero-based)
-        <input type="text" class="remove-position">
+    <div class="form-group">
+      <label class="control-label" for="jquery-steps-remove-position">
+        Position (zero-based)
       </label>
-    </p>
-    <button type="button" class="remove-button">Remove</button>
+      <input
+        type="text"
+        class="remove-position form-control"
+        id="jquery-steps-remove-position"
+      >
+    </div>
+    <admin-button class="remove-button">Remove</admin-button>
   </section>
 </ng-container>

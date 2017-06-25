@@ -1,81 +1,168 @@
-<!-- examples from http://www.jquery-steps.com/Examples -->
-<admin-form-wizard>
-  <h3>Keyboard</h3>
-  <section>
-    <p>Try the keyboard navigation by clicking arrow left or right!</p>
-  </section>
-  <h3>Effects</h3>
-  <section>
-    <p>Wonderful transition effects.</p>
-  </section>
-  <h3>Pager</h3>
-  <section>
-    <p>The next and previous buttons help you to navigate through your content.</p>
-  </section>
-</admin-form-wizard>
+<!-- Examples from http://www.jquery-steps.com/Examples -->
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(104,160,165)">
+      <header><h3>jQuery steps: basic example</h3></header>
+      <admin-form-wizard>
+        <h3>Keyboard</h3>
+        <section>
+          <p>Try the keyboard navigation by clicking arrow left or right!</p>
+        </section>
+        <h3>Effects</h3>
+        <section>
+          <p>Wonderful transition effects.</p>
+        </section>
+        <h3>Pager</h3>
+        <section>
+          <p>The next and previous buttons help you to navigate through your content.</p>
+        </section>
+      </admin-form-wizard>
+    </admin-panel>
+  </ng-template>
 
-<form #form>
-  <admin-form-wizard [form]="form">
-    <h3>Account</h3>
-    <section>
-      <label>User name *
-        <input name="userName" type="text" class="required">
-      </label>
-      <label>Password *
-        <input name="password" type="text" class="required">
-      </label>
-      <label>Confirm Password *
-        <input name="confirm" type="text" class="required">
-      </label>
-      <p>(*) Mandatory</p>
-    </section>
-    <h3>Profile</h3>
-    <section>
-      <label>First name *
-        <input id="name" name="name" type="text" class="required">
-      </label>
-      <label>Last name *
-        <input name="surname" type="text" class="required">
-      </label>
-      <label>Email *
-        <input name="email" type="text" class="required email">
-      </label>
-      <label>Address
-        <input name="address" type="text">
-      </label>
-      <p>(*) Mandatory</p>
-    </section>
-    <h3>Hints</h3>
-    <section>
-    <ul>
-      <li>Foo</li>
-      <li>Bar</li>
-      <li>Foobar</li>
-    </ul>
-    </section>
-    <h3>Finish</h3>
-    <section>
-      <label>
-        <input name="acceptTerms" type="checkbox" class="required">
-          I agree with the Terms and Conditions.
-      </label>
-    </section>
-  </admin-form-wizard>
-</form>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(153,152,149)">
+      <header><h3>jQuery steps: basic form with validation</h3></header>
+      <form #form>
+        <admin-form-wizard [form]="form">
+          <h3>Account</h3>
+          <section>
+            <div class="form-group">
+              <label
+                for="jquery-steps-validation-username"
+                class="control-label"
+              >User name *</label>
+              <input
+                name="userName"
+                type="text"
+                class="required form-control"
+                id="jquery-steps-validation-username"
+              >
+            </div>
 
-<admin-form-wizard [dynamic]="true"></admin-form-wizard>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-password"
+              >Password *</label>
+              <input
+                name="password"
+                type="text"
+                class="required form-control"
+                id="jquery-steps-validation-password"
+              >
+            </div>
 
-<admin-form-wizard [vertical]="true">
-  <h3>Keyboard</h3>
-  <section>
-    <p>Try the keyboard navigation by clicking arrow left or right!</p>
-  </section>
-  <h3>Effects</h3>
-  <section>
-    <p>Wonderful transition effects.</p>
-  </section>
-  <h3>Pager</h3>
-  <section>
-    <p>The next and previous buttons help you to navigate through your content.</p>
-  </section>
-</admin-form-wizard>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-confirm-password"
+              >Confirm Password *</label>
+              <input
+                name="confirm"
+                type="text"
+                class="required form-control"
+                id="jquery-steps-validation-confirm-password"
+              >
+            </div>
+            <p>(*) Mandatory</p>
+          </section>
+          <h3>Profile</h3>
+          <section>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-firstname"
+              >First name *</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                class="required form-control"
+                id="jquery-steps-validation-firstname"
+              >
+            </div>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-lastname"
+              >Last name *</label>
+              <input
+                name="surname"
+                type="text"
+                class="required form-control"
+                id="jquery-steps-validation-lastname">
+            </div>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-email"
+              >Email *</label>
+              <input
+                name="email"
+                type="text"
+                class="required email form-control"
+                id="jquery-steps-validation-email"
+              >
+            </div>
+            <div class="form-group">
+              <label
+                class="control-label"
+                for="jquery-steps-validation-address"
+              >Address</label>
+              <input
+                name="address"
+                type="text"
+                class="form-control"
+                id="jquery-steps-validation-address"
+              >
+            </div>
+            <p>(*) Mandatory</p>
+          </section>
+          <h3>Hints</h3>
+          <section>
+          <ul>
+            <li>Foo</li>
+            <li>Bar</li>
+            <li>Foobar</li>
+          </ul>
+          </section>
+          <h3>Finish</h3>
+          <section>
+            <label class="inline-checkbox">
+              <input name="acceptTerms" type="checkbox" class="required">
+                I agree with the Terms and Conditions.
+            </label>
+          </section>
+        </admin-form-wizard>
+      </form>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(237,188,108)">
+      <header><h3>jQuery steps: dynamic manipulation</h3></header>
+      <admin-form-wizard [dynamic]="true"></admin-form-wizard>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(124,213,186)">
+      <header><h3>jQuery steps: vertical</h3></header>
+      <admin-form-wizard [vertical]="true">
+        <h3>Keyboard</h3>
+        <section>
+          <p>Try the keyboard navigation by clicking arrow left or right!</p>
+        </section>
+        <h3>Effects</h3>
+        <section>
+          <p>Wonderful transition effects.</p>
+        </section>
+        <h3>Pager</h3>
+        <section>
+          <p>The next and previous buttons help you to navigate through your content.</p>
+        </section>
+      </admin-form-wizard>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
