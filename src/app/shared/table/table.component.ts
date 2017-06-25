@@ -13,8 +13,11 @@ import 'datatables.net-responsive';
 import 'datatables.net-responsive-bs';
 import 'datatables.net-responsive-bs/css/responsive.bootstrap.css';
 import 'tablesaw/dist/tablesaw.css';
-import 'tablesaw/dist/tablesaw.js';
+import 'tablesaw/dist/tablesaw.jquery.js';
 
+// tablesaw-init.js checks for `'jQuery' in window` that cannot be
+// fixed with ProvidePlugin
+Object.assign(window, { jQuery: $ });
 import 'tablesaw/dist/tablesaw-init.js';
 
 /**
@@ -88,6 +91,10 @@ export class TableComponent implements OnInit, AfterViewInit {
         ($(this.tableEl.nativeElement) as any).DataTable({
           responsive: true,
         });
+      }, 0);
+    } else if (this.tablesaw) {
+      setTimeout(() => {
+        ($(document as any) as any).trigger('enhance.tablesaw');
       }, 0);
     }
   }

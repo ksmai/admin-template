@@ -1,531 +1,553 @@
 <!-- table data from tablesaw:
   https://github.com/filamentgroup/tablesaw
 -->
-<admin-table [striped]="true" [hover]="true" tablesaw="stack">
-  <thead>
-    <tr>
-      <th>Movie Title</th>
-      <th>Rank</th>
-      <th>Year</th>
-      <th>Rating</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(234,133,100)">
+      <header><h3>Tablesaw: stack</h3></header>
+      <admin-table [striped]="true" [hover]="true" tablesaw="stack">
+        <thead>
+          <tr>
+            <th>Movie Title</th>
+            <th>Rank</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [striped]="true" [hover]="true" tablesaw="swipe">
-  <thead>
-    <tr>
-      <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
-      <th>Rank</th>
-      <th>Year</th>
-      <th>Rating</th>
-      <th>Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel [showHeader]="true" headerColor="rgb(205,204,200)">
+      <header><h3>Tablesaw: swipe</h3></header>
+      <admin-table [striped]="true" [hover]="true" tablesaw="swipe">
+        <thead>
+          <tr>
+            <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
+            <th>Rank</th>
+            <th>Year</th>
+            <th>Rating</th>
+            <th>Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [striped]="true" [hover]="true" tablesaw="columntoggle">
-  <thead>
-    <tr>
-      <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
-      <th [attr.data-tablesaw-priority]="'3'">Rank</th>
-      <th [attr.data-tablesaw-priority]="'2'">Year</th>
-      <th [attr.data-tablesaw-priority]="'0'">Rating</th>
-      <th [attr.data-tablesaw-priority]="'1'">Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel [showHeader]="true" headerColor="rgb(222,188,133)">
+      <header><h3>Tablesaw: column toggle</h3></header>
+      <admin-table [striped]="true" [hover]="true" tablesaw="columntoggle">
+        <thead>
+          <tr>
+            <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
+            <th [attr.data-tablesaw-priority]="'3'">Rank</th>
+            <th [attr.data-tablesaw-priority]="'2'">Year</th>
+            <th [attr.data-tablesaw-priority]="'0'">Rating</th>
+            <th [attr.data-tablesaw-priority]="'1'">Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [striped]="true" [hover]="true" tablesaw="sortable">
-  <thead>
-    <tr>
-      <th [attr.data-tablesaw-sortable-col]="''">Movie Title</th>
-      <th [attr.data-tablesaw-sortable-col]="''">Rank</th>
-      <th [attr.data-tablesaw-sortable-col]="''">Year</th>
-      <th [attr.data-tablesaw-sortable-col]="''">Rating</th>
-      <th [attr.data-tablesaw-sortable-col]="''">Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel [showHeader]="true" headerColor="rgb(81,94,120)">
+      <header><h3>Tablesaw: sortable</h3></header>
+      <admin-table [striped]="true" [hover]="true" tablesaw="sortable">
+        <thead>
+          <tr>
+            <th [attr.data-tablesaw-sortable-col]="''">Movie Title</th>
+            <th [attr.data-tablesaw-sortable-col]="''">Rank</th>
+            <th [attr.data-tablesaw-sortable-col]="''">Year</th>
+            <th [attr.data-tablesaw-sortable-col]="''">Rating</th>
+            <th [attr.data-tablesaw-sortable-col]="''">Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table
-  [striped]="true"
-  [hover]="true"
-  [tablesawSwitch]="true"
-  tablesaw="stack"
->
-  <thead>
-    <tr>
-      <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
-      <th [attr.data-tablesaw-priority]="'3'">Rank</th>
-      <th [attr.data-tablesaw-priority]="'2'">Year</th>
-      <th [attr.data-tablesaw-priority]="'0'">Rating</th>
-      <th [attr.data-tablesaw-priority]="'1'">Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel [showHeader]="true" headerColor="rgb(124,213,186)">
+      <header><h3>Tablesaw: mode switch</h3></header>
+      <admin-table
+        [striped]="true"
+        [hover]="true"
+        [tablesawSwitch]="true"
+        tablesaw="stack"
+      >
+        <thead>
+          <tr>
+            <th [attr.data-tablesaw-priority]="'persist'">Movie Title</th>
+            <th [attr.data-tablesaw-priority]="'3'">Rank</th>
+            <th [attr.data-tablesaw-priority]="'2'">Year</th>
+            <th [attr.data-tablesaw-priority]="'0'">Rating</th>
+            <th [attr.data-tablesaw-priority]="'1'">Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table
-  [striped]="true"
-  [hover]="true"
-  [tablesawSwitch]="true"
-  tablesaw="sortable"
->
-  <thead>
-    <tr>
-      <th
-        [attr.data-tablesaw-sortable-col]="''"
-        [attr.data-tablesaw-priority]="'persist'"
-      >Movie Title</th>
-      <th
-        [attr.data-tablesaw-sortable-col]="''"
-        [attr.data-tablesaw-priority]="'3'"
-      >Rank</th>
-      <th
-        [attr.data-tablesaw-sortable-col]="''"
-        [attr.data-tablesaw-priority]="'2'"
-      >Year</th>
-      <th
-        [attr.data-tablesaw-sortable-col]="''"
-        [attr.data-tablesaw-priority]="'0'"
-      >Rating</th>
-      <th
-        [attr.data-tablesaw-sortable-col]="''"
-        [attr.data-tablesaw-priority]="'1'"
-      >Gross</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Avatar</td>
-      <td>1</td>
-      <td>2009</td>
-      <td>83%</td>
-      <td>$2.7B</td>
-    </tr>
-    <tr>
-      <td>Titanic</td>
-      <td>2</td>
-      <td>1997</td>
-      <td>88%</td>
-      <td>$2.1B</td>
-    </tr>
-    <tr>
-      <td>The Avengers</td>
-      <td>3</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.5B</td>
-    </tr>
-    <tr>
-      <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
-      <td>4</td>
-      <td>2011</td>
-      <td>96%</td>
-      <td>$1.3B</td>
-    </tr>
-    <tr>
-      <td>Frozen</td>
-      <td>5</td>
-      <td>2013</td>
-      <td>89%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Iron Man 3</td>
-      <td>6</td>
-      <td>2013</td>
-      <td>78%</td>
-      <td>$1.2B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Dark of the Moon</td>
-      <td>7</td>
-      <td>2011</td>
-      <td>36%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>The Lord of the Rings: The Return of the King</td>
-      <td>8</td>
-      <td>2003</td>
-      <td>95%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Skyfall</td>
-      <td>9</td>
-      <td>2012</td>
-      <td>92%</td>
-      <td>$1.1B</td>
-    </tr>
-    <tr>
-      <td>Transformers: Age of Extinction</td>
-      <td>10</td>
-      <td>2014</td>
-      <td>18%</td>
-      <td>$1.0B</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel [showHeader]="true" headerColor="rgb(226,153,183)">
+      <header><h3>Tablesaw: kitchen sink</h3></header>
+      <admin-table
+        [striped]="true"
+        [hover]="true"
+        [tablesawSwitch]="true"
+        tablesaw="sortable"
+      >
+        <thead>
+          <tr>
+            <th
+              [attr.data-tablesaw-sortable-col]="''"
+              [attr.data-tablesaw-priority]="'persist'"
+            >Movie Title</th>
+            <th
+              [attr.data-tablesaw-sortable-col]="''"
+              [attr.data-tablesaw-priority]="'3'"
+            >Rank</th>
+            <th
+              [attr.data-tablesaw-sortable-col]="''"
+              [attr.data-tablesaw-priority]="'2'"
+            >Year</th>
+            <th
+              [attr.data-tablesaw-sortable-col]="''"
+              [attr.data-tablesaw-priority]="'0'"
+            >Rating</th>
+            <th
+              [attr.data-tablesaw-sortable-col]="''"
+              [attr.data-tablesaw-priority]="'1'"
+            >Gross</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avatar</td>
+            <td>1</td>
+            <td>2009</td>
+            <td>83%</td>
+            <td>$2.7B</td>
+          </tr>
+          <tr>
+            <td>Titanic</td>
+            <td>2</td>
+            <td>1997</td>
+            <td>88%</td>
+            <td>$2.1B</td>
+          </tr>
+          <tr>
+            <td>The Avengers</td>
+            <td>3</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.5B</td>
+          </tr>
+          <tr>
+            <td>Harry Potter and the Deathly Hallows&mdash;Part 2</td>
+            <td>4</td>
+            <td>2011</td>
+            <td>96%</td>
+            <td>$1.3B</td>
+          </tr>
+          <tr>
+            <td>Frozen</td>
+            <td>5</td>
+            <td>2013</td>
+            <td>89%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Iron Man 3</td>
+            <td>6</td>
+            <td>2013</td>
+            <td>78%</td>
+            <td>$1.2B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Dark of the Moon</td>
+            <td>7</td>
+            <td>2011</td>
+            <td>36%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>The Lord of the Rings: The Return of the King</td>
+            <td>8</td>
+            <td>2003</td>
+            <td>95%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Skyfall</td>
+            <td>9</td>
+            <td>2012</td>
+            <td>92%</td>
+            <td>$1.1B</td>
+          </tr>
+          <tr>
+            <td>Transformers: Age of Extinction</td>
+            <td>10</td>
+            <td>2014</td>
+            <td>18%</td>
+            <td>$1.0B</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

@@ -1,231 +1,261 @@
-<admin-table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel>
+      <h3>Regular table</h3>
+      <admin-table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [bordered]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td [attr.rowspan]="2">1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@TwBootstrap</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel>
+      <h3>Bordered table</h3>
+      <admin-table [bordered]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td [attr.rowspan]="2">1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@TwBootstrap</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [condensed]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel>
+      <h3>Condensed table</h3>
+      <admin-table [condensed]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [condensed]="true" [bordered]="true" [striped]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel>
+      <h3>Bordered, striped and condensed table</h3>
+      <admin-table [condensed]="true" [bordered]="true" [striped]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
 
-<admin-table [striped]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+  <ng-template>
+    <admin-panel>
+      <h3>Striped table</h3>
+      <admin-table [striped]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [hover]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>twitter</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel>
+      <h3>Hover table</h3>
+      <admin-table [hover]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>twitter</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
 
-<admin-table [striped]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
-      <th>Column heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let i of [1,2,3,4,5,6,7,8,9]"
-      [class.active]="i === 1"
-      [class.success]="i === 3"
-      [class.info]="i === 5"
-      [class.warning]="i === 7"
-      [class.danger]="i === 9"
-    >
-      <td>{{i}}</td>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-  </tbody>
-</admin-table>
+    <admin-panel>
+      <h3>Striped and colored table</h3>
+      <admin-table [striped]="true">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+            <th>Column heading</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            *ngFor="let i of [1,2,3,4,5,6,7,8,9]"
+            [class.active]="i === 1"
+            [class.success]="i === 3"
+            [class.info]="i === 5"
+            [class.warning]="i === 7"
+            [class.danger]="i === 9"
+          >
+            <td>{{i}}</td>
+            <td>Column content</td>
+            <td>Column content</td>
+            <td>Column content</td>
+          </tr>
+        </tbody>
+      </admin-table>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
 
-<admin-table [bordered]="true" [responsive]="true">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th *ngFor="let i of [1,2,3,4,5,6]">Table heading</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let i of [1,2,3]">
-      <td>{{i}}</td>
-      <td *ngFor="let j of [1,2,3,4,5,6]">Table cell</td>
-    </tr>
-  </tbody>
-</admin-table>
+<admin-panel>
+  <h3>Responsive bordered table</h3>
+  <admin-table [bordered]="true" [responsive]="true">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th *ngFor="let i of [1,2,3,4,5,6]">Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of [1,2,3]">
+        <td>{{i}}</td>
+        <td *ngFor="let j of [1,2,3,4,5,6]">Table cell</td>
+      </tr>
+    </tbody>
+  </admin-table>
+</admin-panel>
