@@ -1,9 +1,19 @@
-<admin-calendar
-  [events]="events"
-  defaultDate="2046-11-01"
-></admin-calendar>
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(74,144,226)">
+      <header><h3>Full Calendar</h3></header>
+      <admin-calendar
+        [events]="events"
+        defaultDate="2046-11-01"
+      ></admin-calendar>
+    </admin-panel>
 
-<admin-calendar
-  [events]="events"
-  [external]="true"
-></admin-calendar>
+    <admin-panel [showHeader]="true" headerColor="rgb(234,133,100)">
+      <header><h3>Full Calendar: external events</h3></header>
+      <admin-calendar
+        [events]="events"
+        [external]="true"
+      ></admin-calendar>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

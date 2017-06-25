@@ -9,6 +9,13 @@
   margin: 30px;
 }
 
+.dummy-item {
+  height: 0;
+  width: 260px;
+  font-size: 0;
+  overflow: hidden;
+}
+
 .alternate-knob {
   margin: 30px auto;
   display: flex;

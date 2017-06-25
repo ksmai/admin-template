@@ -1,33 +1,101 @@
-<admin-image-crop [src]="desk" [setSelect]="deskSelection">
-</admin-image-crop>
+<admin-grid>
+  <ng-template>
+    <admin-panel [showHeader]="true" headerColor="rgb(238,104,147)">
+      <header><h3>jCrop: basic</h3></header>
+      <admin-image-crop [src]="desk" [setSelect]="deskSelection">
+      </admin-image-crop>
+    </admin-panel>
 
-<admin-image-crop
-  [src]="grass"
-  (change)="onGrassChange($event)"
-  [setSelect]="grassSelection"
-></admin-image-crop>
-{{grassCoord|json}}
+    <admin-panel [showHeader]="true" headerColor="rgb(184,195,200)">
+      <header><h3>jCrop: Handler</h3></header>
+      <div class="row">
+        <div class="col-md-4">
+          <admin-table [condensed]="true" [striped]="true">
+            <tbody>
+              <tr>
+                <th>X1</th>
+                <td>{{grassCoord?.x}}</td>
+              </tr>
+              <tr>
+                <th>Y1</th>
+                <td>{{grassCoord?.y}}</td>
+              </tr>
+              <tr>
+                <th>X2</th>
+                <td>{{grassCoord?.x2}}</td>
+              </tr>
+              <tr>
+                <th>Y2</th>
+                <td>{{grassCoord?.y2}}</td>
+              </tr>
+              <tr>
+                <th>W</th>
+                <td>{{grassCoord?.w}}</td>
+              </tr>
+              <tr>
+                <th>H</th>
+                <td>{{grassCoord?.h}}</td>
+              </tr>
+            </tbody>
+          </admin-table>
+        </div>
+        <div class="col-md-8">
+          <admin-image-crop
+            [src]="grass"
+            (change)="onGrassChange($event)"
+            [setSelect]="grassSelection"
+          ></admin-image-crop>
+        </div>
+      </div>
+    </admin-panel>
 
-<admin-image-crop
-  [src]="bird"
-  (change)="onBirdChange($event)"
-  [aspectRatio]="1"
-></admin-image-crop>
-<div #preview class="preview-image"></div>
+    <admin-panel [showHeader]="true" headerColor="rgb(124,213,186)">
+      <header><h3>jCrop: preview (fixed apsect ratio)</h3></header>
+      <div class="row">
+        <div class="col-md-8">
+          <admin-image-crop
+            [src]="bird"
+            (change)="onBirdChange($event)"
+            [aspectRatio]="1"
+          ></admin-image-crop>
+        </div>
+        <div class="col-md-4">
+          <div #preview class="preview-image"></div>
+        </div>
+      </div>
+    </admin-panel>
 
-<admin-image-crop
-  [src]="desk"
-  [setSelect]="animateSelection"
-  [bgColor]="bgColor"
-  [bgOpacity]="bgOpacity"
-></admin-image-crop>
-<button *ngFor="let i of [1,2,3,4,5,0]" (click)="changeAnimateSelection(i)">
-  {{i}}
-</button>
-<button
-  *ngFor="let c of ['black', 'red', 'blue', 'yellow']"
-  (click)="changeColor(c)"
->{{c}}</button>
-<button *ngFor="let i of [0.2,0.6,1]" (click)="changeOpacity(i)">
-  {{i}}
-</button>
+    <admin-panel [showHeader]="true" headerColor="rgb(102,166,85)">
+      <header><h3>jCrop: animations</h3></header>
+      <div class="row">
+        <div class="col-md-6">
+          <admin-image-crop
+            [src]="desk"
+            [setSelect]="animateSelection"
+            [bgColor]="bgColor"
+            [bgOpacity]="bgOpacity"
+          ></admin-image-crop>
+        </div>
+        <div class="col-md-6">
+          <h4>Animate selection</h4>
+          <admin-button
+            [texts]="['1','2','3','4','5','bye']"
+            (clickBtn)="changeAnimateSelection($event)"
+            tag="primary"
+          ></admin-button>
+          <h4>Change background color</h4>
+          <admin-button
+            [texts]="colorChoices"
+            [colors]="colorChoices"
+            (clickBtn)="changeColor(colorChoices[$event.index])"
+          ></admin-button>
+          <h4>Change background opacity</h4>
+          <admin-button
+            [texts]="opacityLabels"
+            (clickBtn)="changeOpacity(opacityValues[$event.index])"
+          ></admin-button>
+        </div>
+      </div>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

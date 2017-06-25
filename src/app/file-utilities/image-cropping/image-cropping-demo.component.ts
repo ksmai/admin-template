@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link ImageCropComponent}
+ */
 @Component({
   templateUrl: './image-cropping-demo.component.html',
   styleUrls: ['./image-cropping-demo.component.scss'],
@@ -14,6 +17,9 @@ export class ImageCroppingDemoComponent {
   animateSelection = [100, 200, 300, 400];
   bgColor = 'black';
   bgOpacity = 0.6;
+  colorChoices = ['red', 'blue', 'green', 'black'];
+  opacityLabels = ['low', 'mid', 'high', 'full'];
+  opacityValues = [0.9, 0.6, 0.3, 0];
   @ViewChild('preview') previewEl: any;
 
   onGrassChange(c: any): void {
@@ -29,29 +35,29 @@ export class ImageCroppingDemoComponent {
       `${-c.x * 200 / c.w}px ${-c.y * 200 / c.h}px`;
   }
 
-  changeAnimateSelection(i: number): void {
-    switch (i) {
+  changeAnimateSelection(evt: any): void {
+    switch (evt.index) {
+      case 0:
+        this.animateSelection = [10, 10, 200, 150];
+        break;
+
       case 1:
-        this.animateSelection = [100, 10, 200, 200];
+        this.animateSelection = [10, 100, 200, 250];
         break;
 
       case 2:
-        this.animateSelection = [10, 10, 150, 200];
-        break;
-
-      case 3:
         this.animateSelection = [100, 100, 200, 250];
         break;
 
+      case 3:
+        this.animateSelection = [200, 250, 250, 300];
+        break;
+
       case 4:
-        this.animateSelection = [200, 100, 250, 300];
+        this.animateSelection = [200, 100, 300, 200];
         break;
 
       case 5:
-        this.animateSelection = [300, 300, 350, 320];
-        break;
-
-      case 0:
       default:
         this.animateSelection = [0, 0, 0, 0];
     }

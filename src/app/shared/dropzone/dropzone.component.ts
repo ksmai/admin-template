@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import $ = require('jquery');
+
 import 'dropzone/dist/basic.css';
 import 'dropzone/dist/dropzone';
 import 'dropzone/dist/dropzone.css';
@@ -13,6 +15,13 @@ import 'dropzone/dist/dropzone.css';
   templateUrl: './dropzone.component.html',
   styleUrls: ['./dropzone.component.scss'],
 })
-export class DropzoneComponent {
+export class DropzoneComponent implements AfterViewInit {
   @Input() url: string = '#';
+  @ViewChild('div') private divEl: any;
+
+  ngAfterViewInit(): void {
+    ($(this.divEl.nativeElement) as any).dropzone({
+      url: this.url,
+    });
+  }
 }

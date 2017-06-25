@@ -1,0 +1,27 @@
+.icons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+
+.icon__display {
+  font-size: 30px;
+}
+
+.dummy-item {
+  width: 200px;
+  height: 0;
+  overflow: hidden;
+  font-size: 0;
+}

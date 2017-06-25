@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Demonstrate the usage of {@link FontComponent}
+ */
 @Component({
   templateUrl: './font-demo.component.html',
   styleUrls: ['./font-demo.component.scss'],

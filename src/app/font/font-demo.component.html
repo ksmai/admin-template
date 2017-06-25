@@ -1,6 +1,22 @@
-<ul>
-  <li *ngFor="let name of names">
-    <admin-font [name]="name" [color]="color"></admin-font>
-    <span>{{name}}</span>
-  </li>
-</ul>
+<admin-panel [showHeader]="true" headerColor="rgb(234, 120, 130)">
+  <header><h3>Bootstrap glyphicon (total: 273)</h3></header>
+  <ul class="icons">
+    <li *ngFor="let name of names" class="icon">
+      <admin-font [name]="name" [color]="color" class="icon__display">
+      </admin-font>
+      <span class="icon__name">{{name}}</span>
+    </li>
+
+    <!-- Dummy items to align the last row properly -->
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+    <li class="dummy-item"></li>
+  </ul>
+</admin-panel>
