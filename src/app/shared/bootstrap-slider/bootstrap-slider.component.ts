@@ -65,9 +65,11 @@ export class BootstrapSliderComponent implements AfterViewInit, OnChanges {
   @ViewChild('inputEl') private inputEl: any;
 
   ngAfterViewInit(): void {
-    ($(this.inputEl.nativeElement) as any)
-      .slider()
-      .on('change', (evt: any) => this.onSlide(evt.value.newValue));
+    setTimeout(() => {
+      ($(this.inputEl.nativeElement) as any)
+        .slider()
+        .on('change', (evt: any) => this.onSlide(evt.value.newValue));
+    }, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

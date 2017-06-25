@@ -38,11 +38,11 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
   private chart: any;
 
   ngOnChanges(): void {
-    this.drawChart();
+    setTimeout(() => this.drawChart(), 0);
   }
 
   ngAfterViewInit(): void {
-    this.drawChart();
+    setTimeout(() => this.drawChart(), 0);
   }
 
   private drawChart(): void {

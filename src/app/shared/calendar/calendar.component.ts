@@ -49,6 +49,10 @@ export class CalendarComponent implements AfterViewInit {
   @ViewChild('calendar') private calendarEl: any;
 
   ngAfterViewInit(): void {
+    setTimeout(() => this.init(), 0);
+  }
+
+  private init(): void {
     const options = {
       defaultDate: this.defaultDate,
       editable: true,

@@ -36,11 +36,13 @@ export class CodemirrorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.codemirror = CodeMirror(this.el.nativeElement, {
-      mode: 'javascript',
-      theme: 'ambiance',
-      value: this.value,
-      lineNumbers: this.lineNumbers,
-    });
+    setTimeout(() => {
+      this.codemirror = CodeMirror(this.el.nativeElement, {
+        mode: 'javascript',
+        theme: 'ambiance',
+        value: this.value,
+        lineNumbers: this.lineNumbers,
+      });
+    }, 0);
   }
 }

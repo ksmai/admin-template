@@ -112,7 +112,9 @@ export class FormXEditableComponent implements AfterViewInit, OnChanges {
       Object.assign(options, { select2: this.select2 });
     }
 
-    ($(this.el.nativeElement) as any).editable(options);
+    setTimeout(() => {
+      ($(this.el.nativeElement) as any).editable(options);
+    }, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

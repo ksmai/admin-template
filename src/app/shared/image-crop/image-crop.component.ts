@@ -72,10 +72,12 @@ export class ImageCropComponent implements AfterViewInit, OnChanges {
       Object.assign(options, { setSelect: this.setSelect });
     }
 
-    const self = this;
-    ($(this.imgEl.nativeElement) as any).Jcrop(options, function() {
-      self.jCrop = this;
-    });
+    setTimeout(() => {
+      const self = this;
+      ($(this.imgEl.nativeElement) as any).Jcrop(options, function() {
+        self.jCrop = this;
+      });
+    }, 0);
   }
 
   ngOnChanges(changes: SimpleChanges): void {

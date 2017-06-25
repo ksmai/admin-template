@@ -11,6 +11,13 @@ import {
  * PanelComponent
  * A box for holding DOM elements
  * Contains optional header and/or footer
+ * Inputs:
+ *   - showHeader: default to false
+ *   - showFooter: default to false
+ *   - showBody: default to true
+ *   - headerColor: default to #79b0ec
+ *   - footerColor: default to #79b0ec
+ *   - tabbed: whether body contains a TabComponent, default to false
  *
  * @example
  * // basic panel
@@ -43,6 +50,7 @@ import {
 export class PanelComponent implements OnChanges, AfterViewInit {
   @Input() showHeader = false;
   @Input() showFooter = false;
+  @Input() showBody = true;
   @Input() headerColor = '#79b0ec';
   @Input() footerColor = '#79b0ec';
   @HostBinding('class.tabbed') @Input() tabbed: boolean = false;

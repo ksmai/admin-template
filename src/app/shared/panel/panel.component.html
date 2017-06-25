@@ -27,7 +27,7 @@
   <div class="panel-heading" *ngIf="showHeader" #header>
     <ng-content select="header"></ng-content>
   </div>
-  <div class="panel-body">
+  <div class="panel-body" *ngIf="showBody">
     <ng-content></ng-content>
   </div>
   <div class="panel-footer" *ngIf="showFooter" #footer>

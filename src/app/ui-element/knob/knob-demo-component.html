@@ -62,7 +62,11 @@
 
 <admin-grid [cols]="[6, 6]">
   <ng-template>
-    <admin-panel [showHeader]="true" headerColor="#e2bea3">
+    <admin-panel
+      [showHeader]="true"
+      [showBody]="false"
+      headerColor="#e2bea3"
+    >
       <header>
         <h3>jQuery knobs: alternate</h3>
         <div class="alternate-knob">
@@ -79,7 +83,11 @@
   </ng-template>
 
   <ng-template>
-    <admin-panel [showHeader]="true" headerColor="rgb(63,63,59)">
+    <admin-panel
+      [showHeader]="true"
+      [showBody]="false"
+      headerColor="rgb(63,63,59)"
+    >
       <header>
         <h3>jQuery knobs: superpose</h3>
         <div class="superpose">

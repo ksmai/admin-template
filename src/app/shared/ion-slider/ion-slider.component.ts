@@ -94,7 +94,9 @@ export class IonSliderComponent implements AfterViewInit {
       Object.assign(options, { values: this.values });
     }
 
-    ($(this.inputEl.nativeElement) as any).ionRangeSlider(options);
+    setTimeout(() => {
+      ($(this.inputEl.nativeElement) as any).ionRangeSlider(options);
+    }, 0);
     setTimeout(() => {
       $(this.inputEl.nativeElement).data('ionRangeSlider' as any).reset();
     }, 0);

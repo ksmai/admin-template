@@ -15,8 +15,10 @@ export class EditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    ($(this.el.nativeElement) as any).trumbowyg({
-      autogrow: true,
-    });
+    setTimeout(() => {
+      ($(this.el.nativeElement) as any).trumbowyg({
+        autogrow: true,
+      });
+    }, 0);
   }
 }

@@ -84,9 +84,11 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     if (this.datatable) {
-      ($(this.tableEl.nativeElement) as any).DataTable({
-        responsive: true,
-      });
+      setTimeout(() => {
+        ($(this.tableEl.nativeElement) as any).DataTable({
+          responsive: true,
+        });
+      }, 0);
     }
   }
 }

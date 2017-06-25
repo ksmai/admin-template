@@ -59,6 +59,31 @@ export class FormWizardComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    setTimeout(() => this.init(), 0);
+  }
+
+  add(title: string, content: string): void {
+    ($(this.el.nativeElement) as any).steps('add', { title, content });
+  }
+
+  insert(position: number, title: string, content: string): void {
+    if (!Number.isInteger(position)) {
+      return;
+    }
+    ($(this.el.nativeElement) as any).steps('insert', position, {
+      title,
+      content,
+    });
+  }
+
+  remove(position: number): void {
+    if (!Number.isInteger(position)) {
+      return;
+    }
+    ($(this.el.nativeElement) as any).steps('remove', position);
+  }
+
+  private init(): void {
     const options = {
       headerTag: this.headerTag,
       bodyTag: this.bodyTag,
@@ -110,26 +135,5 @@ export class FormWizardComponent implements AfterViewInit {
         this.remove(position);
       });
     }
-  }
-
-  add(title: string, content: string): void {
-    ($(this.el.nativeElement) as any).steps('add', { title, content });
-  }
-
-  insert(position: number, title: string, content: string): void {
-    if (!Number.isInteger(position)) {
-      return;
-    }
-    ($(this.el.nativeElement) as any).steps('insert', position, {
-      title,
-      content,
-    });
-  }
-
-  remove(position: number): void {
-    if (!Number.isInteger(position)) {
-      return;
-    }
-    ($(this.el.nativeElement) as any).steps('remove', position);
   }
 }

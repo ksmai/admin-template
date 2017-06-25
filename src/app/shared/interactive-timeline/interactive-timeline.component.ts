@@ -31,12 +31,14 @@ export class InteractiveTimelineComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.height) {
-      this.el.nativeElement.style.height = `${this.height}px`;
-    }
-    this.timeline = new TL.Timeline(
-      this.timelineEl.nativeElement,
-      this.data,
-    );
+    setTimeout(() => {
+      if (this.height) {
+        this.el.nativeElement.style.height = `${this.height}px`;
+      }
+      this.timeline = new TL.Timeline(
+        this.timelineEl.nativeElement,
+        this.data,
+      );
+    }, 0);
   }
 }

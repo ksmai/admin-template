@@ -155,13 +155,15 @@ export class MapComponent implements AfterViewInit {
   private routingStarted = false;
 
   ngAfterViewInit(): void {
-    this.div.nativeElement.style.height = this.height;
-    this.setupMap();
-    this.setupMarkers();
-    this.setupGeocode();
-    this.drawPolyline();
-    this.drawOverlay();
-    this.drawPolygon();
+    setTimeout(() => {
+      this.div.nativeElement.style.height = this.height;
+      this.setupMap();
+      this.setupMarkers();
+      this.setupGeocode();
+      this.drawPolyline();
+      this.drawOverlay();
+      this.drawPolygon();
+    }, 0);
   }
 
   onKeyup(q: string): void {
