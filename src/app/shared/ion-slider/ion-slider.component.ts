@@ -4,6 +4,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnDestroy,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -49,7 +50,7 @@ import 'ion-rangeslider/js/ion.rangeSlider';
   templateUrl: './ion-slider.component.html',
   styleUrls: ['./ion-slider.component.scss'],
 })
-export class IonSliderComponent implements AfterViewInit {
+export class IonSliderComponent implements AfterViewInit, OnDestroy {
   @Input() type: string = 'single';
   @Input() min: number = 0;
   @Input() max: number = 100;
@@ -66,6 +67,14 @@ export class IonSliderComponent implements AfterViewInit {
   @Input() max_postfix: string = '';
   @Output() change = new EventEmitter<any>();
   @ViewChild('inputEl') private inputEl: any;
+
+  ngOnDestroy(): void {
+    const slider = ($(this.inputEl.nativeElement) as any)
+      .data('ionRangeSlider');
+    if (slider) {
+      slider.destroy();
+    }
+  }
 
   ngAfterViewInit(): void {
     const options = {
@@ -97,6 +106,7 @@ export class IonSliderComponent implements AfterViewInit {
     setTimeout(() => {
       ($(this.inputEl.nativeElement) as any).ionRangeSlider(options);
     }, 0);
+    // make sure the first change event is emitted
     setTimeout(() => {
       $(this.inputEl.nativeElement).data('ionRangeSlider' as any).reset();
     }, 0);

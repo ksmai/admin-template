@@ -5,6 +5,7 @@ import {
   HostBinding,
   Input,
   OnChanges,
+  OnDestroy,
   Output,
   SimpleChanges,
   ViewChild,
@@ -47,7 +48,7 @@ import 'jquery-jcrop/js/jquery.Jcrop.js';
   templateUrl: './image-crop.component.html',
   styleUrls: ['./image-crop.component.scss'],
 })
-export class ImageCropComponent implements AfterViewInit, OnChanges {
+export class ImageCropComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Input() src: string;
   @Input() aspectRatio: number;
   @Input() setSelect: [number, number, number, number];
@@ -57,6 +58,12 @@ export class ImageCropComponent implements AfterViewInit, OnChanges {
   @Output() change = new EventEmitter<any>();
   @ViewChild('img') private imgEl: any;
   private jCrop: any;
+
+  ngOnDestroy(): void {
+    if (this.jCrop) {
+      this.jCrop.destroy();
+    }
+  }
 
   ngAfterViewInit(): void {
     const options = {

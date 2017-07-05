@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   Input,
+  OnDestroy,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -14,6 +15,7 @@ import 'rxjs/add/operator/zip';
 import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 
 // typings not available
 const GMaps = require('gmaps');
@@ -133,7 +135,7 @@ interface IRoute {
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements AfterViewInit {
+export class MapComponent implements AfterViewInit, OnDestroy {
   @Input() lat: number;
   @Input() lng: number;
   @Input() markers: IMarker[] = [];
@@ -153,6 +155,17 @@ export class MapComponent implements AfterViewInit {
   private map: any;
   private searchTerms: Subject<string>;
   private routingStarted = false;
+  private routingSubscription: Subscription;
+  private searchSubscription: Subscription;
+
+  ngOnDestroy(): void {
+    if (this.routingSubscription) {
+      this.routingSubscription.unsubscribe();
+    }
+    if (this.searchSubscription) {
+      this.searchSubscription.unsubscribe();
+    }
+  }
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -184,7 +197,7 @@ export class MapComponent implements AfterViewInit {
     };
     this.map.travelRoute(Object.assign(options, this.route));
 
-    routeSubject
+    this.routingSubscription = routeSubject
       .zip(Observable.interval(this.routeInterval), (e, i) => e)
       .subscribe((e: any) => {
         this.instruction.emit(e.instructions);
@@ -224,7 +237,7 @@ export class MapComponent implements AfterViewInit {
     }
 
     this.searchTerms = new Subject<string>();
-    this.searchTerms
+    this.searchSubscription = this.searchTerms
       .debounceTime(300)
       .distinctUntilChanged()
       .switchMap((q: string) => {

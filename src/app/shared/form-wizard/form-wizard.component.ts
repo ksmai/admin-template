@@ -4,6 +4,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnDestroy,
   Output,
 } from '@angular/core';
 import $ = require('jquery');
@@ -45,7 +46,7 @@ import 'jquery-validation';
   templateUrl: './form-wizard.component.html',
   styleUrls: ['./form-wizard.component.scss'],
 })
-export class FormWizardComponent implements AfterViewInit {
+export class FormWizardComponent implements AfterViewInit, OnDestroy {
   @Input() headerTag: string = 'h3';
   @Input() bodyTag: string = 'section';
   @Input() transitionEffect: string = 'slideLeft';
@@ -54,8 +55,20 @@ export class FormWizardComponent implements AfterViewInit {
   @Input() dynamic: boolean = false;
   @Input() vertical: boolean = false;
   private wizard: any;
+  private validator: any;
 
   constructor(private el: ElementRef) {
+  }
+
+  ngOnDestroy(): void {
+    const $el = $(this.el.nativeElement) as any;
+    $el.find('.add-button').off('click');
+    $el.find('.insert-button').off('click');
+    $el.find('.remove-button').off('click');
+    if (this.validator) {
+      this.validator.destroy();
+    }
+    $el.steps('destroy');
   }
 
   ngAfterViewInit(): void {
@@ -94,7 +107,7 @@ export class FormWizardComponent implements AfterViewInit {
 
     if (this.form) {
       const $form = $(this.form) as any;
-      $form.validate({
+      this.validator = $form.validate({
         errorPlacement: (err: any, el: any) => el.before(err),
       });
 

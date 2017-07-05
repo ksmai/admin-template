@@ -3,6 +3,7 @@ import {
   Component,
   Input,
   OnChanges,
+  OnDestroy,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -54,7 +55,7 @@ import 'X-editable/dist/inputs-ext/typeaheadjs/typeaheadjs';
   templateUrl: './form-x-editable.component.html',
   styleUrls: ['./form-x-editable.component.scss'],
 })
-export class FormXEditableComponent implements AfterViewInit, OnChanges {
+export class FormXEditableComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Input() type: string = 'text';
   @Input() title: string;
   @Input() url: string;
@@ -73,6 +74,15 @@ export class FormXEditableComponent implements AfterViewInit, OnChanges {
   @Input() select2: any;
 
   @ViewChild('editable') private el: any;
+
+  // FIXME
+  // An unresolved bug occurs when destroying x-editable with select2
+  // See https://stackoverflow.com/questions/34884841/cant-destroy-x-editable-select2
+  ngOnDestroy(): void {
+    if (this.type !== 'select2') {
+      ($(this.el.nativeElement) as any).editable('destroy');
+    }
+  }
 
   ngAfterViewInit(): void {
     const options = {

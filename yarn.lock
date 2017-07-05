@@ -87,6 +87,12 @@
   version "3.5.38"
   resolved "https://registry.yarnpkg.com/@types/d3/-/d3-3.5.38.tgz#76f8f2e9159ae562965b2fa0e6fbee1aa643a1bc"
 
+"@types/dropzone@^4.3.35":
+  version "4.3.35"
+  resolved "https://registry.yarnpkg.com/@types/dropzone/-/dropzone-4.3.35.tgz#f80bfe595b18ae7b58eabcedfe232e6de98f827f"
+  dependencies:
+    "@types/jquery" "*"
+
 "@types/jasmine@^2.5.52":
   version "2.5.52"
   resolved "https://registry.yarnpkg.com/@types/jasmine/-/jasmine-2.5.52.tgz#6ea5435d5c71562296e63ef27a4718f94f2fbb13"

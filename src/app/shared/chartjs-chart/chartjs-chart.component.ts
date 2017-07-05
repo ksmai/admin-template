@@ -3,6 +3,7 @@ import {
   Component,
   Input,
   OnChanges,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import * as Chart from 'chart.js';
@@ -34,7 +35,7 @@ interface IDataset {
   templateUrl: './chartjs-chart.component.html',
   styleUrls: ['./chartjs-chart.component.scss'],
 })
-export class ChartJSChartComponent implements OnChanges, AfterViewInit {
+export class ChartJSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() width = 400;
   @Input() height = 400;
   @Input() type: string;
@@ -50,6 +51,12 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => this.drawChart(), 0);
+  }
+
+  ngOnDestroy(): void {
+    if (this.chart) {
+      this.chart.destroy();
+    }
   }
 
   private drawChart(): void {

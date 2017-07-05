@@ -3,6 +3,7 @@ import {
   Component,
   Input,
   OnChanges,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import * as c3 from 'c3';
@@ -28,7 +29,7 @@ type Column = Array<string|number>;
   templateUrl: './c3js-chart.component.html',
   styleUrls: ['./c3js-chart.component.scss'],
 })
-export class C3JSChartComponent implements OnChanges, AfterViewInit {
+export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() columns: Column|Column[];
   @Input() type: string;
   @Input() group: boolean;
@@ -43,6 +44,12 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => this.drawChart(), 0);
+  }
+
+  ngOnDestroy(): void {
+    if (this.chart) {
+      this.chart.unload({ done: () => this.chart.destroy() });
+    }
   }
 
   private drawChart(): void {

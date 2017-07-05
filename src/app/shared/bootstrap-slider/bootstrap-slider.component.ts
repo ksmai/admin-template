@@ -5,6 +5,7 @@ import {
   HostBinding,
   Input,
   OnChanges,
+  OnDestroy,
   Output,
   SimpleChanges,
   ViewChild,
@@ -50,7 +51,7 @@ import $ = require('jquery');
   templateUrl: './bootstrap-slider.component.html',
   styleUrls: ['./bootstrap-slider.component.scss'],
 })
-export class BootstrapSliderComponent implements AfterViewInit, OnChanges {
+export class BootstrapSliderComponent implements AfterViewInit, OnChanges, OnDestroy {
   @Input() min: string|number = 0;
   @Input() max: string|number;
   @Input() step: string|number = 1;
@@ -72,6 +73,12 @@ export class BootstrapSliderComponent implements AfterViewInit, OnChanges {
         .slider()
         .on('change', (evt: any) => this.onSlide(evt.value.newValue));
     }, 0);
+  }
+
+  ngOnDestroy(): void {
+    if (this.inputEl) {
+      ($(this.inputEl.nativeElement) as any).slider('destroy');
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {

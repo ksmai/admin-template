@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, Input, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  Input,
+  OnDestroy,
+  ViewChild,
+} from '@angular/core';
 import $ = require('jquery');
 import 'fullcalendar/dist/fullcalendar';
 import 'fullcalendar/dist/fullcalendar.css';
@@ -40,7 +46,7 @@ interface IEvent {
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
 })
-export class CalendarComponent implements AfterViewInit {
+export class CalendarComponent implements AfterViewInit, OnDestroy {
   @Input() events: IEvent[] = [];
   @Input() defaultDate: string;
   @Input() external: boolean = false;
@@ -50,6 +56,10 @@ export class CalendarComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => this.init(), 0);
+  }
+
+  ngOnDestroy(): void {
+    ($(this.calendarEl.nativeElement) as any).fullCalendar('destroy');
   }
 
   private init(): void {

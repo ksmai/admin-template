@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   Input,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -60,7 +61,7 @@ import 'tablesaw/dist/tablesaw-init.js';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
 })
-export class TableComponent implements OnInit, AfterViewInit {
+export class TableComponent implements OnInit, AfterViewInit, OnDestroy  {
   @Input() datatable: boolean = false;
   @Input() tablesaw: string = null;
   @Input() tablesawSwitch: boolean = false;
@@ -72,6 +73,13 @@ export class TableComponent implements OnInit, AfterViewInit {
   classes: { [key: string]: boolean };
 
   @ViewChild('table') private tableEl: any;
+  private datatableInstance: any;
+
+  ngOnDestroy(): void {
+    if (this.datatableInstance) {
+      this.datatableInstance.destroy();
+    }
+  }
 
   ngOnInit(): void {
     this.classes = {
@@ -88,9 +96,10 @@ export class TableComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (this.datatable) {
       setTimeout(() => {
-        ($(this.tableEl.nativeElement) as any).DataTable({
-          responsive: true,
-        });
+        this.datatableInstance = ($(this.tableEl.nativeElement) as any)
+          .DataTable({
+            responsive: true,
+          });
       }, 0);
     } else if (this.tablesaw) {
       setTimeout(() => {

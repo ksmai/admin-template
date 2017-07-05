@@ -63,6 +63,7 @@
     "@types/c3": "^0.4.42",
     "@types/chart.js": "^2.4.3",
     "@types/codemirror": "^0.0.40",
+    "@types/dropzone": "^4.3.35",
     "@types/jasmine": "^2.5.52",
     "@types/jquery": "^3.2.1",
     "@types/morris.js": "^0.5.6",
