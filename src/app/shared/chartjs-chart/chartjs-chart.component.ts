@@ -28,7 +28,7 @@ interface IDataset {
  *  [datasets]="{ label: '# of fruits', data: [3, 5, 9, 1, 2] }"
  *  [width]="1000"
  *  [height]="300"
- * ></admin-chart>
+ * ></admin-chartjs-chart>
  */
 @Component({
   selector: 'admin-chartjs-chart',

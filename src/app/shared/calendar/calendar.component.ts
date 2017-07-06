@@ -11,7 +11,7 @@ import 'fullcalendar/dist/fullcalendar.css';
 import 'jquery-ui/ui/widget';
 import 'jquery-ui/ui/widgets/draggable';
 
-interface IEvent {
+export interface IEvent {
   title: string;
   allDay?: boolean;
   start: string;

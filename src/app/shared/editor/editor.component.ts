@@ -5,6 +5,12 @@ import 'trumbowyg/dist/ui/trumbowyg.min.css';
 
 ($ as any).trumbowyg.svgPath = require('trumbowyg/dist/ui/icons.svg');
 
+/**
+ * A wrapper around Trumbowyg
+ *
+ * @example
+ * <admin-editor>some initial texts</admin-editor>
+ */
 @Component({
   selector: 'admin-editor',
   templateUrl: './editor.component.html',
