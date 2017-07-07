@@ -3,19 +3,33 @@ import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { EditorComponent } from './editor.component';
+import { ButtonComponent } from '../button/button.component';
+import { FormWizardComponent } from './form-wizard.component';
 
 class Page {
   el: DebugElement;
 
   createElements() {
-    this.el = fixture.debugElement.query(By.directive(EditorComponent));
+    this.el = fixture.debugElement.query(By.directive(FormWizardComponent));
   }
 }
 
 @Component({
   template: `
-    <admin-editor>some initial texts</admin-editor>
+    <admin-form-wizard [vertical]="true">
+      <h3>Keyboard</h3>
+      <section>
+        <p>Left/right</p>
+      </section>
+      <h3>Effects</h3>
+      <section>
+        <p>Wonderful transition effects.</p>
+      </section>
+      <h3>Pager</h3>
+      <section>
+        <p>nice pagers</p>
+      </section>
+    <admin-form-wizard>
   `,
 })
 class ParentComponent {
@@ -37,18 +51,22 @@ function createParentComponent() {
   });
 }
 
-describe('EditorComponent', () => {
+describe('FormWizardComponent', () => {
   beforeEach(async(() => {
     TestBed
       .configureTestingModule({
-        declarations: [EditorComponent, ParentComponent],
+        declarations: [
+          ButtonComponent,
+          FormWizardComponent,
+          ParentComponent,
+        ],
       })
       .compileComponents()
       .then(() => createParentComponent());
   }));
 
-  it('should render the editor', () => {
+  it('should render the wizard', () => {
     expect(page.el).toBeDefined();
-    expect(page.el.nativeElement.innerHTML).toBeTruthy();
+    expect(page.el.nativeElement.classList.contains('wizard')).toBe(true);
   });
 });

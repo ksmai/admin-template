@@ -3,19 +3,29 @@ import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { EditorComponent } from './editor.component';
+import { GridComponent } from './grid.component';
 
 class Page {
   el: DebugElement;
 
   createElements() {
-    this.el = fixture.debugElement.query(By.directive(EditorComponent));
+    this.el = fixture.debugElement.query(By.directive(GridComponent));
+  }
+
+  colCount(width: number) {
+    const des = this.el.queryAll(By.css(`.col-md-${width}`));
+    return des.length;
   }
 }
 
 @Component({
   template: `
-    <admin-editor>some initial texts</admin-editor>
+    <admin-grid [cols]="[4, 4, 2, 2]">
+      <ng-template>col1</ng-template>
+      <ng-template>col2</ng-template>
+      <ng-template>col3</ng-template>
+      <ng-template>col4</ng-template>
+    </admin-grid>
   `,
 })
 class ParentComponent {
@@ -37,18 +47,20 @@ function createParentComponent() {
   });
 }
 
-describe('EditorComponent', () => {
+describe('GridComponent', () => {
   beforeEach(async(() => {
     TestBed
       .configureTestingModule({
-        declarations: [EditorComponent, ParentComponent],
+        declarations: [GridComponent, ParentComponent],
       })
       .compileComponents()
       .then(() => createParentComponent());
   }));
 
-  it('should render the editor', () => {
-    expect(page.el).toBeDefined();
-    expect(page.el.nativeElement.innerHTML).toBeTruthy();
+  it('should create the columns', () => {
+    for (let i = 1; i <= 12; i++) {
+      const expectedCount = i === 2 || i === 4 ? 2 : 0;
+      expect(page.colCount(i)).toEqual(expectedCount, i);
+    }
   });
 });

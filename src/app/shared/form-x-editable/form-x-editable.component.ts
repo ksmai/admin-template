@@ -49,6 +49,11 @@ import 'X-editable/dist/inputs-ext/typeaheadjs/typeaheadjs';
  *   - combodateTemplate: format of datetime display for combodate
  *   - typeahead: payload of typeahead options
  *   - select2: payload of select2 options
+ *
+ * @example
+ * <admin-form-x-editable title="Enter username">
+ *   superuser
+ * </admin-form-x-editable>
  */
 @Component({
   selector: 'admin-form-x-editable',

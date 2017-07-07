@@ -3,19 +3,23 @@ import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { EditorComponent } from './editor.component';
+import { FormXEditableComponent } from './form-x-editable.component';
 
 class Page {
   el: DebugElement;
 
   createElements() {
-    this.el = fixture.debugElement.query(By.directive(EditorComponent));
+    this.el = fixture.debugElement
+      .query(By.directive(FormXEditableComponent))
+      .query(By.css('a'));
   }
 }
 
 @Component({
   template: `
-    <admin-editor>some initial texts</admin-editor>
+    <admin-form-x-editable title="Enter username">
+      superuser
+    </admin-form-x-editable>
   `,
 })
 class ParentComponent {
@@ -37,18 +41,18 @@ function createParentComponent() {
   });
 }
 
-describe('EditorComponent', () => {
+describe('FormWizardComponent', () => {
   beforeEach(async(() => {
     TestBed
       .configureTestingModule({
-        declarations: [EditorComponent, ParentComponent],
+        declarations: [FormXEditableComponent, ParentComponent],
       })
       .compileComponents()
       .then(() => createParentComponent());
   }));
 
-  it('should render the editor', () => {
+  it('should render the wizard', () => {
     expect(page.el).toBeDefined();
-    expect(page.el.nativeElement.innerHTML).toBeTruthy();
+    expect(page.el.nativeElement.innerHTML.trim()).toBeTruthy();
   });
 });

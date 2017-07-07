@@ -12,7 +12,7 @@ declare const TL: any;
 
 /**
  * A wrapper around TimelineJS
- * For an example usage refer to InteractiveTimelineDemoComponent
+ * For an example usage refer to {@link InteractiveTimelineDemoComponent}
  * For data format see https://timeline.knightlab.com/docs/json-format.html
  */
 @Component({

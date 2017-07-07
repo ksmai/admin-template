@@ -3,22 +3,31 @@ import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { EditorComponent } from './editor.component';
+import { ImageCropComponent } from './image-crop.component';
 
 class Page {
   el: DebugElement;
 
   createElements() {
-    this.el = fixture.debugElement.query(By.directive(EditorComponent));
+    this.el = fixture.debugElement.query(By.css('.jcrop-holder'));
   }
 }
 
 @Component({
   template: `
-    <admin-editor>some initial texts</admin-editor>
+    <admin-image-crop
+     [src]="src"
+     [setSelect]="selection"
+     [bgColor]="bgColor"
+     [bgOpacity]="bgOpacity"
+    ></admin-image-crop>
   `,
 })
 class ParentComponent {
+  src = 'some/url';
+  selection = [100, 200, 300, 400];
+  bgColor = 'red';
+  bgOpacity = 0.5;
 }
 
 let fixture: ComponentFixture<ParentComponent>;
@@ -37,18 +46,17 @@ function createParentComponent() {
   });
 }
 
-describe('EditorComponent', () => {
+describe('ImageCropComponent', () => {
   beforeEach(async(() => {
     TestBed
       .configureTestingModule({
-        declarations: [EditorComponent, ParentComponent],
+        declarations: [ImageCropComponent, ParentComponent],
       })
       .compileComponents()
       .then(() => createParentComponent());
   }));
 
-  it('should render the editor', () => {
+  it('should initialize jCrop', () => {
     expect(page.el).toBeDefined();
-    expect(page.el.nativeElement.innerHTML).toBeTruthy();
   });
 });
