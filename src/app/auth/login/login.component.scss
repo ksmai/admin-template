@@ -1,0 +1,62 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(67, 82, 90);
+}
+
+.login {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.login__header {
+  text-align: center;
+}
+
+.login__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.login__facebook {
+  width: 200px;
+}
+
+.login__twitter {
+  width: 150px;
+}
+
+.login__facebook,
+.login__twitter {
+  cursor: pointer;
+}
+
+.login__message {
+  text-align: center;
+  color: rgba(0, 0, 0, .54);
+}
+
+.login__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login__link {
+  color: rgb(85, 201, 166);
+}
+
+.form-control:focus {
+  border-color: rgb(85, 201, 166);
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(85, 201, 166, 0.6);
+}

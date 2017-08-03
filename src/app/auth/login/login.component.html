@@ -1,1 +1,62 @@
-login
+<section class="login">
+  <admin-panel
+    [showHeader]="true"
+    [showControls]="false"
+    headerColor="rgb(85, 201, 166)"
+  >
+    <header>
+      <h3 class="login__header">Login</h3>
+    </header>
+
+    <section class="login__social">
+      <img
+        src="../../../../assets/facebook-login.png"
+        alt="Login with Facebook"
+        class="login__facebook"
+        (click)="onLogin()"
+      >
+      <img
+        src="../../../../assets/twitter-login.png"
+        alt="Login with Twitter"
+        class="login__twitter"
+        (click)="onLogin()"
+      >
+    </section>
+
+    <p class="login__message">Or login with your account</p>
+    <form class="login__form" (submit)="onLogin()">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </div>
+
+          <input
+            type="email"
+            class="form-control"
+            placeholder="admin@template.com"
+          >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-lock"></span>
+          </div>
+
+          <input
+            type="password"
+            class="form-control"
+            placeholder="password"
+          >
+        </div>
+      </div>
+
+      <div class="form-group login__footer">
+        <a routerLink="/signup" class="login__link">Create an account</a>
+        <admin-button color="green" [outlined]="true">Login</admin-button>
+      </div>
+    </form>
+  </admin-panel>
+</section>
