@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(67, 82, 90);
+}
+
+.signup {
+  max-width: 500px;
+  width: 90%;
+  margin: auto;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.signup__header {
+  text-align: center;
+}
+
+.signup__message {
+  text-align: center;
+  color: rgba(0, 0, 0, .54);
+}
+
+.signup__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup__facebook,
+.signup__twitter {
+  cursor: pointer;
+}
+
+.signup__facebook {
+  width: 200px;
+}
+
+.signup__twitter {
+  width: 150px;
+}
+
+.signup__link {
+  margin-top: 20px;
+}
