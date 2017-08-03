@@ -1,1 +1,26 @@
-lock
+<section class="lock">
+  <section class="lock__timer">
+    {{hh}}:{{mm}}:{{ss}}
+  </section>
+
+  <section class="lock__date">
+    {{day}}, {{month}} {{year}}
+  </section>
+
+  <section class="lock__user">
+    <img
+      class="lock__image"
+      src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      alt="A demo profile picture"
+    >
+    <div class="lock__name">Nyan Cat</div>
+    <form (submit)="onUnlock()" class="lock__form">
+      <input
+        type="password"
+        name="password"
+        class="lock__password"
+        placeholder="password"
+      >
+    </form>
+  </section>
+</section>

@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100%;
+  background-color: rgb(67, 82, 90);
+}
+
+.lock {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  color: #fff;
+}
+
+.lock__timer {
+  font-size: 4em;
+  letter-spacing: .1em;
+}
+
+.lock__date {
+  letter-spacing: .1em;
+}
+
+.lock__user {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 40px;
+}
+
+.lock__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.lock__name {
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  right: 50%;
+  transform: translate(-40px, -50%);
+  background-color: #fff;
+  color: rgba(0, 0, 0, .87);
+  padding: 10px;
+  text-align: center;
+}
+
+.lock__form {
+  position: absolute;
+  width: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(40px, -50%);
+}
+
+.lock__password {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color: rgba(0, 0, 0, .87);
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .lock__form,
+  .lock__name {
+    position: static;
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    margin-top: 20px;
+  }
+
+  .lock {
+    padding-top: 50px;
+  }
+}
