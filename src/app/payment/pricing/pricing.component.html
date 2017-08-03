@@ -1,1 +1,51 @@
-pricing
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-md-3"
+      *ngFor="let plan of plans; let i=index"
+      (mouseenter)="onMouseEnter(i)"
+      (mouseleave)="onMouseLeave(i)"
+    >
+      <admin-panel
+        [showHeader]="true"
+        [showFooter]="true"
+        [showControls]="false"
+        footerColor="#fff"
+        [headerColor]="isSelected(i) ?
+          currentHeaderColor :
+          defaultHeaderColor"
+      >
+        <header class="plan__header">
+          <h3 class="plan__name">{{plan.name}}</h3>
+          <div
+            class="plan__price"
+            [style.backgroundColor]="isSelected(i) ?
+              currentHeaderColor :
+              defaultHeaderColor"
+          >${{plan.price}}</div>
+        </header>
+
+        <dl class="plan__data">
+          <dt class="plan__subheader">Domain</dt>
+          <dd class="plan__field">{{plan.domain}}</dd>
+          <dt class="plan__subheader">CPU</dt>
+          <dd class="plan__field">{{plan.cpu}}GHz</dd>
+          <dt class="plan__subheader">RAM</dt>
+          <dd class="plan__field">{{plan.ram}}GB</dd>
+          <dt class="plan__subheader">Bandwidth</dt>
+          <dd class="plan__field">{{plan.bandwidth}}GB</dd>
+          <dt class="plan__subheader">Storage space</dt>
+          <dd class="plan__field">{{plan.storage}}GB</dd>
+        </dl>
+
+        <footer class="plan__footer">
+          <admin-button
+            [outlined]="!isSelected(i)"
+            [color]="isSelected(i)? currentButtonColor : defaultButtonColor"
+            (click)="onChoose(i)"
+          >Choose plan</admin-button>
+        </footer>
+      </admin-panel>
+    </div>
+  </div>
+</div>

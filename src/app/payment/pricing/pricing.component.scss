@@ -1,0 +1,43 @@
+.plan__footer,
+.plan__name {
+  text-align: center;
+}
+
+.plan__header {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.plan__price {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 90px);
+  box-shadow: 0 0 0 5px #fff;
+}
+
+.plan__subheader {
+  margin-top: 20px;
+
+  &:first-child {
+    margin-top: 40px;
+  }
+}
+
+.plan__field {
+  text-align: right;
+}
+
+
+@media (max-width: 991px) {
+  .plan__subheader,
+  .plan__field {
+    text-align: center;
+  }
+}
