@@ -1,1 +1,96 @@
-invoice
+<admin-grid>
+  <ng-template>
+    <admin-panel>
+      <section class="invoice__header">
+        <section class="invoice__issuer">
+          <h2 class="invoice__issuer-name">
+            <admin-font name="flag"></admin-font>&nbsp; FooBarBaz Corp.
+          </h2>
+          <address class="invoice__address">
+            42 Foo Ave, Suite 42<br>
+            San Francisco, CA 94107<br>
+            Phone: (123) 456-7890<br>
+            Email: <a href="mailto: support@foobar.baz">support@foobar.baz</a>
+          </address>
+        </section>
+
+        <section class="invoice__issue">
+          <h3 class="invoice__number">Invoice #42</h3>
+          <h5>Issued 3 August 2017</h5>
+          <h5 class="invoice__due">Payment due 3 September 2017</h5>
+          <h4 class="invoice__client-name">Some Corp.</h4>
+          <address class="invoice__address">
+            42 Some Ave, Suite 42<br>
+            San Francisco, CA 94107<br>
+            Phone: (111) 111-1111<br>
+          </address>
+        </section>
+      </section>
+
+      <section class="invoice__body">
+        <admin-table [hover]="true" [striped]="true" tablesaw="stack">
+          <thead>
+            <tr>
+              <th class="table__header">#</th>
+              <th class="table__header">Item</th>
+              <th class="table__header">Quantity</th>
+              <th class="table__header">Unit Price</th>
+              <th class="table__header">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of items; let i=index">
+              <td>{{i + 1}}</td>
+              <td>{{item.description}}</td>
+              <td>{{item.quantity}} {{item.unit}}</td>
+              <td>${{item.price}}</td>
+              <td>${{item.price * item.quantity}}</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th [attr.colspan]="4" class="table__footer">Total</th>
+              <td class="table__footer">${{total}}</td>
+            </tr>
+          </tfoot>
+        </admin-table>
+      </section>
+
+      <section class="invoice__footer">
+        <section class="invoice__message">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </section>
+
+        <section class="invoice__amount">
+          <admin-table [striped]="true" [hover]="true">
+            <thead>
+              <tr>
+                <th [attr.colspan]="2" class="table__header">Amount due</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>Subtotal</th>
+                <td>${{total}}</td>
+              </tr>
+              <tr>
+                <th>Tax (2%)</th>
+                <td>${{total * 0.02}}</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <td>${{total * 1.02}}</td>
+              </tr>
+            </tbody>
+          </admin-table>
+
+          <admin-button
+            color="darkgray"
+            [outlined]="true"
+            (click)="onPrint()"
+          >Print invoice</admin-button>
+        </section>
+      </section>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

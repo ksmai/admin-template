@@ -1,0 +1,56 @@
+.invoice__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.invoice__issue {
+  margin-left: 30px;
+  text-align: right;
+}
+
+.invoice__address {
+  color: rgba(0, 0, 0, .54);
+}
+
+.invoice__issuer-name,
+.invoice__number {
+  color: #000;
+}
+
+.invoice__issuer-name {
+  font-size: 1.5em;
+}
+
+.invoice__number {
+  font-size: 2em;
+}
+
+.invoice__client-name {
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.invoice__due {
+  color: rgb(234, 120, 130);
+}
+
+.table__footer,
+.table__header {
+  background-color: rgb(153, 152, 149);
+  color: #fff;
+}
+
+.invoice__footer {
+  display: flex;
+  margin-top: 50px;
+}
+
+.invoice__message {
+  flex: 1;
+}
+
+.invoice__amount {
+  flex: 0 1 300px;
+  margin-left: 30px;
+  text-align: right;
+}
