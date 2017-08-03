@@ -15,6 +15,7 @@ import {
  *   - showHeader: default to false
  *   - showFooter: default to false
  *   - showBody: default to true
+ *   - showControls: default to true
  *   - headerColor: default to #79b0ec
  *   - footerColor: default to #79b0ec
  *   - tabbed: whether body contains a TabComponent, default to false
@@ -50,6 +51,7 @@ import {
 export class PanelComponent implements OnChanges, AfterViewInit {
   @Input() showHeader = false;
   @Input() showFooter = false;
+  @Input() showControls = true;
   @Input() showBody = true;
   @Input() headerColor = '#79b0ec';
   @Input() footerColor = '#79b0ec';
