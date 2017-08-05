@@ -12,6 +12,19 @@ module.exports = {
   module: {
     rules: [
       {
+        // workaround issue #120 before #122 is merged
+        // see https://github.com/abpetkov/switchery/pull/122
+        // and https://github.com/abpetkov/switchery/issues/120
+        test: /switchery\.js$/,
+        use: {
+          loader: 'string-replace-loader',
+          options: {
+            search: 'function FastClick(layer) {',
+            replace: 'function FastClick(layer) {_fastClick.call(window,layer);};function _fastClick(layer){',
+          },
+        },
+      },
+      {
         test: /\.html$/,
         use: 'raw-loader',
       },
