@@ -34,6 +34,8 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() type: string;
   @Input() group: boolean;
   @Input() x: string|{ [key: string]: string };
+  @Input() subchart: boolean = false;
+  @Input() colorPattern: string[];
   @ViewChild('div') divEl: any;
 
   private chart: any;
@@ -77,14 +79,18 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
 
     // handle timeseries data
     const axis = {};
-    if (this.type === 'timeseries') {
+    if (this.type === 'timeseries' || this.type === 'timeseries-area') {
       Object.assign(axis, {
         x: {
           type: 'timeseries',
           tick: { format: '%Y-%m-%d' },
         },
       });
-      data.type = undefined;
+      if (this.type === 'timeseries-area') {
+        data.type = 'area';
+      } else {
+        data.type = undefined;
+      }
     }
 
     // handle x-axis
@@ -122,13 +128,20 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
           values: [30, 60, 90, 100],
         },
       });
+    } else if (this.colorPattern) {
+      Object.assign(color, { pattern: this.colorPattern });
     }
+
+    const subchart = {
+      show: this.subchart,
+    };
 
     this.chart = c3.generate({
       data,
       grid,
       axis,
       color,
+      subchart,
       bindto: this.divEl.nativeElement,
     });
   }
