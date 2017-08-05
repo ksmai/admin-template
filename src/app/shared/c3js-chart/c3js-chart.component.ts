@@ -36,6 +36,8 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() x: string|{ [key: string]: string };
   @Input() subchart: boolean = false;
   @Input() colorPattern: string[];
+  @Input() showAxis: boolean = true;
+  @Input() showLegend: boolean = true;
   @ViewChild('div') divEl: any;
 
   private chart: any;
@@ -93,6 +95,13 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
       }
     }
 
+    if (!this.showAxis) {
+      Object.assign(axis, {
+        x: { show: false },
+        y: { show: false },
+      });
+    }
+
     // handle x-axis
     if (typeof this.x === 'string') {
       Object.assign(data, {
@@ -136,12 +145,17 @@ export class C3JSChartComponent implements OnChanges, AfterViewInit, OnDestroy {
       show: this.subchart,
     };
 
+    const legend = {
+      show: this.showLegend,
+    };
+
     this.chart = c3.generate({
       data,
       grid,
       axis,
       color,
       subchart,
+      legend,
       bindto: this.divEl.nativeElement,
     });
   }

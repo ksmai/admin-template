@@ -1,1 +1,27 @@
-dashboard revenue
+<section class="revenue">
+  <section class="revenue__stats">
+    <section class="revenue__gross">
+      <h4>Gross revenue</h4>
+      <h3>9,042</h3>
+    </section>
+
+    <section class="revenue__net">
+      <h4>Net revenue</h4>
+      <h3>6,420</h3>
+    </section>
+  </section>
+
+  <section class="revenue__graph">
+    <h4 class="revenue__graph-title">
+      <span>Daily load</span>
+      <span>42%</span>
+    </h4>
+    <admin-c3js-chart
+      [columns]="revenueData.columns"
+      [type]="revenueData.type"
+      [colorPattern]="revenueData.colorPattern"
+      [showAxis]="revenueData.showAxis"
+      [showLegend]="revenueData.showLegend"
+    ></admin-c3js-chart>
+  </section>
+</section>

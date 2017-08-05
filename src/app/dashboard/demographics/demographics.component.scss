@@ -15,6 +15,7 @@ $tab-color: rgb(234, 133, 100);
 
 .demographics__content {
   flex: 1;
+  min-width: 0;
 }
 
 .demographics__pill {
@@ -58,6 +59,7 @@ $tab-color: rgb(234, 133, 100);
   color: rgba(0, 0, 0, .54);
   vertical-align: middle;
   letter-spacing: .07em;
+  overflow-wrap: break-word;
 }
 
 .demographics__social-switch {
