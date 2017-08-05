@@ -1,0 +1,97 @@
+.demographics {
+  display: flex;
+}
+
+.demographics__nav {
+  flex: 0 0 100px;
+  text-align: center;
+  background-color: rgb(234, 133, 100);
+  overflow: hidden;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.demographics__pill {
+  color: #fff;
+  opacity: .7;
+  transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.demographics__note {
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.demographics__note-header {
+  color: rgba(0, 0, 0, .87);
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.demographics__note-content {
+  color: rgba(0, 0, 0, .54);
+}
+
+.demographics__social {
+  table-layout: fixed;
+}
+
+.demographics__social-icon {
+  width: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.demographics__social-com {
+  color: rgba(0, 0, 0, .54);
+  vertical-align: middle;
+  letter-spacing: .07em;
+}
+
+.demographics__social-switch {
+  text-align: right;
+  vertical-align: middle;
+}
+
+.fa-twitter {
+  color: #79b0ec;
+}
+
+.fa-facebook {
+  color: #4a90e2;
+}
+
+.fa-instagram,
+.fa-linkedin,
+.fa-google-plus {
+  color: #d71f4b;
+}
+
+/* override bootstrap styles */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  opacity: 1;
+  background-color: rgb(234, 133, 100);
+  position: relative;
+
+  &:after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background-color: #fff;
+    transform: translate(50%, -50%) rotate(45deg);
+  }
+}
+
+.nav > li > a:hover {
+  color: #fff;
+  opacity: 1;
+  background-color: rgb(234, 133, 100);
+}

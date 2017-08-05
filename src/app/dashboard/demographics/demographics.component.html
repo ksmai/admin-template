@@ -1,0 +1,89 @@
+<section class="demographics">
+  <ul class="nav nav-pills nav-stacked demographics__nav">
+    <li class="active">
+      <a
+        href="#dashboard-demographics"
+        data-toggle="pill"
+        class="demographics__pill"
+      ><span class="glyphicon glyphicon-stats"></span></a>
+    </li>
+    <li>
+      <a
+        href="#dashboard-social"
+        data-toggle="pill"
+        class="demographics__pill"
+      ><span class="glyphicon glyphicon-tasks"></span></a>
+    </li>
+    <li>
+      <a
+        href="#dashboard-note"
+        data-toggle="pill"
+        class="demographics__pill"
+      ><span class="glyphicon glyphicon-modal-window"></span></a>
+    </li>
+  </ul>
+
+  <div class="tab-content demographics__content">
+    <div class="tab-pane fade in active" id="dashboard-demographics">
+    </div>
+
+    <div class="tab-pane fade" id="dashboard-social">
+      <table class="table table-striped demographics__social">
+        <tbody>
+          <tr>
+            <td class="demographics__social-icon">
+              <i class="fa fa-twitter"></i>
+            </td>
+            <td class="demographics__social-com">TWITTER</td>
+            <td class="demographics__social-switch">
+              <input type="checkbox" checked #twitterSwitch>
+            </td>
+          </tr>
+          <tr>
+            <td class="demographics__social-icon">
+              <i class="fa fa-facebook"></i>
+            </td>
+            <td class="demographics__social-com">FACEBOOK</td>
+            <td class="demographics__social-switch">
+              <input type="checkbox" #facebookSwitch>
+            </td>
+          </tr>
+          <tr>
+            <td class="demographics__social-icon">
+              <i class="fa fa-google-plus"></i>
+            </td>
+            <td class="demographics__social-com">GOOGLE+</td>
+            <td class="demographics__social-switch">
+              <input type="checkbox" #googleSwitch>
+            </td>
+          </tr>
+          <tr>
+            <td class="demographics__social-icon">
+              <i class="fa fa-linkedin"></i>
+            </td>
+            <td class="demographics__social-com">LINKEDIN</td>
+            <td class="demographics__social-switch">
+              <input type="checkbox" checked #linkedinSwitch>
+            </td>
+          </tr>
+          <tr>
+            <td class="demographics__social-icon">
+              <i class="fa fa-instagram"></i>
+            </td>
+            <td class="demographics__social-com">INSTAGRAM</td>
+            <td class="demographics__social-switch">
+              <admin-button tag="primary" size="sm">
+                Connect
+              </admin-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tab-pane fade demographics__note" id="dashboard-note">
+      <h4 class="demographics__note-header">Some notes</h4>
+      <p class="demographics__note-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+    </div>
+  </div>
+</section>

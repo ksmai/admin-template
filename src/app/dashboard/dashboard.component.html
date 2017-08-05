@@ -1,1 +1,43 @@
-dashboard
+<admin-grid [cols]="[12]">
+  <ng-template>
+    <admin-panel>
+      <admin-dashboard-visitor></admin-dashboard-visitor>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
+
+<admin-grid [cols]="[5,7]">
+  <ng-template>
+    <admin-panel [tabbed]="true">
+      <admin-dashboard-demographics></admin-dashboard-demographics>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel>
+      <admin-dashboard-revenue></admin-dashboard-revenue>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
+
+<admin-grid [cols]="[4,8]">
+  <ng-template>
+    <admin-panel>
+      <admin-dashboard-radar></admin-dashboard-radar>
+    </admin-panel>
+
+    <admin-panel [tabbed]="true">
+      <admin-dashboard-data></admin-dashboard-data>
+    </admin-panel>
+  </ng-template>
+
+  <ng-template>
+    <admin-panel>
+      <admin-dashboard-calendar></admin-dashboard-calendar>
+    </admin-panel>
+
+    <admin-panel>
+      <admin-dashboard-map></admin-dashboard-map>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
