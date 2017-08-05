@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+/**
+ * Render visitor data inside dashboard
+ */
 @Component({
   selector: 'admin-dashboard-visitor',
   templateUrl: './visitor.component.html',

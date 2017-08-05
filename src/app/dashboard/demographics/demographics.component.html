@@ -25,6 +25,14 @@
 
   <div class="tab-content demographics__content">
     <div class="tab-pane fade in active" id="dashboard-demographics">
+      <h3 class="demographics__bar-header">Demographics</h3>
+      <admin-c3js-chart
+        [columns]="visitorData.columns"
+        [type]="visitorData.type"
+        [group]="!!visitorData.group"
+        [x]="visitorData.x"
+        [colorPattern]="visitorData.colorPattern"
+      ></admin-c3js-chart>
     </div>
 
     <div class="tab-pane fade" id="dashboard-social">

@@ -1,3 +1,5 @@
+$tab-color: rgb(234, 133, 100);
+
 .demographics {
   display: flex;
 }
@@ -5,16 +7,25 @@
 .demographics__nav {
   flex: 0 0 100px;
   text-align: center;
-  background-color: rgb(234, 133, 100);
+  background-color: $tab-color;
   overflow: hidden;
   border-top-left-radius: 8px;
   border-bottom-left-radius: 8px;
+}
+
+.demographics__content {
+  flex: 1;
 }
 
 .demographics__pill {
   color: #fff;
   opacity: .7;
   transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+}
+
+.demographics__bar-header {
+  text-align: center;
+  color: $tab-color;
 }
 
 .demographics__note {
@@ -74,7 +85,7 @@
 .nav-pills > li.active > a:focus {
   color: #fff;
   opacity: 1;
-  background-color: rgb(234, 133, 100);
+  background-color: $tab-color;
   position: relative;
 
   &:after {
@@ -93,5 +104,5 @@
 .nav > li > a:hover {
   color: #fff;
   opacity: 1;
-  background-color: rgb(234, 133, 100);
+  background-color: $tab-color;
 }
