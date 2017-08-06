@@ -37,7 +37,9 @@ export class DashboardDemographicsComponent implements AfterViewInit {
   ngAfterViewInit() {
     ['twitter', 'facebook', 'google', 'linkedin']
       .forEach((com) => {
-        return new Switchery(this[`${com}Switch`].nativeElement);
+        return new Switchery(this[`${com}Switch`].nativeElement, {
+          size: 'small',
+        });
       });
   }
 }

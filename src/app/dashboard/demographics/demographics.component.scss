@@ -50,7 +50,7 @@ $tab-color: rgb(234, 133, 100);
 }
 
 .demographics__social-icon {
-  width: 50px;
+  width: 40px;
   text-align: center;
   vertical-align: middle;
 }
@@ -65,6 +65,7 @@ $tab-color: rgb(234, 133, 100);
 .demographics__social-switch {
   text-align: right;
   vertical-align: middle;
+  width: 70px;
 }
 
 .fa-twitter {
@@ -107,4 +108,20 @@ $tab-color: rgb(234, 133, 100);
   color: #fff;
   opacity: 1;
   background-color: $tab-color;
+}
+
+:host-context(.minimized) {
+  .demographics__social-switch {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .demographics__pill {
+    padding: 5px 10px;
+  }
+
+  .demographics__nav {
+    flex: 0 0 50px;
+  }
 }
