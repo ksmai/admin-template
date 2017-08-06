@@ -1,0 +1,50 @@
+.radar__table {
+  margin-top: 20px;
+  table-layout: fixed;
+}
+
+.radar__table-header {
+  font-size: 1em;
+  font-weight: 400;
+  color: rgba(0, 0, 0, .54);
+  width: 110px;
+}
+
+.radar__table-stat {
+  text-align: center;
+}
+
+.radar__table-sparkline {
+  text-align: right;
+  width: 60px;
+}
+
+.radar__label {
+  padding: 3px 5px;
+  color: #fff;
+  font-size: .8em;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.radar__label--perf {
+  background-color: rgb(234, 120, 130);
+}
+
+.radar__label--size {
+  background-color: rgb(85, 201, 166);
+}
+
+.radar__label--visitor {
+  background-color: rgb(121, 176, 236);
+}
+
+.radar__label--revenue {
+  background-color: rgb(222, 188, 133);
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .radar__table-stat {
+    display: none;
+  }
+}

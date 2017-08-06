@@ -41,6 +41,7 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit, OnDestro
   @Input() type: string;
   @Input() labels: string[];
   @Input() datasets: IDataset|IDataset[];
+  @Input() sparkline: boolean = false;
   @ViewChild('canvas') private canvasEl: any;
 
   private chart: any;
@@ -78,6 +79,14 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit, OnDestro
           display: (data.datasets as IDataset[]).length > 1,
         },
       };
+      if (this.sparkline) {
+        options.legend.display = false;
+        Object.assign(options, {
+          scale: {
+            ticks: { display: false },
+          },
+        });
+      }
       this.chart = new Chart(ctx, {
         data,
         options,

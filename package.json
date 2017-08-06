@@ -39,6 +39,7 @@
     "jquery": "^3.2.1",
     "jquery-jcrop": "^0.9.13",
     "jquery-knob": "^1.2.11",
+    "jquery-sparkline": "^2.4.0",
     "jquery-steps": "^1.1.0",
     "jquery-ui": "^1.12.1",
     "jquery-validation": "^1.16.0",

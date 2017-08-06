@@ -1,1 +1,49 @@
-dashboard radar
+<admin-chartjs-chart
+  [type]="radarData.type"
+  [labels]="radarData.labels"
+  [datasets]="radarData.datasets"
+  [sparkline]="radarData.sparkline"
+  [width]="radarData.width"
+  [height]="radarData.height"
+></admin-chartjs-chart>
+
+<table class="table table-striped table-hover radar__table">
+  <tbody>
+    <tr>
+      <th class="radar__table-header">Performance</th>
+      <td class="radar__table-stat">
+        <span class="radar__label radar__label--perf">+42%</span>
+      </td>
+      <td class="radar__table-sparkline">
+        <span #sparklinePerf></span>
+      </td>
+    </tr>
+    <tr>
+      <th class="radar__table-header">Bundle size</th>
+      <td class="radar__table-stat">
+        <span class="radar__label radar__label--size">-30%</span>
+      </td>
+      <td class="radar__table-sparkline">
+        <span #sparklineSize></span>
+      </td>
+    </tr>
+    <tr>
+      <th class="radar__table-header">Visitors</th>
+      <td class="radar__table-stat">
+        <span class="radar__label radar__label--visitor">420(+1%)</span>
+      </td>
+      <td class="radar__table-sparkline">
+        <span #sparklineVisitor></span>
+      </td>
+    </tr>
+    <tr>
+      <th class="radar__table-header">Revenue</th>
+      <td class="radar__table-stat">
+        <span class="radar__label radar__label--revenue">90(-5%)</span>
+      </td>
+      <td class="radar__table-sparkline">
+        <span #sparklineRevenue></span>
+      </td>
+    </tr>
+  </tbody>
+</table>
