@@ -29,6 +29,7 @@ export interface IDropdown {
  *   - Changing color: `color="red"`, ...
  *   - Outlined button: `[outlined]="true"`
  *   - Inverse button: `[inverse]="true"`
+ *   - Single icon button: `[icon]="true"`
  * @exmaple
  * <admin-button size="lg" color="pink">Hello</admin-button>
  *
@@ -79,6 +80,7 @@ export class ButtonComponent implements OnChanges, OnInit {
   @Input() texts: Array<string|IDropdown>;
   @Input() justified: boolean = false;
   @Input() vertical: boolean = false;
+  @Input() icon: boolean = false;
   @Output() clickBtn = new EventEmitter<any>();
   classes: { [key: string]: boolean };
   classLists: Array<{ [key: string]: boolean }>;
@@ -102,6 +104,7 @@ export class ButtonComponent implements OnChanges, OnInit {
       'btn-danger': this.tag === 'danger',
       'btn--outlined': this.outlined,
       'btn--inverse': this.inverse && !this.outlined,
+      'btn--icon': this.icon && !this.size && !this.texts,
     };
 
     if (this.color) {
