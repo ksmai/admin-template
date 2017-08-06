@@ -32,6 +32,7 @@
     "datatables.net-responsive": "^2.1.1",
     "datatables.net-responsive-bs": "^2.1.1",
     "dropzone": "^5.1.0",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.4.0",
     "gmaps": "^0.4.24",

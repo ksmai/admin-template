@@ -45,6 +45,10 @@ export class DashboardRadarComponent implements AfterViewInit {
   @ViewChild('sparklineRevenue') sparklineRevenue: ElementRef;
 
   ngAfterViewInit() {
+    setTimeout(() => this.initSparklines(), 0);
+  }
+
+  private initSparklines(): void {
     ($(this.sparklinePerf.nativeElement) as any)
       .sparkline(this.perf, {
         lineColor: 'rgb(234, 120, 130)',

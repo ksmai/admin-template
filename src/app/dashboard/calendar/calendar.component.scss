@@ -1,0 +1,50 @@
+.calendar {
+  display: flex;
+}
+
+.calendar__selector {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+.calendar__weather {
+  flex: 0 1 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: rgb(235, 160, 104);
+  color: #fff;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.weather__icon {
+  font-size: 5em;
+}
+
+.weather__description {
+  font-size: 3em;
+  margin: 0 0 20px;
+}
+
+.weather__temperature {
+  font-size: 2em;
+  margin: 0 0 12px;
+}
+
+.weather__wind {
+  font-size: 1em;
+  margin: 0 0 10px;
+}
+
+.weather__humidity {
+  font-size: 1em;
+  margin: 0;
+}
+
+/* a very weird bug in the bootstrap-datetimepicker library */
+/deep/ .datepicker > div {
+  display: block;
+}

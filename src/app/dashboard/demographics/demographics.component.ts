@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import 'bootstrap/js/tab';
@@ -17,7 +18,7 @@ const Switchery = require('switchery/dist/switchery');
   templateUrl: './demographics.component.html',
   styleUrls: ['./demographics.component.scss'],
 })
-export class DashboardDemographicsComponent implements AfterViewInit {
+export class DashboardDemographicsComponent implements AfterViewInit, OnDestroy {
   visitorData = {
     x: 'Year',
     columns: [
@@ -34,9 +35,21 @@ export class DashboardDemographicsComponent implements AfterViewInit {
   @ViewChild('googleSwitch') googleSwitch: ElementRef;
   @ViewChild('linkedinSwitch') linkedinSwitch: ElementRef;
 
+  private switcheries: any[];
+
   ngAfterViewInit() {
-    ['twitter', 'facebook', 'google', 'linkedin']
-      .forEach((com) => {
+    setTimeout(() => this.initSwitchery(), 0);
+  }
+
+  ngOnDestroy() {
+    this.switcheries.forEach((switchery) => {
+      switchery.destroy();
+    });
+  }
+
+  private initSwitchery(): void {
+    this.switcheries = ['twitter', 'facebook', 'google', 'linkedin']
+      .map((com) => {
         return new Switchery(this[`${com}Switch`].nativeElement, {
           size: 'small',
         });

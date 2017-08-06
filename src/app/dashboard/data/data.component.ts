@@ -84,6 +84,14 @@ export class DashboardDataComponent implements AfterViewInit {
   };
 
   ngAfterViewInit() {
+    setTimeout(() => this.initSparklines(), 0);
+  }
+
+  onFriendClick(friend: any): void {
+    friend.invited = !friend.invited;
+  }
+
+  private initSparklines(): void {
     for (let i = 1; i <= 3; i++) {
       ($(this[`sparkline${i}`].nativeElement) as any)
         .sparkline(this[`data${i}`], {
@@ -91,9 +99,5 @@ export class DashboardDataComponent implements AfterViewInit {
           barColor: '#fff',
         });
     }
-  }
-
-  onFriendClick(friend: any): void {
-    friend.invited = !friend.invited;
   }
 }

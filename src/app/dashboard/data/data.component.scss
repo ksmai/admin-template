@@ -54,6 +54,9 @@ $tab-color: rgb(222, 188, 133);
   background-color: $tab-color;
   color: #fff;
   text-align: center;
+  margin-bottom: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 
 .bar__table-total,
