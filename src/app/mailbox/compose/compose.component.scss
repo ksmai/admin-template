@@ -1,0 +1,66 @@
+.form-control {
+  border-width: 2px;
+}
+
+.horizontal-form .form-control:focus {
+  border-color: #4a90e2;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(#4a90e2, 0.6);
+}
+
+.compose__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.compose__user {
+  display: flex;
+  align-items: center;
+}
+
+.compose__user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.compose__header-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.compose__header-name,
+.compose__header-page {
+  color: rgba(0, 0, 0, .87);
+  margin: 0;
+}
+
+.compose__header-name {
+  margin-bottom: 8px;
+}
+
+.compose__back-btn /deep/ .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.compose__delete-btn /deep/ .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.compose__actions {
+  text-align: right;
+}
+
+.compose__send-btn {
+  margin-left: 20px;
+}

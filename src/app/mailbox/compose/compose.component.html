@@ -1,1 +1,107 @@
-compose
+<admin-grid>
+  <ng-template>
+    <admin-panel>
+      <section class="compose__header">
+        <section class="compose__controls">
+          <admin-button
+            class="compose__back-btn"
+            color="green"
+            [outlined]="true"
+            routerLink="/mailbox/inbox"
+          >
+            <span class="glyphicon glyphicon-arrow-left"></span>
+          </admin-button>
+          <admin-button
+            class="compose__delete-btn"
+            color="red"
+            [outlined]="true"
+            routerLink="/mailbox/inbox"
+          >
+            <span class="glyphicon glyphicon-remove"></span>
+          </admin-button>
+        </section>
+
+        <section class="compose__user">
+          <img
+            src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+            alt="Nyan Cat"
+            class="compose__user-avatar"
+          >
+          <div class="compose__header-texts">
+            <h5 class="compose__header-name">Nyan Cat</h5>
+            <h6 class="compose__header-page">Compose</h6>
+          </div>
+        </section>
+      </section>
+
+      <section class="compose__form form-horizontal">
+        <div class="form-group">
+          <label
+            for="compose__to"
+            class="control-label col-md-1"
+          >To</label>
+
+          <div class="col-md-11">
+            <input
+              type="text"
+              placeholder="foo@example.com"
+              class="form-control"
+              id="compose__to"
+            >
+          </div>
+        </div>
+        <div class="form-group">
+          <label
+            for="compose__cc"
+            class="control-label col-md-1"
+          >CC</label>
+
+          <div class="col-md-11">
+            <input type="text" class="form-control" id="compose__cc">
+          </div>
+        </div>
+        <div class="form-group">
+          <label
+            for="compose__bcc"
+            class="control-label col-md-1"
+          >BCC</label>
+
+          <div class="col-md-11">
+            <input type="text" class="form-control" id="compose__bcc">
+          </div>
+        </div>
+        <div class="form-group">
+          <label
+            for="compose__title"
+            class="control-label col-md-1"
+          >Title</label>
+
+          <div class="col-md-11">
+            <input
+              type="text"
+              placeholder="Some title here..."
+              class="form-control"
+              id="compose__title"
+            >
+          </div>
+        </div>
+      </section>
+
+      <admin-editor>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </admin-editor>
+
+      <section class="compose__actions">
+        <admin-button
+          [texts]="['Discard', 'Save']"
+          [colors]="['red', 'green']"
+          [outlined]="true"
+        ></admin-button>
+
+        <admin-button color="blue" class="compose__send-btn">
+          Send
+        </admin-button>
+      </section>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
