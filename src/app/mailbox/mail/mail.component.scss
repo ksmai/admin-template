@@ -1,0 +1,104 @@
+.mail__heading,
+.mail__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  padding: 20px;
+}
+
+.mail__sender,
+.mail__user {
+  display: flex;
+  align-items: center;
+}
+
+.mail__sender-avatar,
+.mail__user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.mail__sender-info,
+.mail__header-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.mail__from,
+.mail__subject,
+.mail__header-name,
+.mail__header-page {
+  color: rgba(0, 0, 0, .87);
+  margin: 0;
+}
+
+.mail__from,
+.mail__header-name {
+  margin-bottom: 8px;
+}
+
+.mail__btn {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.mail__btn--back,
+.mail__btn--edit,
+.mail__btn--forward,
+.mail__btn--delete,
+.mail__btn--print {
+  margin-right: 10px;
+}
+
+.mail__btn--reply,
+.mail__btn--reply-all,
+.mail__btn--mark {
+  /deep/ .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.mail__btn--reply-all,
+.mail__btn--forward,
+.mail__btn--delete {
+  /deep/ .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.mail__info {
+  text-align: right;
+}
+
+.mail__label {
+  display: inline-block;
+  color: #fff;
+  background-color: rgb(121, 176, 236);
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: .8em;
+}
+
+.mail__attachments,
+.mail__content {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.mail__reply-area {
+  padding: 20px;
+}
+
+.mail__attachment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}

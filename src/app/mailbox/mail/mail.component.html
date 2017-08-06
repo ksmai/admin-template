@@ -1,1 +1,133 @@
-mail
+<admin-grid>
+  <ng-template>
+    <admin-panel>
+      <section class="mail__header">
+        <section class="mail__controls">
+          <admin-button
+            [outlined]="true"
+            [icon]="true"
+            color="green"
+            class="mail__btn mail__btn--back"
+            routerLink="/mailbox/inbox"
+          ><i class="fa fa-arrow-left"></i></admin-button>
+          <admin-button
+            color="blue"
+            [icon]="true"
+            class="mail__btn mail__btn--edit"
+            routerLink="/mailbox/compose"
+          ><i class="fa fa-pencil-square-o"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="mail__btn mail__btn--reply"
+          ><i class="fa fa-reply"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="mail__btn mail__btn--reply-all"
+          ><i class="fa fa-reply-all"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="mail__btn mail__btn--forward"
+          ><i class="fa fa-share"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="red"
+            class="mail__btn mail__btn--mark"
+          ><i class="fa fa-exclamation"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="red"
+            class="mail__btn mail__btn--delete"
+          ><i class="fa fa-trash-o"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="brown"
+            class="mail__btn mail__btn--print"
+          ><i class="fa fa-print"></i></admin-button>
+        </section>
+
+        <section class="mail__user">
+          <img
+            src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+            alt="Nyan Cat"
+            class="mail__user-avatar"
+          >
+          <div class="mail__header-texts">
+            <h5 class="mail__header-name">Nyan Cat</h5>
+            <h6 class="mail__header-page">Mail</h6>
+          </div>
+        </section>
+      </section>
+
+      <section class="mail__heading">
+        <section class="mail__sender">
+          <img
+            src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+            alt="Nyan Cat"
+            class="mail__sender-avatar"
+          >
+          <section class="mail__sender-info">
+            <h5 class="mail__from">
+              <strong>From:</strong> Nyan Cat 2 -
+              <em>nyan@cat.com</em>
+            </h5>
+            <h5 class="mail__subject">
+              <strong>Subject:</strong> Hello, World!
+            </h5>
+          </section>
+        </section>
+
+        <section class="mail__info">
+          <span class="mail__label">LABEL</span>
+          <h5 class="mail__date">6 Aug, 22:23</h5>
+        </section>
+      </section>
+
+      <p class="mail__content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+
+      <section class="mail__attachments">
+        <h4><strong>Attachments</strong> (3 files, 42 KB)</h4>
+        <section class="mail__attachment">
+          <section class="mail__file">
+            <i class="fa fa-picture-o"></i>
+            <strong>cat.jpg</strong> (14 KB)
+          </section>
+          <a href="#" class="mail__download">Download</a>
+        </section>
+        <section class="mail__attachment">
+          <section class="mail__file">
+            <i class="fa fa-picture-o"></i>
+            <strong>dog.jpg</strong> (14 KB)
+          </section>
+          <a href="#" class="mail__download">Download</a>
+        </section>
+        <section class="mail__attachment">
+          <section class="mail__file">
+            <i class="fa fa-picture-o"></i>
+            <strong>kitty.jpg</strong> (14 KB)
+          </section>
+          <a href="#" class="mail__download">Download</a>
+        </section>
+      </section>
+
+      <section class="mail__reply-area">
+        <textarea
+          placeholder="Click here to reply"
+          routerLink="/mailbox/compose"
+          class="form-control"
+          rows="5"
+        ></textarea>
+      </section>
+    </admin-panel>
+  </ng-template>
+</admin-grid>
