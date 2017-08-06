@@ -1,1 +1,151 @@
-dashboard data
+<section class="data">
+  <ul class="nav nav-pills nav-justified">
+    <li class="active">
+      <a
+        href="#dashboard-data-1"
+        data-toggle="pill"
+        class="data__pill"
+      ><span class="glyphicon glyphicon-stats"></span></a>
+    </li>
+    <li>
+      <a
+        href="#dashboard-data-2"
+        data-toggle="pill"
+        class="data__pill"
+      ><span class="glyphicon glyphicon-th-list"></span></a>
+    </li>
+    <li>
+      <a
+        href="#dashboard-data-3"
+        data-toggle="pill"
+        class="data__pill"
+      ><span class="glyphicon glyphicon-time"></span></a>
+    </li>
+  </ul>
+
+  <div class="tab-content data__content">
+    <div class="tab-pane fade in active" id="dashboard-data-1">
+      <h5 class="bar__title">Vim vs Emacs</h5>
+      <h6 class="bar__subtitle">Weekly usage data</h6>
+      <admin-c3js-chart
+        [columns]="barData.columns"
+        [group]="barData.group"
+        [type]="barData.type"
+        [showLegend]="barData.showLegend"
+        [colorPattern]="barData.colorPattern"
+      ></admin-c3js-chart>
+
+      <table class="table bar__table">
+        <tr>
+          <td class="bar__table-total">
+            <h6>Total downloads</h6>
+            <h5>1,324</h5>
+          </td>
+          <td class="bar__table-sparkline">
+            <span #sparkline1></span>
+          </td>
+          <td class="bar__table-stat">
+            +42%
+          </td>
+        </tr>
+        <tr>
+          <td class="bar__table-total">
+            <h6>Total downloads</h6>
+            <h5>4,200</h5>
+          </td>
+          <td class="bar__table-sparkline">
+            <span #sparkline2></span>
+          </td>
+          <td class="bar__table-stat">
+            0
+          </td>
+        </tr>
+        <tr>
+          <td class="bar__table-total">
+            <h6>Total downloads</h6>
+            <h5>3,697</h5>
+          </td>
+          <td class="bar__table-sparkline">
+            <span #sparkline3></span>
+          </td>
+          <td class="bar__table-stat">
+            -64%
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade" id="dashboard-data-2">
+      <div class="form-group friend__form">
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Type a name here..."
+            class="form-control"
+          >
+          <div class="input-group-btn">
+            <admin-button color="orange">
+              <span class="glyphicon glyphicon-search"></span>
+            </admin-button>
+          </div>
+        </div>
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox">
+            Invite all friends
+          </label>
+        </div>
+      </div>
+
+      <table class="table table-striped table-hover friend__table">
+        <tr *ngFor="let friend of friends">
+          <td class="friend__picture-cell">
+            <img
+              class="friend__picture"
+              [src]="friend.picture"
+              [alt]="'Picture of ' + friend.name "
+            >
+          </td>
+          <td class="friend__name-cell">
+            <span class="friend__name">{{friend.name}}</span>
+          </td>
+          <td class="friend__invite-cell">
+            <admin-button
+              [outlined]="!friend.invited"
+              color="orange"
+              (click)="onFriendClick(friend)"
+            >{{friend.invited ? 'invited' : 'invite'}}</admin-button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="tab-pane fade doughnut" id="dashboard-data-3">
+      <admin-c3js-chart
+        [type]="donutData.type"
+        [columns]="donutData.columns"
+        [colorPattern]="donutData.colorPattern"
+      ></admin-c3js-chart>
+
+      <table class="table table-striped table-hover">
+        <tbody>
+          <tr *ngFor="let slice of donutData.columns; let i=index">
+            <td>
+              <div class="donut__progress-bar">
+                <div
+                  class="donut__progress text-center"
+                  [style.backgroundColor]="donutData.colorPattern[i]"
+                  [style.width]="slice[1] * 2 + '%'"
+                >{{slice[0]}}</div>
+              </div>
+            </td>
+            <td class="text-right donut__label-cell">
+              <span class="donut__label">{{slice[1]}}</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
