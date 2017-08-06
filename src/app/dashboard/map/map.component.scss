@@ -1,0 +1,36 @@
+.map__summary {
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  padding-bottom: 20px;
+}
+
+.map__cell {
+  vertical-align: middle;
+}
+
+.glyphicon-circle-arrow-up,
+.glyphicon-circle-arrow-left,
+.glyphicon-circle-arrow-right {
+  font-size: 2em;
+}
+
+.glyphicon-circle-arrow-up {
+  color: rgb(234, 120, 130);
+}
+
+.glyphicon-circle-arrow-left {
+  color: rgb(121, 176, 236);
+}
+
+.glyphicon-circle-arrow-right {
+  color: rgb(85, 201, 166);
+}
+
+.map__address {
+  font-size: .8em;
+  color: rgba(0, 0, 0, .54);
+}
+
+.map__start {
+  margin-bottom: 20px;
+}

@@ -1,1 +1,35 @@
-dashboard map
+<admin-map [lat]="lat" [lng]="lng" [polyline]="polyline"></admin-map>
+<p class="map__summary">Walk 0.3 miles &ndash; for 6 minutes</p>
+<h3 class="map__start">
+  <span class="glyphicon glyphicon-record"></span>
+  <span class="map__place">469 47th Ave</span><br>
+  <span class="map__address">San Francisco, CA 94121, United States</span>
+</h3>
+
+<admin-table [striped]="true" [hover]="true">
+  <tbody>
+    <tr>
+      <td class="map__cell">
+        <span class="glyphicon glyphicon-circle-arrow-up"></span>
+      </td>
+      <td class="map__cell">Walk <strong>west</strong> on <strong>Point Lobos Ave towards 48th Ave</strong></td>
+      <td class="map__cell">312 ft</td>
+    </tr>
+    <tr>
+      <td class="map__cell"><span class="glyphicon glyphicon-circle-arrow-right"></span></td>
+      <td class="map__cell">Turn <strong>right</strong></td>
+      <td class="map__cell">0.2 mi</td>
+    </tr>
+    <tr>
+      <td class="map__cell"><span class="glyphicon glyphicon-circle-arrow-left"></span></td>
+      <td class="map__cell">Follow the road <strong>northwest</strong>. Turn <strong>left</strong> (Slight turn)</td>
+      <td class="map__cell">282 ft</td>
+    </tr>
+  </tbody>
+</admin-table>
+
+<h3 class="map__end">
+  <span class="glyphicon glyphicon-record"></span>
+  <span class="map__place">LincolnPark USS San Francisco Memorial</span><br>
+  <span class="map__address">CA 94121, United States</span>
+</h3>
