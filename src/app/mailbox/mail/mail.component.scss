@@ -102,3 +102,17 @@
   justify-content: space-between;
   margin-bottom: 10px;
 }
+
+@media (max-width: 991px) {
+  .mail__btn--reply,
+  .mail__btn--reply-all,
+  .mail__btn--forward,
+  .mail__btn--mark,
+  .mail__btn--print,
+  .mail__btn--delete,
+  .mail__header-texts,
+  .mail__sender-avatar,
+  .mail__info {
+    display: none;
+  }
+}

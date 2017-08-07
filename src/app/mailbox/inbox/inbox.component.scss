@@ -1,0 +1,211 @@
+.inbox__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  padding: 20px;
+}
+
+.inbox__user {
+  display: flex;
+  align-items: center;
+}
+
+.inbox__user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.inbox__header-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.inbox__header-name,
+.inbox__header-page {
+  color: rgba(0, 0, 0, .87);
+  margin: 0;
+}
+
+.inbox__header-name {
+  margin-bottom: 8px;
+}
+
+.inbox__btn {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.inbox__btn--edit,
+.inbox__btn--forward,
+.inbox__btn--delete {
+  margin-right: 10px;
+}
+
+.inbox__btn--reply,
+.inbox__btn--reply-all,
+.inbox__btn--mark {
+  /deep/ .btn {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.inbox__btn--reply-all,
+.inbox__btn--forward,
+.inbox__btn--delete {
+  /deep/ .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.inbox__content {
+  display: flex;
+  width: 100%;
+}
+
+.inbox__nav {
+  flex: 0 1 30%;
+  max-width: 300px;
+  border-right: 1px solid rgba(0, 0, 0, .12);
+}
+
+.inbox__maillist {
+  flex: 1;
+}
+
+.inbox__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.inbox__nav-header {
+  color: rgba(0, 0, 0, .54);
+  font-size: .8em;
+  letter-spacing: .08em;
+  margin-left: 15px;
+}
+
+.inbox__nav-item {
+  padding: 10px;
+}
+
+.inbox__nav-item--active {
+  background-color: rgb(121, 176, 236);
+  color: #fff;
+}
+
+.inbox__nav-label {
+  color: #fff;
+  padding: 2px 6px;
+  background-color: rgb(234, 120, 130);
+  border-radius: 3px;
+  font-size: .8em;
+}
+
+.inbox__nav-item--active .inbox__nav-label {
+  color: rgb(121, 176, 236);
+  background-color: #fff;
+}
+
+.inbox__my-tag {
+  color: rgb(234, 120, 130);
+}
+
+.inbox__your-tag {
+  color: rgb(85, 201, 166);
+}
+
+.inbox__maillist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.inbox__mail {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color .15s cubic-bezier(.4, 0, .2, 1);
+
+  &:hover {
+    background-color: rgb(255, 211, 177);
+  }
+}
+
+.inbox__mail-data {
+  flex: 1;
+}
+
+.inbox__sender-avatar {
+  border: 3px solid transparent;
+  border-radius: 50%;
+  padding: 3px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+$color-list: 
+  (1, rgb(234, 120, 130)),
+  (2, rgb(121, 176, 236)),
+  (3, rgb(180, 161, 221)),
+  (4, rgb(171,  79,  69)),
+  (5, rgb(235, 160, 101)),
+  (6, rgb( 85, 201, 166)),
+  (7, rgb(222, 188, 133)),
+  (8, rgb(153, 152, 149)),
+  (9, rgb(104, 160, 165));
+
+@each $i, $color in $color-list {
+  .inbox__sender-avatar-#{$i} {
+    border-color: $color;
+  }
+}
+
+.inbox__subject {
+  margin-top: 0;
+  color: rgba(0, 0, 0, .54);
+}
+
+.inbox__mail-label {
+  border-radius: 99px;
+  padding: 3px 10px;
+  font-size: .8em;
+  letter-spacing: .08em;
+  color: #fff;
+  font-weight: 700;
+}
+
+@each $i, $color in $color-list {
+  .inbox__mail-label-#{$i} {
+    background-color: $color;
+  }
+}
+
+.inbox__mail-meta {
+  color: rgba(0, 0, 0, .54);
+}
+
+@media (max-width: 991px) {
+  .inbox__btn--reply-all,
+  .inbox__btn--mark,
+  .inbox__btn--delete,
+  .inbox__nav,
+  .inbox__header-texts,
+  .inbox__sender-avatar,
+  .inbox__mail-meta {
+    display: none;
+  }
+}

@@ -64,3 +64,9 @@
 .compose__send-btn {
   margin-left: 20px;
 }
+
+@media (max-width: 991px) {
+  .compose__header-texts {
+    display: none;
+  }
+}

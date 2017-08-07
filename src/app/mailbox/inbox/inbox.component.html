@@ -1,1 +1,139 @@
-inbox
+<admin-grid>
+  <ng-template>
+    <admin-panel [tabbed]="true">
+      <section class="inbox__header">
+        <section class="inbox__controls">
+          <admin-button
+            color="blue"
+            [icon]="true"
+            class="inbox__btn inbox__btn--edit"
+            routerLink="/mailbox/compose"
+          ><i class="fa fa-pencil-square-o"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="inbox__btn inbox__btn--reply"
+          ><i class="fa fa-reply"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="inbox__btn inbox__btn--reply-all"
+          ><i class="fa fa-reply-all"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="green"
+            class="inbox__btn inbox__btn--forward"
+          ><i class="fa fa-share"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="red"
+            class="inbox__btn inbox__btn--mark"
+          ><i class="fa fa-exclamation"></i></admin-button>
+          <admin-button
+            [icon]="true"
+            [outlined]="true"
+            color="red"
+            class="inbox__btn inbox__btn--delete"
+          ><i class="fa fa-trash-o"></i></admin-button>
+        </section>
+
+        <section class="inbox__user">
+          <img
+            src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+            alt="Nyan Cat"
+            class="inbox__user-avatar"
+          >
+          <div class="inbox__header-texts">
+            <h5 class="inbox__header-name">Nyan Cat</h5>
+            <h6 class="inbox__header-page">Mail</h6>
+          </div>
+        </section>
+      </section>
+
+      <section class="inbox__content">
+        <nav class="inbox__nav">
+          <h5 class="inbox__nav-header">MAILBOXES</h5>
+          <ul class="inbox__nav-list">
+            <li class="inbox__nav-item inbox__nav-item--active">
+              <i class="fa fa-fw fa-envelope-o"></i>
+              <span>Inbox</span>
+              <span class="inbox__nav-label pull-right">42</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-star-o"></i>
+              <span>Starred</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-share-square-o"></i>
+              <span>Sent</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-envelope-open-o"></i>
+              <span>Drafts</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-paperclip"></i>
+              <span>Attachments</span>
+            </li>
+          </ul>
+
+          <h5 class="inbox__nav-header">OTHERS</h5>
+          <ul class="inbox__nav-list">
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-exclamation"></i>
+              <span>Spam</span>
+              <span class="inbox__nav-label pull-right">10</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-trash"></i>
+              <span>Trash</span>
+            </li>
+          </ul>
+
+          <h5 class="inbox__nav-header">TAGS</h5>
+          <ul class="inbox__nav-list">
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-circle inbox__my-tag"></i>
+              <span>#myTag</span>
+            </li>
+            <li class="inbox__nav-item">
+              <i class="fa fa-fw fa-circle inbox__your-tag"></i>
+              <span>#yourTag</span>
+            </li>
+        </nav>
+
+        <ul class="inbox__maillist">
+          <li
+            *ngFor="let i of [1,2,3,4,5,6,7,8,9]"
+            class="inbox__mail"
+            routerLink="/mailbox/mail"
+          >
+            <img
+              src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+              alt="Nyan cat"
+              [class]="'inbox__sender-avatar inbox__sender-avatar-' + i"
+            >
+
+            <section class="inbox__mail-data">
+              <h5 class="inbox__sender-name">Nyan Cat {{i}}</h5>
+              <h6 class="inbox__subject">
+                <span [class]="'inbox__mail-label inbox__mail-label-' + i"
+                >LABEL</span>
+                This is a subject
+              </h6>
+            </section>
+
+            <section class="inbox__mail-meta">
+              <h6 class="text-right">{{10 - i}} Aug</h6>
+              <h6 class="text-right">#{{i}}</h6>
+            </section>
+          </li>
+        </ul>
+      </section>
+    </admin-panel>
+  </ng-template>
+</admin-grid>

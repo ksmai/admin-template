@@ -13,7 +13,7 @@ yarn           # install dependencies
 yarn start     # start dev server
 yarn test      # run tests
 yarn run build # build for production
-yarn run test  # lint source code
+yarn run lint  # lint source code
 ```
 
 ## LICENSE
