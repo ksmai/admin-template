@@ -21,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^4.2.2",
     "@angular/router": "^4.2.2",
     "X-editable": "https://github.com/vitalets/x-editable",
+    "blueimp-gallery": "^2.25.2",
     "bootstrap": "^3.3.7",
     "bootstrap-slider": "^9.8.0",
     "c3": "^0.4.13",

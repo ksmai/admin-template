@@ -1,1 +1,37 @@
-gallery
+<div
+  class="blueimp-gallery blueimp-gallery-carousel gallery__container"
+  #container
+>
+  <div class="slides"></div>
+  <h3 class="title"></h3>
+  <a class="prev">‹</a>
+  <a class="next">›</a>
+  <a class="close">×</a>
+  <a class="play-pause"></a>
+  <ol class="indicator"></ol>
+</div>
+
+<div class="gallery__links">
+  <div
+    *ngFor="let image of images; let i=index"
+    class="gallery__link"
+  >
+    <a
+      class="gallery__thumbnail"
+      [style.background-image]="'url(' + image.href + ')'"
+      [attr.data-href]="image.href"
+      (click)="onOpen(i)"
+    >
+      <div class="gallery__overlay">
+        <i class="fa fa-search-plus fa-2x"></i>
+      </div>
+    </a>
+    <h5>{{image.title}}</h5>
+    <h6 class="gallery__description">{{image.description}}</h6>
+    <admin-button
+      color="pinkishred"
+      [outlined]="!image.liked"
+      (click)="onLike(i)"
+    ><i class="fa fa-heart"></i> {{image.likes}}</admin-button>
+  </div>
+</div>
