@@ -1,0 +1,49 @@
+<admin-panel [tabbed]="true">
+  <section class="post__header">
+    <img [src]="avatar" [alt]="name" class="post__avatar">
+    <div class="post__user">
+      <h4 class="post__name">{{name}}</h4>
+      <h5 class="post__location">{{location}}</h5>
+    </div>
+    <div class="post__meta">
+      <ng-content select="[postIcon]"></ng-content>
+      <h6 class="post__time">{{time}}</h6>
+    </div>
+  </section>
+
+  <p class="post__message">
+    <ng-content></ng-content>
+  </p>
+
+  <ng-content select="[postMedia]"></ng-content>
+
+  <section class="post__like">
+    <button type="button" class="post__like-button">
+      <i class="fa fa-thumbs-o-up"></i>
+      Like
+    </button>
+
+    <span><strong>{{likes}}</strong> people like this</span>
+  </section>
+
+  <ul class="post__comments">
+    <li *ngFor="let comment of comments" class="comment">
+      <img
+        [src]="comment.avatar"
+        [alt]="comment.name"
+        class="comment__avatar"
+      >
+      <div class="comment__texts">
+        <h4 class="comment__name">{{comment.name}}</h4>
+        <p class="comment__message">{{comment.message}}</p>
+      </div>
+
+      <h6 class="comment__time">{{comment.time}}</h6>
+    </li>
+  </ul>
+
+  <textarea
+    class="post__comment-input"
+    placeholder="Write a comment..."
+  ></textarea>
+</admin-panel>

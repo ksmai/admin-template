@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { SharedModule } from '../shared/shared.module';
+import { SocialPostComponent } from './social-post/social-post.component';
 import { SocialComponent } from './social.component';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { SocialComponent } from './social.component';
 
   declarations: [
     SocialComponent,
+    SocialPostComponent,
   ],
 })
 export class SocialModule {

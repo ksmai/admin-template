@@ -1,1 +1,121 @@
-social
+<section class="social__cover">
+  <div class="social__scrim">
+    <div class="social__info">
+      <h3 class="social__location">A place with some grass, Earth</h3>
+      <h5 class="social__date">7 Aug 2017</h5>
+
+      <div class="social__like" [class.social__like--liked]="liked">
+        <button
+          type="button"
+          class="social__like-button"
+          (click)="onLike()"
+        ><i class="fa fa-heart"></i></button>
+        {{likes}} likes
+      </div>
+    </div>
+
+    <div class="social__user">
+      <img
+        src="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        alt="Nyan cat"
+        class="social__user-avatar"
+      >
+      <h4 class="social__user-name">Nyan Cat</h4>
+      <h5 class="social__user-title">Just a cat</h5>
+      <admin-button
+        [outlined]="!followed"
+        color="purple"
+        (click)="onFollow()"
+      >{{followed ? 'Followed' : 'Follow me' }}</admin-button>
+    </div>
+  </div>
+
+</section>
+
+<admin-grid [cols]="[6, 6]">
+  <ng-template>
+    <admin-panel [tabbed]="true">
+      <textarea
+        class="social__input"
+        rows="3"
+        placeholder="What's on your mind?"
+      ></textarea>
+
+      <section class="social__buttons">
+        <div class="social__icon-buttons">
+          <button type="button" class="social__icon-button">
+            <i class="fa fa-map-marker fa-fw"></i>
+          </button>
+          <button type="button" class="social__icon-button">
+            <i class="fa fa-camera fa-fw"></i>
+          </button>
+          <button type="button" class="social__icon-button">
+            <i class="fa fa-calendar fa-fw"></i>
+          </button>
+        </div>
+
+        <admin-button color="green">Send</admin-button>
+      </section>
+    </admin-panel>
+
+    <admin-social-post
+      name="Nyan Cat 42"
+      location="My cat house"
+      time="1 min ago"
+      [likes]="42"
+      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [comments]="commentsForBird"
+    >
+      <i class="fa fa-twitter" postIcon></i>
+      This bird is so cool! Don't you think so?
+      <img
+        src="../../../assets/demo/bird.jpeg"
+        alt="bird"
+        class="social__image"
+        postMedia
+      >
+    </admin-social-post>
+  </ng-template>
+
+  <ng-template>
+    <admin-social-post
+      name="Nyan Cat 2 created an event"
+      location="Nyan Cat House, 9 Avenue, Humboldt, SK, Canada"
+      time="2 hours ago"
+      [likes]="420"
+      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [comments]="[]"
+    >
+      <i class="fa fa-map-marker" postIcon></i>
+      Come play with me at my home!
+      <admin-map
+        [lat]="52.2042337"
+        [lng]="-105.1026553"
+        [markers]="[{ lat: 52.2042337, lng: -105.1026553 }]"
+        postMedia
+      ></admin-map>
+    </admin-social-post>
+
+    <admin-social-post
+      name="Nyan Cat 4242"
+      location="Some random place"
+      time="10 hours ago"
+      [likes]="9001"
+      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [comments]="commentsForVideo"
+    >
+      <i class="fa fa-youtube" postIcon></i>
+      nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan...
+      <div class="social__youtube-wrapper" postMedia>
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/QH2-TGUlwu4"
+          frameborder="0"
+          class="social__youtube"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </admin-social-post>
+  </ng-template>
+</admin-grid>
