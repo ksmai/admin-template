@@ -39,3 +39,17 @@
   justify-content: space-between;
   padding: 10px 20px;
 }
+
+@media (max-width: 991px) {
+  .revenue {
+    flex-direction: column;
+  }
+
+  .revenue__stats {
+    border-radius: 8px 8px 0 0;
+  }
+
+  .revenue__graph {
+    border-radius: 0 0 8px 8px;
+  }
+}

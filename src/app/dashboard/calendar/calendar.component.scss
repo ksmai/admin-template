@@ -48,3 +48,13 @@
 /deep/ .datepicker > div {
   display: block;
 }
+
+@media (max-width: 991px) {
+  .calendar {
+    flex-direction: column;
+  }
+
+  .calendar__weather {
+    border-radius: 0 0 8px 8px;
+  }
+}
