@@ -1,0 +1,116 @@
+.post__cover {
+  width: 100%;
+  height: 400px;
+  padding: 20px 40px;
+  border-radius: 8px 8px 0 0;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+}
+
+.post__scrim {
+  background-color: rgba(0, 0, 0, .5);
+  border-radius: 8px 8px 0 0;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 100px;
+}
+
+.post__title {
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.post__extract {
+  color: rgba(255, 255, 255, .7);
+  text-align: center;
+}
+
+.post__action {
+  border: 2px solid rgba(0, 0, 0, .12);;
+  background: none;
+  border-radius: 50%;
+  margin: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+}
+
+$brands:
+  (facebook, #76abe9),
+  (twitter, #a6caf2),
+  (google-plus, #f1a4ab),
+  (dribbble, #edc1d3),
+  (flickr, #f1a4ab),
+  (instagram, #f28a5e);
+@each $brand, $color in $brands {
+  .post__action--#{$brand} {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+.post__content {
+  padding: 20px 40px;
+}
+
+.post__authorship {
+  color: rgba(0, 0, 0, .54);
+}
+
+.post__paragraph {
+  text-indent: 2em;
+  margin: 20px 0;
+  line-height: 2;
+  text-align: justify;
+}
+
+.post__youtube-wrapper {
+  width: 100%;
+  padding-bottom: 56.25%;
+  margin: 20px auto;
+  position: relative;
+}
+
+.post__youtube {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.post__tag {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .07em;
+  margin-top: 30px;
+}
+
+@media (max-width: 991px) {
+  .post__scrim {
+    padding: 20px;
+  }
+
+  .post__extract {
+    display: none;
+  }
+}

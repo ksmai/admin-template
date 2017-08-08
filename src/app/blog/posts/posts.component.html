@@ -91,11 +91,11 @@
           <h5>Trending posts</h5>
           <ul class="blog__trending-list">
             <li *ngFor="let post of posts" class="blog__trending-post">
-              <a routerLink="/blog/posts" class="blog__trending-subject">
+              <a routerLink="/blog/post" class="blog__trending-subject">
                 {{post.subject}}
               </a>
               <h6><em>{{post.date}}</em> &ndash;
-                <a routerLink="/blog/posts">{{post.author}}</a>
+                <a routerLink="/blog/post">{{post.author}}</a>
               </h6>
             </li>
           </ul>
