@@ -1,1 +1,141 @@
-posts
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <admin-panel
+        [tabbed]="true"
+        *ngFor="let post of posts"
+        class="post"
+      >
+        <img [src]="post.picture" [alt]="post.subject" class="post__picture">
+
+        <div class="post__main">
+          <h3 class="post__subject">{{post.subject}}</h3>
+          <h6 class="post__authorship">by
+            <a routerLink="/blog/post">{{post.author}}</a> / {{post.date}}
+          </h6>
+          <p class="post__extract">{{post.extract}}</p>
+          <a routerLink="/blog/post">Read more</a>
+        </div>
+
+        <div class="post__footer">
+          <span class="post__tag">
+            <i class="fa fa-hashtag"></i> {{post.tag}}
+          </span>
+          <div class="post__stats">
+            <span class="post__stat post__stat--comments">
+              <i class="fa fa-comments"></i> {{post.comments}}
+            </span>
+            <span class="post__stat post__stat--shares">
+              <i class="fa fa-share-alt"></i> {{post.shares}}
+            </span>
+            <span class="post__stat post__stat--likes">
+              <i class="fa fa-heart"></i> {{post.likes}}
+            </span>
+          </div>
+        </div>
+      </admin-panel>
+
+      <div class="blog__pagination">
+        <admin-pagination
+          [start]="1"
+          [end]="20"
+          color="red"
+        ></admin-pagination>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <admin-panel [tabbed]="true" class="blog__owner-panel">
+        <div class="blog__owner">
+          <p class="blog__owner-intro">
+            Hi! My name is Nyan Cat and I'm a cat.
+          </p>
+          <div class="blog__owner-avatar-container">
+            <img
+              src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+              alt="Nyan Cat"
+              class="blog__owner-avatar"
+            >
+          </div>
+        </div>
+      </admin-panel>
+
+      <admin-panel class="blog__actions-panel">
+        <div class="blog__actions">
+          <button type="button" class="blog__action blog__action--facebook">
+            <i class="fa fa-facebook fa-fw"></i>
+          </button>
+          <button type="button" class="blog__action blog__action--twitter">
+            <i class="fa fa-twitter fa-fw"></i>
+          </button>
+          <button
+            type="button"
+            class="blog__action blog__action--google-plus"
+          >
+            <i class="fa fa-google-plus fa-fw"></i>
+          </button>
+          <button type="button" class="blog__action blog__action--dribbble">
+            <i class="fa fa-dribbble fa-fw"></i>
+          </button>
+          <button type="button" class="blog__action blog__action--flickr">
+            <i class="fa fa-flickr fa-fw"></i>
+          </button>
+          <button type="button" class="blog__action blog__action--instagram">
+            <i class="fa fa-instagram fa-fw"></i>
+          </button>
+        </div>
+      </admin-panel>
+
+      <admin-panel class="blog__trending-panel">
+        <div class="blog__trending">
+          <h5>Trending posts</h5>
+          <ul class="blog__trending-list">
+            <li *ngFor="let post of posts" class="blog__trending-post">
+              <a routerLink="/blog/posts" class="blog__trending-subject">
+                {{post.subject}}
+              </a>
+              <h6><em>{{post.date}}</em> &ndash;
+                <a routerLink="/blog/posts">{{post.author}}</a>
+              </h6>
+            </li>
+          </ul>
+        </div>
+
+        <div class="blog__tags">
+          <button type="button" class="blog__tag" *ngFor="let tag of tags">
+            {{tag}}
+          </button>
+        </div>
+      </admin-panel>
+
+      <admin-panel class="blog__writers-panel">
+        <div class="blog__writers">
+          <h5>Our writers</h5>
+          <ul class="blog__writer-list">
+            <li *ngFor="let i of [1,2,3,4]" class="blog__writer">
+              <img
+                src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+                alt="Nyan Cat"
+                class="blog__writer-avatar"
+              >
+              <span>Nyan Cat {{i}}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-group blog__subscribe">
+          <div class="input-group">
+            <input
+              type="text"
+              placeholder="ex@example.com"
+              class="form-control"
+            >
+            <div class="input-group-btn">
+              <admin-button color="green">Subscribe</admin-button>
+            </div>
+          </div>
+        </div>
+      </admin-panel>
+    </div>
+  </div>
+</div>

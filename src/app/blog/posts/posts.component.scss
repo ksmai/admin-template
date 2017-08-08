@@ -1,0 +1,210 @@
+.post__picture {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.post__main {
+  padding: 0 40px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.post__footer {
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post__tag {
+  text-transform: uppercase;
+  font-size: .8em;
+  letter-spacing: .08em;
+}
+
+.post__stat {
+  margin-left: 20px;
+}
+
+.post__stat--likes {
+  color: rgb(226, 153, 183);
+}
+
+.blog__owner {
+  display: flex;
+}
+
+.blog__owner-intro {
+  padding: 10px 20px;
+  flex: 1;
+}
+
+.blog__owner-avatar-container {
+  flex: 0 1 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(222, 188, 133);
+  border-radius: 0 8px 8px 0;
+  padding: 20px;
+}
+
+.blog__owner-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.blog__action {
+  border: 2px solid rgba(0, 0, 0, .12);;
+  background: none;
+  border-radius: 50%;
+  margin: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+  }
+}
+
+$brands:
+  (facebook, #76abe9),
+  (twitter, #a6caf2),
+  (google-plus, #f1a4ab),
+  (dribbble, #edc1d3),
+  (flickr, #f1a4ab),
+  (instagram, #f28a5e);
+@each $brand, $color in $brands {
+  .blog__action--#{$brand} {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color;
+      border-color: $color;
+    }
+  }
+}
+
+.blog__writers,
+.blog__trending {
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.blog__writer-list,
+.blog__trending-list {
+  list-style: none;
+  padding: 10px 0;
+  border-top: 1px dashed rgba(0, 0, 0, .54);
+}
+
+.blog__tags {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.blog__tag {
+  margin: 5px 15px;
+  border: 0;
+  position: relative;
+  background-color: #dfdfdf;
+  height: 2em;
+  padding: 5px 10px;
+  transition: all .15s cubic-bezier(.4, 0, .2, 1);
+
+  &:before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    border-right: 1em solid #dfdfdf;
+    border-top: 1em solid transparent;
+    border-bottom: 1em solid transparent;
+    transition: all .15s cubic-bezier(.4, 0, .2, 1);
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: rgb(85, 201, 166);
+
+    &:before {
+      border-right-color: rgb(85, 201, 166);
+    }
+  }
+}
+
+.blog__writer {
+  margin-bottom: 20px;
+}
+
+.blog__writer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Make input-group-btn works with admin-button component */
+.form-group .input-group .input-group-btn {
+  font-size: inherit;
+
+  /deep/ .btn-group--split {
+    display: flex;
+  }
+
+  /deep/ admin-button .btn {
+    border-radius: 0;
+  }
+
+  &:first-child /deep/ .btn {
+    margin-right: -2px;
+
+    &:first-of-type {
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+    }
+  }
+
+  &:last-child /deep/ .btn {
+    margin-left: -2px;
+
+    &:last-of-type {
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+    }
+  }
+}
+
+.form-control {
+  border-width: 2px;
+
+  &:focus {
+    border-color: rgb(85, 201, 166);
+    box-shadow:
+      inset 0 1px 1px rgba(0, 0, 0, 0.075),
+      0 0 8px rgba(85, 201, 166, 0.6);
+  }
+}
+
+.blog__subscribe {
+  margin-top: 20px;
+}
+
+.blog__pagination {
+  text-align: center;
+}
+
+@media (max-width: 991px) {
+  .blog__owner-panel,
+  .blog__trending-panel,
+  .blog__actions-panel,
+  .blog__writers-panel {
+    display: none;
+  }
+}
