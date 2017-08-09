@@ -1,1 +1,56 @@
-topnav
+<nav class="topnav" [ngClass]="colorClass">
+  <button
+    type="button"
+    (click)="toggleSidenav()"
+    class="topnav__toggle-btn topnav__toggle-btn--menu"
+  ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+
+  <h1 class="topnav__logo">
+    <i class="fa fa-code"></i>
+    admin template
+  </h1>
+
+  <div class="topnav__btn-group">
+    <button
+      type="button"
+      class="topnav__btn topnav__btn--color"
+      (click)="openColorModal()"
+    ><span class="glyphicon glyphicon-asterisk"></span></button>
+  </div>
+
+  <div class="topnav__btn-group">
+    <button type="button" class="topnav__btn topnav__btn--language">
+      <span class="glyphicon glyphicon-asterisk"></span>
+    </button>
+  </div>
+
+  <div class="topnav__btn-group">
+    <button
+      type="button"
+      class="topnav__btn topnav__btn--user"
+      routerLink="/social"
+    ><span class="glyphicon glyphicon-user"></span></button>
+    <button type="button" class="topnav__btn topnav__btn--setting">
+      <span class="glyphicon glyphicon-cog"></span>
+    </button>
+  </div>
+
+  <div class="topnav__btn-group">
+    <button
+      type="button"
+      class="topnav__btn topnav__btn--mail"
+      routerLink="/mailbox/inbox"
+    ><span class="glyphicon glyphicon-envelope"></span></button>
+    <button type="button" class="topnav__btn topnav__btn--notification">
+      <span class="glyphicon glyphicon-comment"></span>
+    </button>
+    <button type="button" class="topnav__btn topnav__btn--feed">
+      <span class="glyphicon glyphicon-volume-up"></span>
+    </button>
+  </div>
+
+  <a
+    href="https://github.com/ksmai/admin-template"
+    class="topnav__toggle-btn"
+  ><span class="glyphicon glyphicon-off"></span></a>
+</nav>

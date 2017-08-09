@@ -1,6 +1,92 @@
+@import '../../styles/colors';
+
 :host {
   display: block;
   width: 100%;
   height: 100%;
-  outline: 1px dashed #000;
+}
+
+.topnav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(76, 93, 103);
+}
+
+.topnav__toggle-btn {
+  border: 0;
+  background: none;
+  height: 75px;
+  width: 75px;
+  color: #fff;
+  transition: background-color .15s cubic-bezier(.4, 0, .2, 1);
+  line-height: 75px;
+  font-size: 35px;
+  text-align: center;
+  padding: 0;
+}
+
+.topnav__toggle-btn--menu {
+  display: none;
+}
+
+.topnav__logo {
+  margin: 0 24px;
+  color: #fff;
+  flex: 1;
+  font-size: 1.3em;
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+
+.topnav__btn-group {
+  border-left: 1px solid rgba(255, 255, 255, .12);
+  height: 75px;
+  padding: 0 12px;
+}
+
+.topnav__btn {
+  color: #fff;
+  background: none;
+  border: none;
+  outline: none;
+  height: 75px;
+  line-height: 75px;
+  font-size: 1.3em;
+  padding: 0 12px;
+  opacity: .7;
+  transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+
+  &:hover,
+  &:active,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+@each $name, $color in $colors {
+  .topnav--#{$name} {
+    .topnav__toggle-btn {
+      background-color: darken($color, 5%);
+
+      &:hover {
+        background-color: $color;
+      }
+    }
+
+    .topnav__btn--color {
+      color: $color;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .topnav__toggle-btn--menu {
+    display: inline-block;
+  }
+
+  .topnav__btn-group {
+    display: none;
+  }
 }
