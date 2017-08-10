@@ -1,11 +1,109 @@
+@import '../../styles/colors';
+
 :host {
   display: block;
   width: 100%;
   height: 100%;
-  outline: 1px dotted #000;
 }
 
 .sidenav {
-  overflow-y: auto;
+  background-color: rgb(76, 93, 103);
   height: 100%;
+}
+
+.sidenav__user {
+  display: flex;
+  padding: 20px;
+  height: 75px;
+  width: 100%;
+}
+
+.sidenav__user-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.sidenav__user-info {
+  margin: 0 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidenav__user-name {
+  color: #fff;
+}
+
+.sidenav__user-experience-bar {
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.sidenav__user-filled-experience {
+  width: 40%;
+  height: 5px;
+  background-color: #fff;
+}
+
+.sidenav__user-lock {
+  background: none;
+  border: none;
+  color: #000;
+  opacity: .3;
+  transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+  padding: 5px;
+
+  &:hover {
+    opacity: .5;
+  }
+}
+
+.sidenav__tab {
+  border-right: 1px solid rgba(0, 0, 0, .12);
+  color: rgba(0, 0, 0, .2);
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+@each $name, $color in $colors {
+  .sidenav--#{$name} {
+    .sidenav__user {
+      background-color: $color;
+    }
+
+    .sidenav__tabs {
+      background-color: rgba($color, .8);
+    }
+
+    /* override bootstrap style */
+    .sidenav__tabs > .sidenav__tab.active > a {
+      color: rgba($color, .8);
+    }
+  }
+}
+
+/* override bootstrap style */
+.sidenav__tabs > .sidenav__tab > a {
+  padding: 5px 10px;
+  color: rgba(0, 0, 0, .38);
+  border-radius: 0;
+}
+
+/* override bootstrap style */
+.sidenav__tabs > .sidenav__tab > a:hover {
+  background-color: rgba(0, 0, 0, .1);
+}
+
+/* override bootstrap style */
+.sidenav__tabs > .sidenav__tab.active > a {
+  background-color: rgba(0, 0, 0, .38);
+}
+
+.sidenav__content {
+  overflow-y: auto;
 }

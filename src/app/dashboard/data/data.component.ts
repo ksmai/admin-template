@@ -4,8 +4,9 @@ import {
   ElementRef,
   ViewChild,
 } from '@angular/core';
-import 'bootstrap/js/tab';
 import $ = require('jquery');
+
+import 'bootstrap/js/tab';
 import 'jquery-sparkline';
 
 const nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
