@@ -9,6 +9,8 @@
 .sidenav {
   background-color: rgb(76, 93, 103);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidenav__user {
@@ -84,6 +86,11 @@
     .sidenav__tabs > .sidenav__tab.active > a {
       color: rgba($color, .8);
     }
+
+    /deep/ .links__link-item--active,
+    /deep/ .links__child-link-item--active {
+      border-color: $color;
+    }
   }
 }
 
@@ -106,4 +113,6 @@
 
 .sidenav__content {
   overflow-y: auto;
+  flex: 1;
+  min-height: 0;
 }

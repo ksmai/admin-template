@@ -1,1 +1,42 @@
-links
+<nav class="links">
+  <input
+    type="text"
+    placeholder="Search..."
+    [(ngModel)]="filter"
+    class="links__input"
+  >
+
+  <ul class="links__list">
+    <li
+      *ngFor="let entry of displayedLinks"
+      [routerLink]="entry.href || null"
+      [routerLinkActive]="entry.href ? 'links__link-item--active' : ''"
+      [class.links__link-item]="entry.name && !entry.children"
+      [class.links__group-item]="entry.children"
+      [class.links__category-item]="!entry.name"
+    >
+      <ng-container *ngIf="!entry.name; else linkOrGroup">
+        <span class="links__category">{{entry}}</span>
+      </ng-container>
+
+      <ng-template #linkOrGroup>
+        <i [class]="'fa fa-fw fa-' + entry.icon"></i>
+        <span class="links__name">{{entry.name}}</span>
+        <ng-container *ngIf="entry.children">
+          <span class="links__count">{{entry.children.length}}</span>
+          <ul class="links__child-list">
+            <li
+              *ngFor="let child of entry.children"
+              [routerLink]="child.href"
+              routerLinkActive="links__child-link-item--active"
+              class="links__child-link-item"
+            >
+              <i [class]="'fa fa-fw fa-' + child.icon"></i>
+              <span class="links__name">{{child.name}}</span>
+            </li>
+          </ul>
+        </ng-container>
+      </ng-template>
+    </li>
+  </ul>
+</nav>
