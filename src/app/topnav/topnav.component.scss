@@ -57,11 +57,122 @@
   padding: 0 12px;
   opacity: .7;
   transition: opacity .15s cubic-bezier(.4, 0, .2, 1);
+  position: relative;
 
   &:hover,
   &:active,
   &:focus {
     opacity: 1;
+  }
+}
+
+.topnav__btn--color,
+.topnav__btn--language {
+  opacity: 1;
+}
+
+.topnav__bubble {
+  position: absolute;
+  border-radius: 50%;
+  color: #fff;
+  font-size: .4em;
+  font-weight: 900;
+  top: 10px;
+  right: 0;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+}
+
+.topnav__bubble--feed {
+  background-color: rgb(68, 193, 172);
+}
+
+.topnav__bubble--notification {
+  background-color: rgb(235, 160, 104);
+}
+
+.topnav__popover {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 200px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, .87);
+  box-shadow:
+    0 1px 3px -2px rgba(0, 0, 0, .2),
+    0 2px 2px rgba(0, 0, 0, .14),
+    0 3px 5px rgba(0, 0, 0, .12);
+  z-index: 10;
+  border-top: 5px solid #fff;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 100%;
+    right: 7px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+  }
+}
+
+.topnav__btn:hover,
+.topnav__btn:active,
+.topnav__btn:focus {
+  .topnav__popover {
+    display: inline-block;
+  }
+}
+
+.topnav__popover-title {
+  color: rgba(0, 0, 0, .54);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  text-align: left;
+  font-size: .7em;
+  margin: 10px 20px;
+}
+
+.topnav__popover--language {
+  width: 300px;
+}
+
+.topnav__language-list {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.topnav__language-item {
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, .38);
+  transition: color .15s cubic-bezier(.4, 0, .2, 1);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: rgba(0, 0, 0, .87);
+  }
+}
+
+.topnav__language-name {
+  margin-left: 10px;
+}
+
+.topnav__language-item--active {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
   }
 }
 
@@ -77,6 +188,22 @@
 
     .topnav__btn--color {
       color: $color;
+    }
+
+    .topnav__popover {
+      border-color: $color;
+
+      &:before {
+        border-bottom-color: $color;
+      }
+    }
+
+    .topnav__language-item--active {
+      background-color: darken($color, 5%);
+
+      &:hover {
+        background-color: $color;
+      }
     }
   }
 }

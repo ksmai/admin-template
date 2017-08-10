@@ -1,9 +1,9 @@
 import {
   Component,
-  Input,
-  Output,
-  OnChanges,
   EventEmitter,
+  Input,
+  OnChanges,
+  Output,
 } from '@angular/core';
 
 import { VexDialogService } from '../core/vex-dialog.service';
@@ -21,6 +21,27 @@ export class TopnavComponent implements OnChanges {
   @Output() navColorChange = new EventEmitter<string>();
 
   colorClass: { [key: string]: boolean };
+  locale: string = 'us';
+  locales: string[] = ['us', 'fr', 'it', 'de', 'sa', 'hk'];
+  languages = {
+    us: ['English - U.S.', 'French', 'Italian', 'German', 'Arabic',
+      'Traditional Chinese'],
+
+    fr: ['iAnglais - États-Unis', 'français', 'allemand',
+      'italien', 'arabe', 'Chinois traditionnel'],
+
+    it: ['Inglese - U.S.', 'francese', 'Tedesco', 'italiano',
+      'Arabo', 'Cinese tradizionale'],
+
+    de: ['Amerikanisches Englisch.', 'Französisch', 'Deutsche',
+      'Italienisch', 'Arabisch', 'Traditionelles Chinesisch'],
+
+    sa: ['الإنجليزية - الولايات المتحدة', 'الفرنسية', 'ألمانية',
+      'الإيطالي', 'عربى', 'الصينية التقليدية'],
+
+    hk: ['英文 - 美國', '法文', '德語', '意大利語', '阿拉伯語',
+      '繁體中文'],
+  };
 
   constructor(private vexDialogService: VexDialogService) {
   }
@@ -39,6 +60,10 @@ export class TopnavComponent implements OnChanges {
   changeNavColor(color: string): void {
     this.navColor = color;
     this.navColorChange.emit(this.navColor);
+  }
+
+  changeLocale(locale: string): void {
+    this.locale = locale;
   }
 
   openColorModal(): void {
@@ -107,7 +132,7 @@ export class TopnavComponent implements OnChanges {
       'blue',
       'purple',
       'brown',
-      'paleyellow'
+      'paleyellow',
     ].map((color: string) => {
       return `
         <input

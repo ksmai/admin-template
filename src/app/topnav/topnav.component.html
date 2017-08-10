@@ -20,7 +20,23 @@
 
   <div class="topnav__btn-group">
     <button type="button" class="topnav__btn topnav__btn--language">
-      <span class="glyphicon glyphicon-asterisk"></span>
+      <span [class]="'flag-icon flag-icon-' + locale"></span>
+      <div class="topnav__popover topnav__popover--language">
+        <h6 class="topnav__popover-title">Locale</h6>
+        <ul class="topnav__language-list">
+          <li
+            *ngFor="let lang of locales; let i=index"
+            class="topnav__language-item"
+            [class.topnav__language-item--active]="lang === locale"
+            (click)="changeLocale(lang)"
+          >
+            <span [class]="'flag-icon flag-icon-' + lang"></span>
+            <span class="topnav__language-name">
+              {{languages[locale][i]}}
+            </span>
+          </li>
+        </ul>
+      </div>
     </button>
   </div>
 
@@ -30,8 +46,12 @@
       class="topnav__btn topnav__btn--user"
       routerLink="/social"
     ><span class="glyphicon glyphicon-user"></span></button>
+
     <button type="button" class="topnav__btn topnav__btn--setting">
       <span class="glyphicon glyphicon-cog"></span>
+      <div class="topnav__popover topnav__popover--setting">
+        popover
+      </div>
     </button>
   </div>
 
@@ -41,11 +61,21 @@
       class="topnav__btn topnav__btn--mail"
       routerLink="/mailbox/inbox"
     ><span class="glyphicon glyphicon-envelope"></span></button>
+
     <button type="button" class="topnav__btn topnav__btn--notification">
       <span class="glyphicon glyphicon-comment"></span>
+      <span class="topnav__bubble topnav__bubble--notification">3</span>
+      <div class="topnav__popover topnav__popover--notification">
+        popover
+      </div>
     </button>
+
     <button type="button" class="topnav__btn topnav__btn--feed">
       <span class="glyphicon glyphicon-volume-up"></span>
+      <span class="topnav__bubble topnav__bubble--feed">4</span>
+      <div class="topnav__popover topnav__popover--feed">
+        popover
+      </div>
     </button>
   </div>
 
