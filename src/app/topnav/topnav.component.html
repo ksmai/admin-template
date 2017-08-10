@@ -50,7 +50,19 @@
     <button type="button" class="topnav__btn topnav__btn--setting">
       <span class="glyphicon glyphicon-cog"></span>
       <div class="topnav__popover topnav__popover--setting">
-        popover
+        <h6 class="topnav__popover-title">Dimension</h6>
+        <ul class="topnav__setting-list">
+          <li
+            class="topnav__setting-item"
+            [class.topnav__setting-item--active]="!boxed"
+            (click)="changeBoxed(false)"
+          >Fluid</li>
+          <li
+            class="topnav__setting-item"
+            [class.topnav__setting-item--active]="boxed"
+            (click)="changeBoxed(true)"
+          >Boxed (1200px)</li>
+        </ul>
       </div>
     </button>
   </div>
@@ -64,17 +76,126 @@
 
     <button type="button" class="topnav__btn topnav__btn--notification">
       <span class="glyphicon glyphicon-comment"></span>
-      <span class="topnav__bubble topnav__bubble--notification">3</span>
+      <span class="topnav__bubble topnav__bubble--notification">2</span>
       <div class="topnav__popover topnav__popover--notification">
-        popover
+        <h6 class="topnav__popover-title">Notifications</h6>
+        <ul class="topnav__notification-list">
+          <li class="topnav__notification-item">
+            <div class="topnav__notification-media">
+              <img
+                src="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+                alt="Nyan Cat"
+                class="topnav__notification-avatar"
+              >
+              <span
+                class="topnav__notification-label
+                  topnav__notification-label--new"
+              >New</span>
+            </div>
+            <div class="topnav__notification-content">
+              <p class="topnav__time">
+                <i class="fa fa-comments"></i>
+                <em>3 hours ago</em>
+              </p>
+              <p class="topnav__link">
+                Nyan Cat 2 sent you a private message
+              </p>
+              <p class="topnav__notification-extract">
+                Nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan...
+              </p>
+            </div>
+          </li>
+          <li class="topnav__notification-item">
+            <div class="topnav__notification-media">
+              <img
+                src="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+                alt="Nyan Cat"
+                class="topnav__notification-avatar"
+              >
+              <span
+                class="topnav__notification-label
+                  topnav__notification-label--alert"
+              >Alert</span>
+            </div>
+            <div class="topnav__notification-content">
+              <p class="topnav__time">
+                <i class="fa fa-exclamation-circle"></i>
+                <em>9 hours ago</em>
+              </p>
+              <p class="topnav__link">
+                Nyan Cat 4 sent you an alert
+              </p>
+              <p class="topnav__notification-extract">
+                Nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan nyan...
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="topnav__notification-buttons">
+          <button type="button" class="topnav__notification-button">
+            Mark all read
+          </button>
+          <button type="button" class="topnav__notification-button">
+            View all
+          </button>
+        </div>
       </div>
     </button>
 
     <button type="button" class="topnav__btn topnav__btn--feed">
       <span class="glyphicon glyphicon-volume-up"></span>
-      <span class="topnav__bubble topnav__bubble--feed">4</span>
+      <span class="topnav__bubble topnav__bubble--feed">3</span>
       <div class="topnav__popover topnav__popover--feed">
-        popover
+        <h6 class="topnav__popover-title">News Feed</h6>
+        <ul class="topnav__feed-list">
+          <li class="topnav__feed-item">
+            <div class="topnav__feed-media">
+              <i class="fa fa-star fa-2x fa-fw"></i>
+            </div>
+            <div class="topnav__feed-content">
+              <p class="topnav__time">
+                <em>few seconds ago</em>
+              </p>
+              <p class="topnav__feed-title">
+                <span class="topnav__link">@nyancat2</span>
+                starred
+                <span class="topnav__repo">ksmai/admin-template</span>
+              </p>
+            </div>
+          </li>
+          <li class="topnav__feed-item">
+            <div class="topnav__feed-media">
+              <i class="fa fa-comments fa-2x fa-fw"></i>
+            </div>
+            <div class="topnav__feed-content">
+              <p class="topnav__time">
+                <em>2 hours ago</em>
+              </p>
+              <p class="topnav__feed-title">
+                <span class="topnav__link">@nyancat3</span>
+                commentd on issue
+                <span class="topnav__repo">#42</span>
+              </p>
+            </div>
+          </li>
+          <li class="topnav__feed-item">
+            <div class="topnav__feed-media">
+              <i class="fa fa-code-fork fa-2x fa-fw"></i>
+            </div>
+            <div class="topnav__feed-content">
+              <p class="topnav__time">
+                <em>5 hours ago</em>
+              </p>
+              <p class="topnav__feed-title">
+                <span class="topnav__link">@nyancat4</span>
+                forked
+                <span class="topnav__repo">angular/angular</span>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <span #sparkline></span>
       </div>
     </button>
   </div>

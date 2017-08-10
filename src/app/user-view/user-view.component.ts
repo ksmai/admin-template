@@ -6,5 +6,6 @@ import { Component, HostBinding } from '@angular/core';
 })
 export class UserViewComponent {
   @HostBinding('class.always-show-sidenav') alwaysShowSidenav = false;
+  @HostBinding('class.boxed') boxed = false;
   navColor = 'pinkishred';
 }

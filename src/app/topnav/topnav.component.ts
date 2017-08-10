@@ -1,10 +1,15 @@
 import {
+  AfterViewInit,
   Component,
+  ElementRef,
   EventEmitter,
   Input,
   OnChanges,
   Output,
+  ViewChild,
 } from '@angular/core';
+import $ = require('jquery');
+import 'jquery-sparkline';
 
 import { VexDialogService } from '../core/vex-dialog.service';
 
@@ -13,7 +18,7 @@ import { VexDialogService } from '../core/vex-dialog.service';
   templateUrl: './topnav.component.html',
   styleUrls: ['./topnav.component.scss'],
 })
-export class TopnavComponent implements OnChanges {
+export class TopnavComponent implements OnChanges, AfterViewInit {
   @Input() alwaysShowSidenav: boolean;
   @Output() alwaysShowSidenavChange = new EventEmitter<boolean>();
 
@@ -43,6 +48,11 @@ export class TopnavComponent implements OnChanges {
       '繁體中文'],
   };
 
+  @Input() boxed = false;
+  @Output() boxedChange = new EventEmitter<boolean>();
+
+  @ViewChild('sparkline') sparklineEl: ElementRef;
+
   constructor(private vexDialogService: VexDialogService) {
   }
 
@@ -52,9 +62,27 @@ export class TopnavComponent implements OnChanges {
     };
   }
 
+  ngAfterViewInit() {
+    ($(this.sparklineEl.nativeElement) as any).sparkline(
+      [11, 12, 10, 5, 8, 2, 4, 4, 8, 9, 8, 11, 6, 17, 10, 17, 3, 2, 11, 13],
+      {
+        type: 'bar',
+        barColor: '#4c5d67',
+        barWidth: 10,
+        height: '50px',
+      },
+    );
+  }
+
   toggleSidenav(): void {
     this.alwaysShowSidenav = !this.alwaysShowSidenav;
     this.alwaysShowSidenavChange.emit(this.alwaysShowSidenav);
+  }
+
+  changeBoxed(boxed: boolean): void {
+    this.boxed = boxed;
+    this.boxedChange.emit(this.boxed);
+    setTimeout(() => window.dispatchEvent(new Event('resize')), 0);
   }
 
   changeNavColor(color: string): void {
