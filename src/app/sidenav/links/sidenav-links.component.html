@@ -1,42 +1,47 @@
 <nav class="links">
-  <input
-    type="text"
-    placeholder="Search..."
-    [(ngModel)]="filter"
-    class="links__input"
-  >
+  <div class="links__input-container">
+    <input
+      type="text"
+      placeholder="Search..."
+      [(ngModel)]="filter"
+      class="links__input"
+    >
+  </div>
 
   <ul class="links__list">
-    <li
-      *ngFor="let entry of displayedLinks"
-      [routerLink]="entry.href || null"
-      [routerLinkActive]="entry.href ? 'links__link-item--active' : ''"
-      [class.links__link-item]="entry.name && !entry.children"
-      [class.links__group-item]="entry.children"
-      [class.links__category-item]="!entry.name"
-    >
-      <ng-container *ngIf="!entry.name; else linkOrGroup">
-        <span class="links__category">{{entry}}</span>
-      </ng-container>
+    <ng-container *ngFor="let entry of displayedLinks">
+      <li
+        [routerLink]="entry.href || null"
+        [routerLinkActive]="entry.href ? 'links__link-item--active': ''"
+        [ngClass]="itemClass(entry)"
+        (click)="onToggleClose(entry.name)"
+      >
+        <span
+          class="links__category"
+          *ngIf="!entry.name; else linkOrGroup"
+        >{{entry}}</span>
 
-      <ng-template #linkOrGroup>
-        <i [class]="'fa fa-fw fa-' + entry.icon"></i>
-        <span class="links__name">{{entry.name}}</span>
-        <ng-container *ngIf="entry.children">
-          <span class="links__count">{{entry.children.length}}</span>
-          <ul class="links__child-list">
-            <li
-              *ngFor="let child of entry.children"
-              [routerLink]="child.href"
-              routerLinkActive="links__child-link-item--active"
-              class="links__child-link-item"
-            >
-              <i [class]="'fa fa-fw fa-' + child.icon"></i>
-              <span class="links__name">{{child.name}}</span>
-            </li>
-          </ul>
-        </ng-container>
-      </ng-template>
-    </li>
+        <ng-template #linkOrGroup>
+          <i [class]="'fa fa-fw fa-' + entry.icon"></i>
+          <span class="links__name">{{entry.name}}</span>
+          <span class="links__count" *ngIf="entry.children">
+            {{entry.children.length}}
+            <span [routerLink]="entry.prefix"></span>
+          </span>
+        </ng-template>
+      </li>
+
+      <ul class="links__child-list" *ngIf="entry.children">
+        <li
+          *ngFor="let child of entry.children"
+          [routerLink]="child.href"
+          routerLinkActive="links__child-link-item--active"
+          class="links__child-link-item"
+        >
+          <i [class]="'fa fa-fw fa-' + child.icon"></i>
+          <span class="links__name">{{child.name}}</span>
+        </li>
+      </ul>
+    </ng-container>
   </ul>
 </nav>

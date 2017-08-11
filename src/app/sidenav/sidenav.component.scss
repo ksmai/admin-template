@@ -121,6 +121,7 @@
       color: rgba($color, .8);
     }
 
+    /deep/ .links__group-item--active,
     /deep/ .links__link-item--active,
     /deep/ .links__child-link-item--active {
       border-color: $color;

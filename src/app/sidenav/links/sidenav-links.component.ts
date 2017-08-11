@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface ILinkGroup {
   name: string;
   icon: string;
   children: ILink[];
   category: string;
+  prefix: string;
 }
 
 export interface ILink {
@@ -34,6 +36,7 @@ export class SidenavLinksComponent {
     name: 'mailbox',
     icon: 'envelope-o',
     category: 'pages',
+    prefix: '/mailbox',
     children: [{
       name: 'inbox',
       href: '/mailbox/inbox',
@@ -64,6 +67,7 @@ export class SidenavLinksComponent {
     name: 'blog',
     icon: 'newspaper-o',
     category: 'pages',
+    prefix: '/blog',
     children: [{
       name: 'posts',
       href: '/blog/posts',
@@ -84,6 +88,7 @@ export class SidenavLinksComponent {
     name: 'charts',
     icon: 'signal',
     category: 'components',
+    prefix: '/charts',
     children: [{
       name: 'chart.js',
       href: '/charts/chartjs',
@@ -129,6 +134,7 @@ export class SidenavLinksComponent {
     name: 'ui elements',
     icon: 'toggle-off',
     category: 'components',
+    prefix: '/ui-elements',
     children: [{
       name: 'buttons',
       href: '/ui-elements/buttons',
@@ -169,6 +175,7 @@ export class SidenavLinksComponent {
     name: 'forms',
     icon: 'files-o',
     category: 'components',
+    prefix: '/forms',
     children: [{
       name: 'controls',
       href: '/forms/controls',
@@ -189,6 +196,7 @@ export class SidenavLinksComponent {
     name: 'tables',
     icon: 'table',
     category: 'components',
+    prefix: '/tables',
     children: [{
       name: 'bootstrap tables',
       href: '/tables/bootstrap-tables',
@@ -219,6 +227,7 @@ export class SidenavLinksComponent {
     name: 'file utilities',
     icon: 'folder-open-o',
     category: 'components',
+    prefix: '/file-utilities',
     children: [{
       name: 'dropzone',
       href: '/file-utilities/dropzone',
@@ -262,6 +271,25 @@ export class SidenavLinksComponent {
     category: 'extras',
   }];
 
+  closed = {
+    'mailbox': true,
+    'blog': true,
+    'charts': true,
+    'ui elements': true,
+    'forms': true,
+    'tables': true,
+    'file utilities': true,
+  };
+
+  constructor(private router: Router) {
+  }
+
+  onToggleClose(name: string): void {
+    if (this.closed.hasOwnProperty(name)) {
+      this.closed[name] = !this.closed[name];
+    }
+  }
+
   get displayedLinks() {
     const links: any[] = this.filteredLinks;
     let lastCategory = null;
@@ -291,5 +319,23 @@ export class SidenavLinksComponent {
             return regex.test(child.name);
           });
     });
+  }
+
+  itemClass(entry: any): { [key: string]: boolean } {
+    const classes = {
+      'links__link-item': !!entry.name && !entry.children,
+      'links__group-item': !!entry.children,
+      'links__group-item--closed': !!entry.children &&
+        this.closed[entry.name],
+      'links__category-item': !entry.name,
+    };
+
+    if (entry.children) {
+      classes[`links__group-item--${entry.name.replace(/ /g, '-')}`] = true;
+      classes['links__group-item--active'] = this.router
+        .isActive(entry.prefix, false);
+    }
+
+    return classes;
   }
 }
