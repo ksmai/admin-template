@@ -21,6 +21,8 @@ export interface IBlogPost {
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent {
+  nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
+
   posts: IBlogPost[] = [{
     picture: require('../../../../assets/demo/bird.jpeg'),
     subject: 'Some story about a bird',

@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
+  facebookLogin = require('../../../../assets/facebook-login.png');
+  twitterLogin = require('../../../../assets/twitter-login.png');
+
   constructor(private router: Router) {
   }
 

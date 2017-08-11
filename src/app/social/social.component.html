@@ -16,7 +16,7 @@
 
     <div class="social__user">
       <img
-        src="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        [src]="nyanCat"
         alt="Nyan cat"
         class="social__user-avatar"
       >
@@ -63,13 +63,13 @@
       location="My cat house"
       time="1 min ago"
       [likes]="42"
-      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [avatar]="nyanCat"
       [comments]="commentsForBird"
     >
       <i class="fa fa-twitter" postIcon></i>
       This bird is so cool! Don't you think so?
       <img
-        src="../../../assets/demo/bird.jpeg"
+        [src]="birdImage"
         alt="bird"
         class="social__image"
         postMedia
@@ -83,7 +83,7 @@
       location="Nyan Cat House, 9 Avenue, Humboldt, SK, Canada"
       time="2 hours ago"
       [likes]="420"
-      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [avatar]="nyanCat"
       [comments]="[]"
     >
       <i class="fa fa-map-marker" postIcon></i>
@@ -101,7 +101,7 @@
       location="Some random place"
       time="10 hours ago"
       [likes]="9001"
-      avatar="../../../assets/demo/Nyan_cat_250px_frame.jpg"
+      [avatar]="nyanCat"
       [comments]="commentsForVideo"
     >
       <i class="fa fa-youtube" postIcon></i>

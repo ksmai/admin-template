@@ -61,13 +61,13 @@
     <p class="signup__message">Or...</p>
     <section class="signup__social">
       <img
-        src="../../../../assets/facebook-login.png"
+        [src]="facebookLogin"
         alt="Login with Facebook"
         class="signup__facebook"
         (click)="onSignup()"
       >
       <img
-        src="../../../../assets/twitter-login.png"
+        [src]="twitterLogin"
         alt="Login with Twitter"
         class="signup__twitter"
         (click)="onSignup()"

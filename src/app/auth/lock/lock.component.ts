@@ -22,6 +22,7 @@ export class LockComponent implements OnInit, OnDestroy {
     'Friday', 'Saturday'];
   months = ['January', 'February', 'March', 'April', 'May', 'June',
     'July', 'August', 'September', 'October', 'November', 'December'];
+  nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
 
   constructor(private locationService: Location) {
   }

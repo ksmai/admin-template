@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./mail.component.scss'],
 })
 export class MailComponent {
+  nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
 }

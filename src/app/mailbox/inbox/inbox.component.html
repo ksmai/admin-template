@@ -43,7 +43,7 @@
 
         <section class="inbox__user">
           <img
-            src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+            [src]="nyanCat"
             alt="Nyan Cat"
             class="inbox__user-avatar"
           >
@@ -113,7 +113,7 @@
             routerLink="/mailbox/mail"
           >
             <img
-              src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+              [src]="nyanCat"
               alt="Nyan cat"
               [class]="'inbox__sender-avatar inbox__sender-avatar-' + i"
             >

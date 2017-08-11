@@ -25,6 +25,7 @@ export class TopnavComponent implements OnChanges, AfterViewInit {
   @Input() navColor: string;
   @Output() navColorChange = new EventEmitter<string>();
 
+  nyanCat = require('../../../assets/demo/Nyan_cat_250px_frame.jpg');
   colorClass: { [key: string]: boolean };
   locale: string = 'us';
   locales: string[] = ['us', 'fr', 'it', 'de', 'sa', 'hk'];

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 const nyanCat = require('../../../assets/demo/Nyan_cat_250px_frame.jpg');
+const birdImage = require('../../../assets/demo/bird.jpeg');
 
 /**
  * Renders the social media like page
@@ -13,6 +14,8 @@ export class SocialComponent {
   liked = false;
   likes = 999;
   followed = false;
+  nyanCat = nyanCat;
+  birdImage = birdImage;
 
   commentsForBird = [{
     avatar: nyanCat,

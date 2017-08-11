@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./compose.component.scss'],
 })
 export class ComposeComponent {
+  nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
 }

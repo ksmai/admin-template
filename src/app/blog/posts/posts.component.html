@@ -52,7 +52,7 @@
           </p>
           <div class="blog__owner-avatar-container">
             <img
-              src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+              [src]="nyanCat"
               alt="Nyan Cat"
               class="blog__owner-avatar"
             >
@@ -114,7 +114,7 @@
           <ul class="blog__writer-list">
             <li *ngFor="let i of [1,2,3,4]" class="blog__writer">
               <img
-                src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+                [src]="nyanCat"
                 alt="Nyan Cat"
                 class="blog__writer-avatar"
               >

@@ -4,6 +4,10 @@ import {
   IEvent,
 } from '../../shared/static-timeline/static-timeline.component';
 
+const birdImage = require('../../../../assets/demo/bird.jpeg');
+const grassImage = require('../../../../assets/demo/grass.jpeg');
+const nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
+
 /**
  * Render the timeline tab inside sidenav
  */
@@ -13,6 +17,9 @@ import {
   styleUrls: ['./sidenav-timeline.component.scss'],
 })
 export class SidenavTimelineComponent {
+  birdImage = birdImage;
+  grassImage = grassImage;
+  nyanCat = nyanCat;
   events: IEvent[] = [{
     date: '11 Aug 2017',
     templates: [0],

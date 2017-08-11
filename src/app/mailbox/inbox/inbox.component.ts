@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./inbox.component.scss'],
 })
 export class InboxComponent {
+  nyanCat = require('../../../../assets/demo/Nyan_cat_250px_frame.jpg');
 }
