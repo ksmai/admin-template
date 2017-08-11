@@ -4,14 +4,20 @@
   text-align: center;
   padding: 10px;
   background-color: #999;
+  color: #fff;
 }
 
 .link {
-  color: #fff;
+  color: #ef5523;
+  font-weight: 700;
   text-decoration: none;
 
   &:hover,
   &:active {
     text-decoration: underline;
   }
+}
+
+.link--name {
+  color: #42e6d8;
 }

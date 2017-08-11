@@ -6,8 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent {
-  url = 'https://github.com/ksmai/admin-template';
+  github = 'https://github.com/ksmai/admin-template';
+  rubix = 'http://rubix410.sketchpixy.com/ltr/dashboard';
   author = 'ksmai';
-  year = (new Date()).getFullYear();
-  version = 'v1.0.0';
 }
