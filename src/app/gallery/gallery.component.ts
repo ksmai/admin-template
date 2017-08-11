@@ -3,6 +3,9 @@ import $ = require('jquery');
 import 'blueimp-gallery/css/blueimp-gallery.min.css';
 
 const Gallery = require('blueimp-gallery/js/blueimp-gallery.min');
+const birdImage = require('../../../assets/demo/bird.jpeg');
+const deskImage = require('../../../assets/demo/desk.jpeg');
+const grassImage = require('../../../assets/demo/grass.jpeg');
 
 /**
  * Renders the gallery
@@ -17,63 +20,63 @@ export class GalleryComponent implements OnDestroy {
   images = [{
     title: 'Bird 1',
     description: 'Just a bird',
-    href: '../../../assets/demo/bird.jpeg',
+    href: birdImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
   }, {
     title: 'Desk 1',
     description: 'Just a desk',
-    href: '../../../assets/demo/desk.jpeg',
+    href: deskImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
   }, {
     title: 'Grass 1',
     description: 'Just some grass',
-    href: '../../../assets/demo/grass.jpeg',
+    href: grassImage,
     type: 'image/jpeg',
     likes: 30,
     liked: true,
   }, {
     title: 'Bird 2',
     description: 'Just a bird',
-    href: '../../../assets/demo/bird.jpeg',
+    href: birdImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
   }, {
     title: 'Desk 2',
     description: 'Just a desk',
-    href: '../../../assets/demo/desk.jpeg',
+    href: deskImage,
     type: 'image/jpeg',
     likes: 12,
     liked: true,
   }, {
     title: 'Grass 2',
     description: 'Just some grass',
-    href: '../../../assets/demo/grass.jpeg',
+    href: grassImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
   }, {
     title: 'Bird 3',
     description: 'Just a bird',
-    href: '../../../assets/demo/bird.jpeg',
+    href: birdImage,
     type: 'image/jpeg',
     likes: 100,
     liked: true,
   }, {
     title: 'Desk 3',
     description: 'Just a desk',
-    href: '../../../assets/demo/desk.jpeg',
+    href: deskImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
   }, {
     title: 'Grass 3',
     description: 'Just some grass',
-    href: '../../../assets/demo/grass.jpeg',
+    href: grassImage,
     type: 'image/jpeg',
     likes: 42,
     liked: false,
