@@ -1,11 +1,22 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import {
+  Component,
+  ContentChildren,
+  HostBinding,
+  Input,
+  OnChanges,
+  OnInit,
+  QueryList,
+  TemplateRef,
+} from '@angular/core';
 import randomColor = require('randomcolor');
 
-interface IEvent {
+export interface IEvent {
   date: string;
   time?: string;
-  texts: string[];
+  texts?: string[];
+  templates?: number[];
   reversed?: boolean[];
+  hasAvatar?: boolean[];
 }
 
 type Luminosity = 'bright'|'dark'|'light'|'random';
@@ -38,6 +49,9 @@ export class StaticTimelineComponent implements OnInit, OnChanges {
   @Input() luminosity: Luminosity = 'bright';
   @Input() block: boolean;
   @Input() full: boolean;
+  @Input() icon = 'comment';
+  @HostBinding('class.dark-mode') @Input() darkMode: boolean = false;
+  @ContentChildren(TemplateRef) templates: QueryList<TemplateRef<any>>;
   colors: string[];
 
   ngOnChanges(): void {
@@ -56,6 +70,10 @@ export class StaticTimelineComponent implements OnInit, OnChanges {
         evt.reversed = evt.texts.map(() => (i++) % 2 > 0);
       });
     }
+  }
+
+  getTemplate(i: number) {
+    return this.templates.toArray()[i];
   }
 
   shade(from: string) {

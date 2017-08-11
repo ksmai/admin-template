@@ -12,7 +12,7 @@
       [style.background-color]="block ? shade(colors[i]) : ''"
     >
       <span
-        class="static-timeline__bullet glyphicon glyphicon-comment"
+        [class]="'static-timeline__bullet glyphicon glyphicon-' + icon"
         [style.background-color]="full ? '' : colors[i]"
       ></span><span class="static-timeline-event__date" >{{evt.date}}</span>
     </section>
@@ -32,6 +32,26 @@
         ><ng-container *ngIf="full && evt.time && j === 0"><span
           class="static-timeline-event__time">{{evt.time}}</span><br
         ></ng-container>{{text}}</span>
+      </li>
+    </ul>
+
+    <ul class="static-timeline-event__desc-list">
+      <li
+        *ngFor="let t of evt.templates; let j=index"
+        class="static-timeline-event__desc-item"
+      >
+        <span
+          class="static-timeline-event__bullet"
+          [style.background-color]="colors[i]"
+          *ngIf="!evt.hasAvatar || !evt.hasAvatar[j]"
+        ></span><span
+          class="static-timeline-event__desc"
+          [class.static-timeline-event__desc--reversed]="full &&
+            evt.reversed[j]"
+        ><ng-container *ngIf="full && evt.time && j === 0"><span
+          class="static-timeline-event__time">{{evt.time}}</span><br
+        ></ng-container><ng-container
+          *ngTemplateOutlet="getTemplate(t)"></ng-container></span>
       </li>
     </ul>
   </li>
