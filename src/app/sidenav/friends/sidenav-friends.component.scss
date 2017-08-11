@@ -1,0 +1,61 @@
+.friends__type {
+  color: rgba(255, 255, 255, .5);
+  font-size: .8em;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 16px 16px 8px;
+  letter-spacing: .04em;
+}
+
+.friends__list {
+  list-style: none;
+  margin: none;
+  border: none;
+  padding: 8px 0;
+}
+
+.friends__item {
+  padding: 8px 16px;
+  font-weight: 500;
+  cursor: pointer;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: rgba(0, 0, 0, .2);
+  }
+}
+
+.friends__name {
+  color: rgba(255, 255, 255, .7);
+}
+
+.friends__list--offline .friends__name {
+  color: rgba(255, 255, 255, .5);
+}
+
+.friends__avatar {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  border: 3px solid transparent;
+  padding: 2px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.friends__list--online .friends__avatar {
+  border-color: rgb(85, 201, 166);
+}
+
+.friends__list--idle .friends__avatar {
+  border-color: rgb(250, 221, 127);
+}
+
+.friends__list--busy .friends__avatar {
+  border-color: rgb(234, 120, 130);
+}
+
+.friends__list--offline .friends__avatar {
+  border-color: rgb(128, 128, 128);
+}

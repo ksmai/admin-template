@@ -1,1 +1,31 @@
-friends
+<h5 class="friends__type">Online ({{onlineFriends.length}})</h5>
+<ul class="friends__list friends__list--online">
+  <li *ngFor="let friend of onlineFriends" class="friends__item">
+    <img [src]="friend.avatar" [alt]="friend.name" class="friends__avatar">
+    <span class="friends__name">{{friend.name}}</span>
+  </li>
+</ul>
+
+<h5 class="friends__type">Idle ({{idleFriends.length}})</h5>
+<ul class="friends__list friends__list--idle">
+  <li *ngFor="let friend of idleFriends" class="friends__item">
+    <img [src]="friend.avatar" [alt]="friend.name" class="friends__avatar">
+    <span class="friends__name">{{friend.name}}</span>
+  </li>
+</ul>
+
+<h5 class="friends__type">Busy ({{busyFriends.length}})</h5>
+<ul class="friends__list friends__list--busy">
+  <li *ngFor="let friend of busyFriends" class="friends__item">
+    <img [src]="friend.avatar" [alt]="friend.name" class="friends__avatar">
+    <span class="friends__name">{{friend.name}}</span>
+  </li>
+</ul>
+
+<h5 class="friends__type">Offline ({{offlineFriends.length}})</h5>
+<ul class="friends__list friends__list--offline">
+  <li *ngFor="let friend of offlineFriends" class="friends__item">
+    <img [src]="friend.avatar" [alt]="friend.name" class="friends__avatar">
+    <span class="friends__name">{{friend.name}}</span>
+  </li>
+</ul>
