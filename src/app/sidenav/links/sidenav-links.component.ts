@@ -101,7 +101,7 @@ export class SidenavLinksComponent {
       category: 'charts',
     }, {
       name: 'morris.js',
-      href: 'charts/morrisjs',
+      href: '/charts/morrisjs',
       icon: 'area-chart',
       category: 'charts',
     }],

@@ -77,12 +77,13 @@ export class TopnavComponent implements OnChanges, AfterViewInit {
   toggleSidenav(): void {
     this.alwaysShowSidenav = !this.alwaysShowSidenav;
     this.alwaysShowSidenavChange.emit(this.alwaysShowSidenav);
+    setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
   }
 
   changeBoxed(boxed: boolean): void {
     this.boxed = boxed;
     this.boxedChange.emit(this.boxed);
-    setTimeout(() => window.dispatchEvent(new Event('resize')), 0);
+    setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
   }
 
   changeNavColor(color: string): void {
