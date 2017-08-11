@@ -1,1 +1,44 @@
-alerts
+<admin-static-timeline
+  [events]="events"
+  [darkMode]="true"
+  [colors]="colors"
+>
+  <ng-template>
+    <span class="alert__date">11 Aug 2017</span>
+    <span class="alert__info">Something detected</span>
+    <span #detectedSparkline></span>
+  </ng-template>
+
+  <ng-template>
+    <span class="alert__date">10 Aug 2017</span>
+    <span class="alert__info">Something needs your action!</span>
+
+    <admin-button
+      color="green"
+      [outlined]="true"
+      size="sm"
+      class="alert__button alert__button--yes"
+    >YES</admin-button>
+
+    <admin-button
+      color="red"
+      [outlined]="true"
+      size="sm"
+    >NO</admin-button>
+  </ng-template>
+
+  <ng-template>
+    <span class="alert__date">11 Aug 2017</span>
+    <span class="alert__info">Some data here...</span>
+    <span #someDataSparkline></span>
+  </ng-template>
+
+  <ng-template>
+    <span class="alert__date">10 Aug 2017</span>
+    <span class="alert__info">More data...</span>
+    <span #moreDataSparkline1></span>
+    <span #moreDataSparkline2></span>
+    <span #moreDataSparkline3></span>
+    <span #moreDataSparkline4></span>
+  </ng-template>
+</admin-static-timeline>

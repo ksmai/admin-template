@@ -26,4 +26,10 @@ export class SidenavTimelineComponent {
     templates: [3],
     hasAvatar: [true],
   }];
+
+  colors = [
+    'rgb(234, 133, 100)',
+    'rgb(127, 136, 236)',
+    'rgb(85, 201, 166)',
+  ];
 }

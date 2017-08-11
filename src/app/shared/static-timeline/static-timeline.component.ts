@@ -33,6 +33,14 @@ type Luminosity = 'bright'|'dark'|'light'|'random';
  *      - a flag for full mode where the timeline is in the middle
  *   - luminosity
  *      - bright/light/dark/random - colors for the bullets
+ *   - colors
+ *      - an array of css colors to be used for bullets
+ *   - darkMode
+ *      - enable dark theme
+ *   - icon
+ *      - the name of bootstrap glyphicon to be used in bullets
+ *   - templates
+ *      - <ng-template> content children
  *
  * Note: Date/Time are displayed as provided, without formatting/sorting
  *
@@ -52,17 +60,19 @@ export class StaticTimelineComponent implements OnInit, OnChanges {
   @Input() icon = 'comment';
   @HostBinding('class.dark-mode') @Input() darkMode: boolean = false;
   @ContentChildren(TemplateRef) templates: QueryList<TemplateRef<any>>;
-  colors: string[];
+  @Input() colors: string[];
 
   ngOnChanges(): void {
     this.ngOnInit();
   }
 
   ngOnInit(): void {
-    this.colors = randomColor({
-      count: this.events.length,
-      luminosity: this.luminosity,
-    } as any) as any as string[];
+    if (!this.colors || this.colors.length < this.events.length) {
+      this.colors = randomColor({
+        count: this.events.length,
+        luminosity: this.luminosity,
+      } as any) as any as string[];
+    }
 
     if (this.full) {
       let i = 0;
