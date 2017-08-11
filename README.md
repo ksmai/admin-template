@@ -3,6 +3,9 @@
 # admin-template
 An admin template clone of [rubix](http://rubix410.sketchpixy.com/ltr/dashboard).
 
+# Demo
+https://ksmai.github.io/admin-template
+
 ## Development
 ```
 # clone repository
