@@ -1,1 +1,78 @@
-timeline
+<admin-static-timeline
+  [darkMode]="true"
+  [events]="events"
+  luminosity="light"
+>
+  <ng-template>
+    <p>
+      <img
+        src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        alt="Nyan Cat"
+        class="event__avatar"
+      >
+      <span class="event__username">Nyan Cat 2</span><br>
+      sent you a friend request!
+    </p>
+
+    <admin-button
+      [outlined]="true"
+      color="green"
+      size="sm"
+      class="event__accept-button"
+    >accept</admin-button>
+
+    <admin-button
+      [outlined]="true"
+      color="red"
+      size="sm"
+    >decline</admin-button>
+  </ng-template>
+
+  <ng-template>
+    <p>
+      <img
+        src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        alt="Nyan Cat"
+        class="event__avatar"
+      >
+      <span class="event__username">Nyan Cat 3</span><br>
+      is at some awesome place
+    </p>
+
+    <img
+      src="../../../../assets/demo/grass.jpeg"
+      alt="Grass"
+      class="event__picture"
+    >
+  </ng-template>
+
+  <ng-template>
+    <p>
+      <img
+        src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        alt="Nyan Cat"
+        class="event__avatar"
+      >
+      <span class="event__username">Nyan Cat 3</span><br>
+      captured a bird!
+    </p>
+
+    <img
+      src="../../../../assets/demo/bird.jpeg"
+      alt="Bird"
+      class="event__picture"
+    >
+  </ng-template>
+
+  <ng-template>
+    <p>
+      <img
+        src="../../../../assets/demo/Nyan_cat_250px_frame.jpg"
+        alt="Nyan Cat"
+        class="event__avatar"
+      >
+      <span class="event__username">Nyan Cat 4</span><br>
+      Hello! Let's sing some Nyan Cat together!
+    </p>
+  </ng-template>
+</admin-static-timeline>
