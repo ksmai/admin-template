@@ -1,0 +1,136 @@
+.graphs__section {
+  margin: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+}
+
+.graphs__subheader {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .5);
+  font-size: .8em;
+  letter-spacing: .04em;
+  font-weight: 900;
+  margin: 0 0 8px;
+}
+
+.graphs__statistics {
+  text-align: center;
+  padding: 0 16px;
+}
+
+.graphs__stock {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.graphs__stock-trend {
+  flex: 0 0 100%;
+  margin-bottom: 8px;
+}
+
+.graphs__stock-bars {
+  flex: 0 1 50%;
+}
+
+.graphs__stock-stats {
+  flex: 0 1 50%;
+}
+
+.graphs__stock-return {
+  color: #fff;
+  background-color: rgb(85, 201, 166);
+  width: 70px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: .8em;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+
+.graphs__indices {
+  display: flex;
+}
+
+.graphs__nasdaq,
+.graphs__dow {
+  flex: 0 1 50%;
+}
+
+.graphs__nasdaq {
+  margin-right: 16px;
+}
+
+.graphs__money {
+  font-size: .9em;
+  color: rgba(255, 255, 255, .7);
+  margin: 10px 0 0;
+}
+
+.graphs__currency {
+  color: rgb(222, 188, 133);
+}
+
+.graphs__amount {
+  font-size: 1.2em;
+  letter-spacing: .06em;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.graphs__up {
+  color: rgb(85, 201, 166);
+
+  &:after {
+    margin-left: 5px;
+    content: "\e253";
+    font-family: "Glyphicons Halflings";
+    vertical-align: text-top;
+  }
+}
+
+.graphs__down {
+  color: rgb(234, 120, 130);
+
+  &:after {
+    margin-left: 5px;
+    content: "\e252";
+    font-family: "Glyphicons Halflings";
+    vertical-align: text-top;
+  }
+}
+
+.graphs__gender-table {
+  margin-top: 16px;
+}
+
+.graphs__gender-label {
+  color: rgba(255, 255, 255, .5);
+  font-weight: 700;
+  font-size: .8em;
+  letter-spacing: .04em;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
+.graphs__male-icon {
+  &:nth-child(-n+6) {
+    color: rgb(165, 199, 236);
+  }
+
+  &:nth-child(n+7) {
+    color: rgba(0, 0, 0, .5);
+  }
+}
+
+.graphs__female-icon {
+  &:nth-child(-n+7) {
+    color: rgb(227, 148, 179);
+  }
+
+  &:nth-child(n+8) {
+    color: rgba(0, 0, 0, .5);
+  }
+}

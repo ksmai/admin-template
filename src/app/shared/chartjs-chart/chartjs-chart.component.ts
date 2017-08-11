@@ -42,6 +42,7 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit, OnDestro
   @Input() labels: string[];
   @Input() datasets: IDataset|IDataset[];
   @Input() sparkline: boolean = false;
+  @Input() opaque: boolean = false;
   @ViewChild('canvas') private canvasEl: any;
 
   private chart: any;
@@ -128,10 +129,18 @@ export class ChartJSChartComponent implements OnChanges, AfterViewInit, OnDestro
       luminosity: 'bright',
     }) as any as string[];
 
-    return {
-      transparent: rgbArray.map((rgb) => this.rgb2rgba(rgb, 0.2)),
-      opaque: rgbArray.map((rgb) => this.rgb2rgba(rgb, 1)),
-    };
+    let opaque;
+    let transparent;
+    if (this.opaque) {
+      transparent = rgbArray.map((rgb) => this.rgb2rgba(rgb, 0.8));
+      const white = 'rgb(255, 255, 255)';
+      opaque = rgbArray.map(() => this.rgb2rgba(white, 1));
+    } else {
+      transparent = rgbArray.map((rgb) => this.rgb2rgba(rgb, 0.2));
+      opaque = rgbArray.map((rgb) => this.rgb2rgba(rgb, 1));
+    }
+
+    return { transparent, opaque };
   }
 
   private rgb2rgba(rgb: string, alpha: number) {

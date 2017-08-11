@@ -1,1 +1,89 @@
-graphs
+<section class="graphs__section">
+  <div class="graphs__statistics">
+    <h5 class="graphs__subheader">Statistics</h5>
+    <admin-chartjs-chart
+      [type]="polarData.type"
+      [sparkline]="polarData.sparkline"
+      [width]="polarData.width"
+      [height]="polarData.height"
+      [labels]="polarData.labels"
+      [datasets]="polarData.datasets"
+      [opaque]="true"
+    ></admin-chartjs-chart>
+  </div>
+</section>
+
+<section class="graphs__section">
+  <div class="graphs__stock">
+    <div class="graphs__stock-trend">
+      <span #stockTrend></span>
+    </div>
+    <div class="graphs__stock-bars">
+      <h5 class="graphs__subheader">GOOG</h5>
+      <span #stockBars></span>
+      <span #stockBars2></span>
+    </div>
+    <div class="graphs__stock-stats">
+      <h5 class="graphs__subheader">Change</h5>
+      <span class="graphs__stock-return">+42.42%</span>
+    </div>
+  </div>
+</section>
+
+<section class="graphs__section">
+  <div class="graphs__indices">
+    <div class="graphs__nasdaq">
+      <h5 class="graphs__subheader">NASDAQ</h5>
+      <span #nasdaq></span>
+      <h6 class="graphs__money">
+        <span class="graphs__currency">USD</span>
+        <span class="graphs__up">42%</span>
+      </h6>
+      <h6 class="graphs__amount graphs__money">$420.42</h6>
+      <h6 class="graphs__money">
+        <span class="graphs__currency">EUR</span> &euro;315.32
+      </h6>
+    </div>
+
+    <div class="graphs__dow">
+      <h5 class="graphs__subheader">DOW</h5>
+      <span #dow></span>
+      <h6 class="graphs__money">
+        <span class="graphs__currency">CNY</span>
+        <span class="graphs__down">14%</span>
+      </h6>
+      <h6 class="graphs__amount graphs__money">&yen;4200</h6>
+      <h6 class="graphs__money">
+        <span class="graphs__currency">GBP</span> &pound;414.47
+      </h6>
+    </div>
+  </div>
+</section>
+
+<section class="graphs__section">
+  <div class="graphs__gender">
+    <span #gender></span>
+    <table class="graphs__gender-table">
+      <tbody>
+        <tr>
+          <th class="graphs__gender-label">Male</th>
+          <td>
+            <i
+              class="fa fa-male graphs__male-icon"
+              *ngFor="let x of 'x'.repeat(14).split('')"
+            ></i>
+          </td>
+        </tr>
+        <tr>
+          <th class="graphs__gender-label">Female</th>
+          <td>
+            <i
+              class="fa fa-female graphs__female-icon"
+              *ngFor="let x of 'x'.repeat(11).split('')"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
