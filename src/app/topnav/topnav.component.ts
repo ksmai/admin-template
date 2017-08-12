@@ -42,10 +42,10 @@ export class TopnavComponent implements OnChanges, AfterViewInit {
     de: ['Amerikanisches Englisch.', 'Französisch', 'Italienisch', 'Deutsch',
       'Arabisch', 'Traditionelles Chinesisch'],
 
-    sa: ['الإنجليزية - الولايات المتحدة', 'الفرنسية', 'ألمانية',
-      'الإيطالي', 'عربى', 'الصينية التقليدية'],
+    sa: ['الإنجليزية - الولايات المتحدة', 'الفرنسية', 'الإيطالي',
+      'ألمانية', 'عربى', 'الصينية التقليدية'],
 
-    hk: ['英文 - 美國', '法文', '德語', '意大利語', '阿拉伯語',
+    hk: ['英文 - 美國', '法文', '意大利語', '德語', '阿拉伯語',
       '繁體中文'],
   };
 
