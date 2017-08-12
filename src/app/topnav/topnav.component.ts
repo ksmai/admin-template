@@ -33,14 +33,14 @@ export class TopnavComponent implements OnChanges, AfterViewInit {
     us: ['English - U.S.', 'French', 'Italian', 'German', 'Arabic',
       'Traditional Chinese'],
 
-    fr: ['iAnglais - États-Unis', 'français', 'allemand',
-      'italien', 'arabe', 'Chinois traditionnel'],
+    fr: ['Anglais - États-Unis', 'français', 'italien',
+      'allemand', 'arabe', 'Chinois traditionnel'],
 
-    it: ['Inglese - U.S.', 'francese', 'Tedesco', 'italiano',
+    it: ['Inglese - U.S.', 'francese', 'italiano', 'tedesco',
       'Arabo', 'Cinese tradizionale'],
 
-    de: ['Amerikanisches Englisch.', 'Französisch', 'Deutsche',
-      'Italienisch', 'Arabisch', 'Traditionelles Chinesisch'],
+    de: ['Amerikanisches Englisch.', 'Französisch', 'Italienisch', 'Deutsch',
+      'Arabisch', 'Traditionelles Chinesisch'],
 
     sa: ['الإنجليزية - الولايات المتحدة', 'الفرنسية', 'ألمانية',
       'الإيطالي', 'عربى', 'الصينية التقليدية'],
